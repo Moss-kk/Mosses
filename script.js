@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * MOSSES PORTFOLIO — INTERACTIVE CONTROLLER
+ * SUMI-E TECH SCROLL — INTERACTIVE CONTROLLER
  * Live Frame Inspector · Filtering · CV Modal · Telemetry Clock
  * ═══════════════════════════════════════════════════════════════
  */
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 01. Live Clock (2026 East Africa Time)
+ * 01. Live East Africa Time Clock (2026 EAT)
  */
 function initLiveClock() {
   const clockEl = document.getElementById('liveClock');
@@ -77,9 +77,9 @@ function initMobileDrawer() {
  * 03. Project Category Filtering
  */
 function initProjectFiltering() {
-  const filterTabs = document.querySelectorAll('.filter-tab');
-  const primaryCards = document.querySelectorAll('.project-case-card');
-  const secondaryCards = document.querySelectorAll('.sec-card');
+  const filterTabs = document.querySelectorAll('.filter-btn');
+  const primaryCards = document.querySelectorAll('.sumie-project-card');
+  const secondaryCards = document.querySelectorAll('.sumie-sub-card');
 
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -174,7 +174,7 @@ function initLivePreviewModal() {
     }
   });
 
-  // Desktop vs Mobile View Toggle
+  // Desktop vs Mobile Viewport Mode
   if (desktopViewBtn && mobileViewBtn && frameWrapper) {
     desktopViewBtn.addEventListener('click', () => {
       desktopViewBtn.classList.add('active');
@@ -250,7 +250,7 @@ function initContactForm() {
 
     if (!name || !email || !message) {
       if (feedback) {
-        feedback.className = 'form-status error mono-text';
+        feedback.className = 'form-status-line error mono-text';
         feedback.textContent = 'ERROR: Please fill in all required fields.';
       }
       return;
@@ -261,13 +261,13 @@ function initContactForm() {
       submitBtn.innerHTML = '<span>Preparing Transmission...</span>';
     }
 
-    const mailSubject = encodeURIComponent(`[PORTFOLIO CONTACT] ${scope} — ${name}`);
+    const mailSubject = encodeURIComponent(`[SUMI-E DISPATCH] ${scope} — ${name}`);
     const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
     const mailUrl = `mailto:kiflemusse@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
     setTimeout(() => {
       if (feedback) {
-        feedback.className = 'form-status success mono-text';
+        feedback.className = 'form-status-line success mono-text';
         feedback.innerHTML = `✓ DISPATCH READY. Opening your email client to send to <strong>kiflemusse@gmail.com</strong>...`;
       }
 
