@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════
-   MOSSES PORTFOLIO — CLEAN MINIMALIST & CLIENT-FOCUSED STYLESHEET
-   Deep Dark Canvas · Solar Amber Accent · 100% Mobile Responsive
+   MOSSES PORTFOLIO — MODERN MINIMALIST & WORKFLOW STYLESHEET
+   Deep Dark Aerospace · Solar Amber Accent · Floating Island Pill
+   100% Mobile Responsive · Clean Glassmorphism Workflow Showcase
    ═══════════════════════════════════════════════════════════════ */
 
 /* ─── 01. Design Tokens & Theme Variables ─── */
@@ -10,6 +11,7 @@
   --surface: #11151C;
   --surface-raised: #161B24;
   --surface-hover: #1D232F;
+  --surface-glass: rgba(17, 21, 28, 0.82);
 
   /* Solar Amber Accent */
   --accent: #FFB347;
@@ -22,7 +24,7 @@
   --fg-subtle: #C5BDB0;
   --fg-muted: #888275;
 
-  /* Borders */
+  /* Hairline Borders */
   --border: rgba(255, 179, 71, 0.12);
   --border-subtle: #1C222D;
   --border-active: rgba(255, 179, 71, 0.4);
@@ -32,19 +34,19 @@
   --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
-  /* Geometry & Spacing */
-  --radius-sm: 4px;
-  --radius: 8px;
-  --radius-lg: 12px;
+  /* Geometry & Radii */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
   --site-max-w: 1200px;
   --site-pad: 1rem;
-  --header-height: 68px;
 
   /* Transitions */
   --trans-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
   --trans-smooth: 240ms cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
-  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 6px 24px rgba(0, 0, 0, 0.5);
+  --shadow-pill: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 /* ─── 02. Reset & Full-Width Foundation ─── */
@@ -57,7 +59,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 16px);
+  scroll-padding-top: 100px;
   background-color: var(--bg);
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
@@ -80,7 +82,7 @@ body {
   position: relative;
 }
 
-/* Subtle Technical Grid Background (100% width, never 100vw) */
+/* Background Subtle Grid Texture (100% width, never 100vw) */
 body::before {
   content: "";
   position: fixed;
@@ -134,6 +136,10 @@ button, input, select, textarea {
   color: #22c55e;
 }
 
+.text-muted {
+  color: var(--fg-muted);
+}
+
 .site-container {
   width: 100%;
   max-width: 100%;
@@ -181,29 +187,28 @@ button, input, select, textarea {
   vertical-align: middle;
 }
 
-/* ─── 03. Buttons ─── */
-.btn-primary {
+/* ─── 03. Pill Buttons & Actions ─── */
+.btn-pill-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
   background-color: var(--accent);
   color: #0C0F14;
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.75rem 1.4rem;
-  border-radius: var(--radius);
+  letter-spacing: 0.02em;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--accent);
   cursor: pointer;
   box-shadow: 0 4px 14px var(--accent-glow);
   transition: all var(--trans-fast);
-  min-height: 44px;
+  min-height: 40px;
 }
 
-.btn-primary:hover {
+.btn-pill-primary:hover {
   background-color: var(--accent-hover);
   border-color: var(--accent-hover);
   color: #000000;
@@ -211,166 +216,192 @@ button, input, select, textarea {
   box-shadow: 0 6px 20px rgba(255, 179, 71, 0.4);
 }
 
-.btn-primary:active {
+.btn-pill-primary:active {
   transform: translateY(1px);
 }
 
-.btn-secondary {
+.btn-pill-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
   background-color: var(--surface-raised);
   color: var(--fg);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.75rem 1.4rem;
-  border-radius: var(--radius);
-  border: 1.5px solid var(--border);
+  letter-spacing: 0.02em;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
   cursor: pointer;
   transition: all var(--trans-fast);
-  min-height: 44px;
+  min-height: 40px;
 }
 
-.btn-secondary:hover {
+.btn-pill-secondary:hover {
   background-color: var(--surface-hover);
   border-color: var(--accent);
   color: #ffffff;
   transform: translateY(-2px);
 }
 
-.btn-secondary:active {
+.btn-pill-secondary:active {
   transform: translateY(1px);
 }
 
 .btn-sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.75rem;
-  min-height: 38px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.775rem;
+  min-height: 36px;
 }
 
 .btn-full {
   width: 100%;
 }
 
-/* ─── 04. Sticky Navigation ─── */
-.site-header {
+/* ─── 04. Floating Island Navbar Pill (Navigation5 Style) ─── */
+.floating-nav-wrapper {
   position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: rgba(12, 15, 20, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
+  top: 0.75rem;
+  z-index: 200;
   width: 100%;
+  padding-left: var(--site-pad);
+  padding-right: var(--site-pad);
+  box-sizing: border-box;
 }
 
-.header-inner {
+.floating-nav-pill {
+  max-width: 1020px;
+  margin: 0 auto;
+  height: 56px;
+  background: rgba(17, 21, 28, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-pill);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  padding: 0 0.65rem 0 1rem;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.logo-box {
-  width: 36px;
-  height: 36px;
-  background-color: var(--surface-raised);
-  border: 1px solid var(--accent);
-  border-radius: var(--radius);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.05rem;
-  flex-shrink: 0;
-}
-
-.logo-box.mini {
-  width: 28px;
-  height: 28px;
-  font-size: 0.85rem;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  line-height: 1;
-}
-
-.brand-role {
-  font-size: 0.625rem;
-  color: var(--fg-muted);
-  letter-spacing: 0.08em;
-  margin-top: 0.2rem;
-}
-
-.desktop-nav {
-  display: none;
-}
-
-.header-actions {
+.nav-brand-group {
   display: flex;
   align-items: center;
   gap: 0.55rem;
 }
 
-.icon-link-btn {
+.logo-pill-icon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.logo-pill-icon.mini {
+  width: 26px;
+  height: 26px;
+}
+
+.brand-name-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-brand-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.nav-brand-badge {
+  font-size: 0.58rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-top: 0.15rem;
+}
+
+.desktop-pill-nav {
+  display: none;
+}
+
+.pill-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg-subtle);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--trans-fast);
+}
+
+.pill-nav-link:hover, .pill-nav-link.active {
+  color: #ffffff;
+  background: var(--surface-raised);
+}
+
+.nav-badge-api {
+  background: var(--accent-subtle);
+  color: var(--accent);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+}
+
+.nav-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 50%;
   color: var(--fg);
   transition: all var(--trans-fast);
 }
 
-.icon-link-btn:hover {
-  background: var(--surface-raised);
+.nav-icon-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
 
-.mobile-menu-btn {
+.mobile-pill-toggle {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 44px;
-  height: 44px;
-  background: var(--surface);
+  width: 40px;
+  height: 40px;
+  background: var(--surface-raised);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 50%;
   cursor: pointer;
-  padding: 10px;
+  padding: 9px;
 }
 
-.mobile-menu-btn .bar {
+.mobile-pill-toggle .bar {
   width: 100%;
   height: 2px;
   background-color: #ffffff;
@@ -380,9 +411,9 @@ button, input, select, textarea {
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  background-color: rgba(12, 15, 20, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(12, 15, 20, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 250;
   opacity: 0;
   pointer-events: none;
@@ -446,8 +477,8 @@ button, input, select, textarea {
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 1.75rem;
+  gap: 1.15rem;
+  margin-top: 1.5rem;
   margin-bottom: auto;
 }
 
@@ -476,7 +507,7 @@ button, input, select, textarea {
   color: var(--fg-muted);
 }
 
-/* ─── 05. Hero Section (Simple & Direct) ─── */
+/* ─── 05. Hero Section ─── */
 .hero-section {
   width: 100%;
   padding-top: 2rem;
@@ -508,8 +539,8 @@ button, input, select, textarea {
   color: var(--accent);
   background: var(--accent-subtle);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem;
 }
 
 .live-dot {
@@ -547,7 +578,7 @@ button, input, select, textarea {
 
 .hero-btn {
   padding: 0.85rem 1rem;
-  font-size: 0.825rem;
+  font-size: 0.85rem;
   width: 100%;
 }
 
@@ -557,7 +588,7 @@ button, input, select, textarea {
   grid-template-columns: 1fr 1fr;
   gap: 1rem 0.5rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   padding: 1.15rem;
   background: var(--surface);
   width: 100%;
@@ -584,7 +615,7 @@ button, input, select, textarea {
   margin-top: 0.2rem;
 }
 
-/* Interactive 3D CSS Solar Radar Card (NO PERSONAL PHOTO) */
+/* Interactive 3D CSS Solar Radar */
 .hero-visual-col {
   width: 100%;
 }
@@ -707,8 +738,8 @@ button, input, select, textarea {
 }
 
 @keyframes radarSweep {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
 }
 
 .solar-core-orb {
@@ -768,7 +799,275 @@ button, input, select, textarea {
   color: var(--fg-muted);
 }
 
-/* ─── 06. Services Section (3 Cards) ─── */
+/* ─── 06. Workflow Control Section (Features5 Component) ─── */
+.workflow-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.workflow-left {
+  width: 100%;
+}
+
+.workflow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--fg-subtle);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
+.workflow-heading {
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #ffffff;
+  margin-bottom: 0.85rem;
+}
+
+.workflow-subtext {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--fg-subtle);
+  margin-bottom: 1.75rem;
+  max-width: 520px;
+}
+
+.workflow-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.workflow-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.workflow-icon-box {
+  width: 38px;
+  height: 38px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.workflow-item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.item-desc {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+
+.workflow-btn {
+  width: auto;
+}
+
+/* Layered Glassmorphism Stage Cards */
+.workflow-right {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.25rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  justify-content: center;
+}
+
+.workflow-stage-stage-wrap {
+  position: relative;
+  min-height: 380px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.glass-stage-card {
+  background: rgba(22, 27, 36, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  transition: transform var(--trans-smooth), border-color var(--trans-fast);
+}
+
+.glass-stage-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Card 1 */
+.card-incoming {
+  width: min(100%, 280px);
+}
+
+.card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.68rem;
+  margin-bottom: 0.35rem;
+}
+
+.badge-row {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.stage-tag {
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.tag-live {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.tag-trigger {
+  background: var(--surface-raised);
+  color: var(--fg);
+}
+
+.stage-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.45rem;
+}
+
+.stage-card-details {
+  font-size: 0.725rem;
+  color: var(--fg-muted);
+  line-height: 1.5;
+}
+
+/* Card 2 */
+.card-decision {
+  width: min(100%, 260px);
+  margin-top: 1rem;
+  margin-left: auto;
+  border-color: var(--border-active);
+}
+
+.stage-category {
+  font-size: 0.68rem;
+  color: var(--fg-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.stage-progress-bar {
+  display: flex;
+  height: 6px;
+  width: 100%;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin: 0.65rem 0;
+  background: var(--surface);
+}
+
+.bar-seg { height: 100%; }
+.seg-primary { width: 50%; background: var(--accent); }
+.seg-blue { width: 30%; background: #60a5fa; }
+.seg-orange { width: 20%; background: #fb923c; }
+
+.stage-meta-pills {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.65rem;
+  color: var(--fg-muted);
+}
+
+/* Card 3 */
+.card-execution {
+  width: min(100%, 280px);
+  margin-top: 1rem;
+}
+
+.exec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.exec-title {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.exec-synced {
+  font-size: 0.65rem;
+  color: #22c55e;
+}
+
+.exec-desc {
+  font-size: 0.8rem;
+  color: var(--fg-subtle);
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
+}
+
+.exec-badges {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+}
+
+.badge-success {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+}
+
+.badge-dist {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── 07. Services Section (3 Cards) ─── */
 .section-head-wrap {
   margin-bottom: 2rem;
   width: 100%;
@@ -866,10 +1165,10 @@ button, input, select, textarea {
   background: var(--surface-raised);
   border: 1px solid var(--border);
   padding: 0.2rem 0.5rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
 }
 
-/* ─── 07. Featured Projects Section ─── */
+/* ─── 08. Featured Projects Section ─── */
 .primary-projects-list {
   display: flex;
   flex-direction: column;
@@ -975,7 +1274,7 @@ button, input, select, textarea {
   background: var(--surface-raised);
   border: 1px solid var(--border);
   padding: 0.25rem 0.55rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
 }
 
 .project-actions {
@@ -986,8 +1285,8 @@ button, input, select, textarea {
   margin-top: auto;
 }
 
-.project-actions .btn-primary,
-.project-actions .btn-secondary {
+.project-actions .btn-pill-primary,
+.project-actions .btn-pill-secondary {
   width: 100%;
   justify-content: center;
 }
@@ -1149,7 +1448,7 @@ button, input, select, textarea {
   color: var(--fg);
 }
 
-/* ─── 08. Secondary Projects ─── */
+/* ─── 09. Secondary Projects ─── */
 .secondary-projects-wrap {
   margin-top: 3rem;
   border-top: 1px dashed var(--border);
@@ -1221,7 +1520,7 @@ button, input, select, textarea {
 .sec-card-tags span {
   background: var(--surface-raised);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   padding: 0.15rem 0.45rem;
 }
 
@@ -1233,7 +1532,7 @@ button, input, select, textarea {
   text-underline-offset: 3px;
 }
 
-/* ─── 09. Skills / Tech Stack Section (Compact & Visual) ─── */
+/* ─── 10. Skills / Tech Stack Section (Compact Pills) ─── */
 .skills-compact-grid {
   display: flex;
   flex-direction: column;
@@ -1271,7 +1570,7 @@ button, input, select, textarea {
 .skill-pill {
   background: var(--surface-raised);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   font-size: 0.775rem;
   color: var(--fg);
   padding: 0.35rem 0.75rem;
@@ -1283,7 +1582,7 @@ button, input, select, textarea {
   color: var(--accent);
 }
 
-/* ─── 10. Contact Section (Frictionless) ─── */
+/* ─── 11. Contact Section (Frictionless) ─── */
 .contact-frame {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1361,7 +1660,7 @@ button, input, select, textarea {
   height: 36px;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1449,7 +1748,7 @@ button, input, select, textarea {
 .form-status.success { color: #22c55e; }
 .form-status.error { color: #ef4444; }
 
-/* ─── 11. Full Footer ─── */
+/* ─── 12. Full Footer ─── */
 .site-footer {
   background: #080A0E;
   border-top: 1px solid var(--border);
@@ -1517,7 +1816,7 @@ button, input, select, textarea {
   color: var(--accent);
 }
 
-/* ─── 12. Modals (Inspector & CV) ─── */
+/* ─── 13. Modals (Inspector & CV) ─── */
 .preview-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1609,7 +1908,7 @@ button, input, select, textarea {
   height: 32px;
   background: var(--surface-raised);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   color: var(--fg);
   display: flex;
   align-items: center;
@@ -1725,13 +2024,18 @@ button, input, select, textarea {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   13. PROGRESSIVE ENHANCEMENT (TABLET & DESKTOP BREAKPOINTS)
+   14. PROGRESSIVE ENHANCEMENT (TABLET & DESKTOP BREAKPOINTS)
    ═══════════════════════════════════════════════════════════════ */
 
 /* ─── Tablet: min-width: 768px ─── */
 @media (min-width: 768px) {
   :root {
     --site-pad: 1.5rem;
+  }
+
+  .floating-nav-pill {
+    height: 60px;
+    padding: 0 0.85rem 0 1.25rem;
   }
 
   .hero-cta-group {
@@ -1741,7 +2045,7 @@ button, input, select, textarea {
 
   .hero-btn {
     width: auto;
-    padding: 0.85rem 1.5rem;
+    padding: 0.85rem 1.6rem;
   }
 
   .hero-stats-band {
@@ -1755,6 +2059,38 @@ button, input, select, textarea {
 
   .stat-box:last-child {
     border-right: none;
+  }
+
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .card-incoming {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 250px;
+    margin: 0;
+  }
+
+  .card-decision {
+    position: absolute;
+    top: 110px;
+    right: 10px;
+    width: 240px;
+    margin: 0;
+    z-index: 5;
+  }
+
+  .card-execution {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    width: 260px;
+    margin: 0;
   }
 
   .services-grid {
@@ -1780,8 +2116,8 @@ button, input, select, textarea {
     width: auto;
   }
 
-  .project-actions .btn-primary,
-  .project-actions .btn-secondary {
+  .project-actions .btn-pill-primary,
+  .project-actions .btn-pill-secondary {
     width: auto;
   }
 
@@ -1815,48 +2151,19 @@ button, input, select, textarea {
 @media (min-width: 1024px) {
   :root {
     --site-pad: 2rem;
-    --header-height: 72px;
   }
 
   .site-container {
     max-width: var(--site-max-w);
   }
 
-  .desktop-nav {
+  .desktop-pill-nav {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: 0.35rem;
   }
 
-  .nav-item {
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--fg-subtle);
-    padding: 0.35rem 0;
-    position: relative;
-  }
-
-  .nav-item:hover, .nav-item.active {
-    color: #ffffff;
-  }
-
-  .nav-item::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent);
-    transition: width var(--trans-fast);
-  }
-
-  .nav-item:hover::after, .nav-item.active::after {
-    width: 100%;
-  }
-
-  .mobile-menu-btn {
+  .mobile-pill-toggle {
     display: none;
   }
 

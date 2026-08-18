@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * MOSSES PORTFOLIO — MINIMALIST INTERACTIVE CONTROLLER
- * Live Frame Inspector · CV Modal · Contact Dispatch · Mobile Drawer
+ * MOSSES PORTFOLIO — INTERACTIVE CONTROLLER
+ * Floating Pill Nav · Workflow Telemetry · Frame Inspector · CV
  * ═══════════════════════════════════════════════════════════════
  */
 
@@ -225,14 +225,14 @@ function initContactForm() {
 }
 
 /**
- * 05. Navigation Scroll Spy
+ * 05. Navigation Scroll Spy & Active State Indicator
  */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.desktop-nav .nav-item');
+  const navLinks = document.querySelectorAll('.desktop-pill-nav .pill-nav-link');
 
   function onScroll() {
-    const scrollPos = window.scrollY + 100;
+    const scrollPos = window.scrollY + 140;
 
     sections.forEach(section => {
       const top = section.offsetTop;
