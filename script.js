@@ -1,14 +1,12 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * MOSSES PORTFOLIO — INTERACTIVE CONTROLLER
- * Live Frame Inspector · Filtering · CV Modal · Telemetry Clock
+ * MOSSES PORTFOLIO — MINIMALIST INTERACTIVE CONTROLLER
+ * Live Frame Inspector · CV Modal · Contact Dispatch · Mobile Drawer
  * ═══════════════════════════════════════════════════════════════
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initLiveClock();
   initMobileDrawer();
-  initProjectFiltering();
   initLivePreviewModal();
   initCvModal();
   initContactForm();
@@ -16,26 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 01. Live East Africa Time Telemetry Clock (2026 EAT)
- */
-function initLiveClock() {
-  const clockEl = document.getElementById('liveClock');
-  if (!clockEl) return;
-
-  function updateTime() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    clockEl.textContent = `2026 EAT ${hours}:${minutes}:${seconds}`;
-  }
-
-  updateTime();
-  setInterval(updateTime, 1000);
-}
-
-/**
- * 02. Mobile Drawer Navigation
+ * 01. Mobile Drawer Navigation
  */
 function initMobileDrawer() {
   const toggleBtn = document.getElementById('mobileMenuBtn');
@@ -74,45 +53,7 @@ function initMobileDrawer() {
 }
 
 /**
- * 03. Project Category Filtering
- */
-function initProjectFiltering() {
-  const filterTabs = document.querySelectorAll('.filter-tab');
-  const primaryCards = document.querySelectorAll('.project-case-card');
-  const secondaryCards = document.querySelectorAll('.sec-card');
-
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      filterTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const filterVal = tab.getAttribute('data-filter');
-
-      // Primary cards
-      primaryCards.forEach(card => {
-        const cat = card.getAttribute('data-category') || '';
-        if (filterVal === 'all' || cat.includes(filterVal)) {
-          card.style.display = window.innerWidth >= 1024 ? 'grid' : 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      // Secondary cards
-      secondaryCards.forEach(secCard => {
-        const cat = secCard.getAttribute('data-category') || '';
-        if (filterVal === 'all' || (filterVal !== 'flagship' && cat.includes(filterVal))) {
-          secCard.style.display = 'flex';
-        } else {
-          secCard.style.display = 'none';
-        }
-      });
-    });
-  });
-}
-
-/**
- * 04. Live Project Inspector Modal
+ * 02. Live Project Inspector Modal
  */
 function initLivePreviewModal() {
   const modal = document.getElementById('previewModal');
@@ -191,7 +132,7 @@ function initLivePreviewModal() {
 }
 
 /**
- * 05. CV Modal Handler
+ * 03. CV Modal Handler
  */
 function initCvModal() {
   const cvModal = document.getElementById('cvModal');
@@ -231,7 +172,7 @@ function initCvModal() {
 }
 
 /**
- * 06. Contact Transmission Form
+ * 04. Contact Form Transmission
  */
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -251,24 +192,24 @@ function initContactForm() {
     if (!name || !email || !message) {
       if (feedback) {
         feedback.className = 'form-status error mono-text';
-        feedback.textContent = 'ERROR: Please fill in all required fields.';
+        feedback.textContent = 'Please fill in all required fields.';
       }
       return;
     }
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Preparing Transmission...</span>';
+      submitBtn.innerHTML = '<span>Preparing Message...</span>';
     }
 
-    const mailSubject = encodeURIComponent(`[PORTFOLIO CONTACT] ${scope} — ${name}`);
-    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
+    const mailSubject = encodeURIComponent(`[NEW INQUIRY] ${scope} — ${name}`);
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${scope}\n\nMessage:\n${message}`);
     const mailUrl = `mailto:kiflemusse@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
     setTimeout(() => {
       if (feedback) {
         feedback.className = 'form-status success mono-text';
-        feedback.innerHTML = `✓ DISPATCH READY. Opening your email client to send to <strong>kiflemusse@gmail.com</strong>...`;
+        feedback.innerHTML = `✓ Ready! Opening your email client to send to <strong>kiflemusse@gmail.com</strong>...`;
       }
 
       window.location.href = mailUrl;
@@ -284,14 +225,14 @@ function initContactForm() {
 }
 
 /**
- * 07. Navigation Scroll Spy
+ * 05. Navigation Scroll Spy
  */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.desktop-nav .nav-item');
 
   function onScroll() {
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 100;
 
     sections.forEach(section => {
       const top = section.offsetTop;
