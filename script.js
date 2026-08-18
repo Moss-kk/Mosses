@@ -1,10 +1,150 @@
 /**
- * MOSSES PORTFOLIO — FLUID INTERACTIVE MOTION JAVASCRIPT (v13.0)
- * Continuous Tabs Sliding Pill, Card Swipe Carousel, Scroll Reveals, Copy Toasts & AI Chat
+ * MOSSES PORTFOLIO — FLUID INTERACTIVE MOTION JAVASCRIPT (v14.0)
+ * TextScramble & TextLoop Engine, Mobile CardSwipe with Dot Pagination,
+ * Continuous Floating Pill Tabs, Copy Toasts & Interactive AI Chat
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ─── 01. Continuous Tabs: Sliding Spring Active Pill ───
+  // ─── 01. TextScramble & TextLoop Engine ───
+  class TextScramble {
+    constructor(el) {
+      this.el = el;
+      this.chars = '!<>-_\\/[]{}—=+*^?#abcdefghijklmnopqrstuvwxyz';
+      this.update = this.update.bind(this);
+    }
+
+    setText(newText) {
+      const oldText = this.el.innerText;
+      const length = Math.max(oldText.length, newText.length);
+      const promise = new Promise((resolve) => (this.resolve = resolve));
+      this.queue = [];
+
+      for (let i = 0; i < length; i++) {
+        const from = oldText[i] || '';
+        const to = newText[i] || '';
+        const start = Math.floor(Math.random() * 20);
+        const end = start + Math.floor(Math.random() * 20);
+        this.queue.push({ from, to, start, end });
+      }
+
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    }
+
+    update() {
+      let output = '';
+      let complete = 0;
+
+      for (let i = 0, n = this.queue.length; i < n; i++) {
+        let { from, to, start, end, char } = this.queue[i];
+        if (this.frame >= end) {
+          complete++;
+          output += to;
+        } else if (this.frame >= start) {
+          if (!char || Math.random() < 0.28) {
+            char = this.randomChar();
+            this.queue[i].char = char;
+          }
+          output += `<span class="text-terracotta">${char}</span>`;
+        } else {
+          output += from;
+        }
+      }
+
+      this.el.innerHTML = output;
+
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    }
+
+    randomChar() {
+      return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
+  }
+
+  const scrambleEl = document.getElementById('heroTextScramble');
+  const heroBadge = document.getElementById('heroTextLoopBadge');
+
+  if (scrambleEl) {
+    const fx = new TextScramble(scrambleEl);
+    const phrases = [
+      "Hi, I'm Mussie — Full-Stack Developer & AI Builder",
+      "What can I build for you today?",
+      "Custom Web Apps • Next.js & Supabase",
+      "Intelligent AI & Telegram Bots",
+      "End-to-End Business Automation"
+    ];
+
+    let counter = 0;
+    let loopTimeout = null;
+
+    const nextPhrase = () => {
+      clearTimeout(loopTimeout);
+      fx.setText(phrases[counter]).then(() => {
+        loopTimeout = setTimeout(nextPhrase, 3200);
+      });
+      counter = (counter + 1) % phrases.length;
+    };
+
+    nextPhrase();
+
+    if (heroBadge) {
+      heroBadge.addEventListener('click', () => {
+        nextPhrase();
+      });
+    }
+  }
+
+  // ─── 02. Mobile CardSwipe Dot Pagination Synchronization ───
+  function setupScrollSwipeDots(trackId, dotsContainerId) {
+    const track = document.getElementById(trackId);
+    const dotsContainer = document.getElementById(dotsContainerId);
+    if (!track || !dotsContainer) return;
+
+    const dots = dotsContainer.querySelectorAll('.dot');
+    const cards = track.children;
+    if (dots.length === 0 || cards.length === 0) return;
+
+    // Track scroll
+    track.addEventListener('scroll', () => {
+      const scrollLeft = track.scrollLeft;
+      const cardWidth = cards[0]?.offsetWidth || 300;
+      const activeIdx = Math.round(scrollLeft / cardWidth);
+
+      dots.forEach((dot, i) => {
+        if (i === activeIdx) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }, { passive: true });
+
+    // Click dot to scroll
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        if (cards[idx]) {
+          cards[idx].scrollIntoView({
+            behavior: 'smooth',
+            inline: 'start',
+            block: 'nearest'
+          });
+        }
+      });
+    });
+  }
+
+  // Setup mobile swipe dots for Services and Experience
+  setupScrollSwipeDots('servicesSwipeTrack', 'servicesDots');
+  setupScrollSwipeDots('experienceSwipeTrack', 'expDots');
+
+  // ─── 03. Continuous Tabs: Sliding Spring Active Pill ───
   const tabsNav = document.getElementById('continuousTabsNav');
   const tabButtons = document.querySelectorAll('.tab-pill-btn');
   const slidingPill = document.getElementById('slidingActivePill');
@@ -31,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle Tab Click
   tabButtons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       tabButtons.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       updateSlidingPill(btn);
@@ -70,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentActive) updateSlidingPill(currentActive);
   });
 
-  // ─── 02. Scroll Reveal Observer ───
+  // ─── 04. Scroll Reveal Observer ───
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -87,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach((el) => el.classList.add('is-revealed'));
   }
 
-  // ─── 03. Interactive Project Card Swipe & Carousel ───
+  // ─── 05. Interactive Project Card Swipe & Carousel ───
   const carouselTrack = document.getElementById('projectCarouselTrack');
   const prevBtn = document.getElementById('carouselPrevBtn');
   const nextBtn = document.getElementById('carouselNextBtn');
@@ -136,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ─── 04. Copy to Clipboard with Toast Notification ───
+  // ─── 06. Copy to Clipboard with Toast Notification ───
   const copyButtons = document.querySelectorAll('.copy-link-btn');
   const toast = document.getElementById('toastNotification');
   let toastTimer = null;
@@ -172,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ─── 05. Mobile Navigation Drawer ───
+  // ─── 07. Mobile Navigation Drawer ───
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const drawerCloseBtn = document.getElementById('drawerCloseBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
@@ -207,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ─── 06. Interactive Eagle Investments AI Chat Simulation ───
+  // ─── 08. Interactive Eagle Investments AI Chat Simulation ───
   const eagleChatThread = document.getElementById('eagleChatThread');
   const chatChips = document.querySelectorAll('.chat-chip');
 
@@ -250,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ─── 07. Contact Form Mailto Dispatch ───
+  // ─── 09. Contact Form Mailto Dispatch ───
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
 

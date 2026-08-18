@@ -6,7 +6,7 @@
   <title>Mussie Kifle — Full-Stack Developer &amp; AI Builder</title>
   
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Mussie Kifle — Full-Stack Developer &amp; AI Builder. Fast web apps, AI tools, and automation systems with interactive motion design." />
+  <meta name="description" content="Hi, I am Mussie Kifle — Full-Stack Developer &amp; AI Builder. I build fast web apps, AI tools, and automation systems that help businesses scale." />
   <meta name="keywords" content="Mussie Kifle, Full-Stack Developer, AI Builder, Web Developer, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Supabase, Phoenixopia" />
   <meta name="author" content="Mussie Kifle" />
   <meta name="robots" content="index, follow" />
@@ -119,7 +119,7 @@
   <main id="mainContent">
 
     <!-- ══════════════════════════════════════════════════
-         02. HERO SECTION (INTERACTIVE CRAFT SPREAD)
+         02. HERO SECTION WITH TEXT SCRAMBLE & TEXT LOOP
     ══════════════════════════════════════════════════ -->
     <section class="hero-section reveal-on-scroll" id="hero">
       <div class="site-container hero-container">
@@ -127,9 +127,12 @@
         <!-- Left Column: Bio & Core Pitch -->
         <div class="hero-text-col">
           
-          <div class="overline-tag">
+          <!-- Interactive TextLoop / TextScramble Badge -->
+          <div class="text-loop-badge font-code" id="heroTextLoopBadge" title="Click to cycle next phrase">
             <span class="pill-dot"></span>
-            <span>CREATIVE SOFTWARE &bull; FULL-STACK &bull; AI SYSTEMS</span>
+            <span class="scramble-container">
+              <span id="heroTextScramble" class="scramble-text">Hi, I'm Mussie — Full-Stack Developer</span>
+            </span>
           </div>
 
           <!-- Playfair Display Headline -->
@@ -188,7 +191,7 @@
           <div class="studio-card interactive-hover-card">
             <div class="studio-card-header">
               <div class="studio-badge-wrap">
-                <span class="studio-tag pill-chip">MOTION STUDIO // 2026</span>
+                <span class="studio-tag pill-chip">STUDIO // 2026</span>
               </div>
               <span class="studio-status-pill"><span class="status-pulse-dot"></span> Active Builder</span>
             </div>
@@ -249,23 +252,35 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         03. SERVICES / CAPABILITIES
+         03. SERVICES / WHAT I CAN BUILD FOR YOU (MOBILE SIDE-SCROLL)
     ══════════════════════════════════════════════════ -->
     <section class="section-wrap reveal-on-scroll" id="services">
       <div class="site-container">
         
-        <div class="section-header">
-          <div class="section-overline font-code">WHAT I CAN BUILD FOR YOU</div>
-          <h2 class="section-title font-serif">Services &amp; Capabilities</h2>
-          <p class="section-subtitle">
-            High-impact digital software tailored to scale your operations and revenue.
-          </p>
+        <div class="section-header section-header-split">
+          <div>
+            <div class="section-overline font-code">WHAT I CAN BUILD FOR YOU</div>
+            <h2 class="section-title font-serif">Services &amp; Capabilities</h2>
+            <p class="section-subtitle">
+              High-impact digital software tailored to scale your operations and revenue.
+            </p>
+          </div>
+          <!-- Mobile Swipe Indicator / Dot Indicators -->
+          <div class="mobile-section-indicator">
+            <span class="font-code text-secondary" style="font-size: 0.75rem;">Swipe cards &rarr;</span>
+            <div class="dots-pagination" id="servicesDots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
         </div>
 
-        <div class="services-grid">
+        <!-- Mobile Side-Scroll Card Grid -->
+        <div class="services-grid mobile-scroll-x" id="servicesSwipeTrack">
           
           <!-- SERVICE 1 -->
-          <div class="service-card interactive-hover-card">
+          <div class="service-card interactive-hover-card" data-index="0">
             <div class="service-icon-box">
               <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -286,7 +301,7 @@
           </div>
 
           <!-- SERVICE 2 -->
-          <div class="service-card interactive-hover-card">
+          <div class="service-card interactive-hover-card" data-index="1">
             <div class="service-icon-box">
               <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -307,7 +322,7 @@
           </div>
 
           <!-- SERVICE 3 -->
-          <div class="service-card interactive-hover-card">
+          <div class="service-card interactive-hover-card" data-index="2">
             <div class="service-icon-box">
               <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="16 18 22 12 16 6"></polyline>
@@ -689,23 +704,36 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         05. WORK EXPERIENCE TIMELINE
+         05. WORK EXPERIENCE TIMELINE (MOBILE SWIPEABLE)
     ══════════════════════════════════════════════════ -->
     <section class="section-wrap reveal-on-scroll" id="experience">
       <div class="site-container">
         
-        <div class="section-header">
-          <div class="section-overline font-code">CAREER TRACK RECORD</div>
-          <h2 class="section-title font-serif">Work Experience &amp; Engineering Practice</h2>
-          <p class="section-subtitle">
-            From startup software engineering to independent product development.
-          </p>
+        <div class="section-header section-header-split">
+          <div>
+            <div class="section-overline font-code">CAREER TRACK RECORD</div>
+            <h2 class="section-title font-serif">Work Experience &amp; Engineering Practice</h2>
+            <p class="section-subtitle">
+              From startup software engineering to independent product development.
+            </p>
+          </div>
+          <!-- Mobile Swipe Indicator / Dot Indicators -->
+          <div class="mobile-section-indicator">
+            <span class="font-code text-secondary" style="font-size: 0.75rem;">Swipe career history &rarr;</span>
+            <div class="dots-pagination" id="expDots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
         </div>
 
-        <div class="experience-timeline">
+        <!-- Experience Timeline with Mobile Side-Scroll -->
+        <div class="experience-timeline mobile-scroll-x" id="experienceSwipeTrack">
           
           <!-- Experience 1: Phoenixopia Software Solutions PLC -->
-          <div class="exp-item interactive-hover-card">
+          <div class="exp-item interactive-hover-card" data-index="0">
             <div class="exp-meta-bar">
               <span class="exp-role font-serif text-terracotta">Software Engineer / Full-Stack &amp; AI Builder</span>
               <span class="exp-period font-code">Present</span>
@@ -725,7 +753,7 @@
           </div>
 
           <!-- Experience 2: Addis Foodie & Startup Products -->
-          <div class="exp-item interactive-hover-card">
+          <div class="exp-item interactive-hover-card" data-index="1">
             <div class="exp-meta-bar">
               <span class="exp-role font-serif text-terracotta">Lead Full-Stack Developer &amp; Product Creator</span>
               <span class="exp-period font-code">2024 — Present</span>
@@ -744,7 +772,7 @@
           </div>
 
           <!-- Experience 3: Freelance Full-Stack Solutions -->
-          <div class="exp-item interactive-hover-card">
+          <div class="exp-item interactive-hover-card" data-index="2">
             <div class="exp-meta-bar">
               <span class="exp-role font-serif text-terracotta">Freelance Full-Stack &amp; Automation Engineer</span>
               <span class="exp-period font-code">2022 — Present</span>
@@ -763,7 +791,7 @@
           </div>
 
           <!-- Education: AASTU Mechatronics -->
-          <div class="exp-item interactive-hover-card">
+          <div class="exp-item interactive-hover-card" data-index="3">
             <div class="exp-meta-bar">
               <span class="exp-role font-serif text-terracotta">B.Sc. Mechatronics Engineering Candidate</span>
               <span class="exp-period font-code">2023 — 2027 (Expected)</span>
