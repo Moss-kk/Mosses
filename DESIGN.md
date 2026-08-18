@@ -1,19 +1,21 @@
-# MOSSes Portfolio — Hero Headline Animation, App Window Mockups & Live Demos
+# MOSSes Portfolio — 3D TextLoop Variants & Rebuilt Hero
 
 ```yaml
-version: "15.0.0"
-name: "Product-Framed Live Showcase & Animated Hero"
-description: "Prominent Hero Introduction ('Hi, I'm Mussie — Full-Stack Developer & AI Builder'), Dynamic Headline Text Animation with Scramble/Loop, Realistic App Window Browser Mockups with traffic lights and URL bars for live project screenshots, and clean direct live product actions (removed GitHub project redirects)."
+version: "16.0.0"
+name: "3D TextLoop Variants Hero"
+description: "Rebuilt hero headline featuring Framer Motion 3D TextLoop variants: Initial (translateY 20px, rotateX 90deg, opacity 0, blur 4px) -> Animate (translateY 0, rotateX 0, opacity 1, blur 0) -> Exit (translateY -20px, rotateX -90deg, opacity 0, blur 4px) with spring physics and auto-width tracking."
 components:
   hero:
-    intro-badge: "Prominent, larger 'Hi, I'm Mussie — Full-Stack Developer & AI Builder' introduction"
-    headline-animation: "Dynamic animated loop cycling through 'fast web apps', 'intelligent AI tools', 'custom Telegram bots', 'scalable SaaS platforms', and 'end-to-end automations'"
-  project-mockups:
-    frame: "Realistic browser window mockup with traffic lights (red/yellow/green), secure SSL URL bar, and live badge"
-    actions: "Direct live product demo launch [ View Live ↗ ] and [ Copy Link 🔗 ] (GitHub redirects removed from project cards)"
+    headline: "I build software for [Founders / Startups / Businesses / Design Engineers]"
+    text-loop:
+      variants:
+        initial: "y: 20px, rotateX: 90deg, opacity: 0, filter: blur(4px)"
+        animate: "y: 0px, rotateX: 0deg, opacity: 1, filter: blur(0px)"
+        exit: "y: -20px, rotateX: -90deg, opacity: 0, filter: blur(4px)"
+      spring: "stiffness 900, damping 80, mass 10"
 ```
 
-## Enhancements
-1. **Hero Headline Motion**: Dynamic animated phrases cycling smoothly inside the main serif headline.
-2. **Product App Mockup Frames**: Realistic macOS-style browser chrome framing each live screenshot with a secure URL bar.
-3. **Focused Direct Actions**: Clean `View Live ↗` and `Copy Link 🔗` CTAs on all featured and supporting project cards.
+## Rebuilt Hero Architecture
+1. **Headline**: `I build software for <TextLoop: Founders • Startups • Businesses • Design Engineers>`
+2. **3D Rotation & Blur**: Real 3D `rotateX` perspective with progressive Gaussian blur clearing.
+3. **Width Interpolation**: The wrapper width smoothly expands/contracts to match the active word.

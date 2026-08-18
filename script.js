@@ -1,111 +1,73 @@
 /**
- * MOSSES PORTFOLIO — PRODUCT SHOWCASE & DYNAMIC HEADLINE JAVASCRIPT (v15.0)
- * Headline TextScramble Loop, Hero Intro Decrypt, Mobile CardSwipe with Dot Pagination,
+ * MOSSES PORTFOLIO — 3D TEXTLOOP VARIANTS JAVASCRIPT (v16.0)
+ * 3D rotateX + Blur Filter TextLoop Controller, Mobile CardSwipe with Dot Pagination,
  * Continuous Floating Pill Tabs, Copy Toasts & Interactive AI Chat
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ─── 01. TextScramble Engine ───
-  class TextScramble {
-    constructor(el) {
-      this.el = el;
-      this.chars = '!<>-_\\/[]{}—=+*^?#abcdefghijklmnopqrstuvwxyz';
-      this.update = this.update.bind(this);
-    }
+  // ─── 01. 3D TextLoop Variants Controller ───
+  const textLoopWrapper = document.getElementById('heroTextLoopWrapper');
+  const textLoopItems = document.querySelectorAll('.text-loop-item');
 
-    setText(newText) {
-      const oldText = this.el.innerText;
-      const length = Math.max(oldText.length, newText.length);
-      const promise = new Promise((resolve) => (this.resolve = resolve));
-      this.queue = [];
+  let currentLoopIndex = 0;
+  let textLoopTimer = null;
 
-      for (let i = 0; i < length; i++) {
-        const from = oldText[i] || '';
-        const to = newText[i] || '';
-        const start = Math.floor(Math.random() * 16);
-        const end = start + Math.floor(Math.random() * 16);
-        this.queue.push({ from, to, start, end });
-      }
-
-      cancelAnimationFrame(this.frameRequest);
-      this.frame = 0;
-      this.update();
-      return promise;
-    }
-
-    update() {
-      let output = '';
-      let complete = 0;
-
-      for (let i = 0, n = this.queue.length; i < n; i++) {
-        let { from, to, start, end, char } = this.queue[i];
-        if (this.frame >= end) {
-          complete++;
-          output += to;
-        } else if (this.frame >= start) {
-          if (!char || Math.random() < 0.28) {
-            char = this.randomChar();
-            this.queue[i].char = char;
-          }
-          output += `<span class="text-terracotta">${char}</span>`;
-        } else {
-          output += from;
-        }
-      }
-
-      this.el.innerHTML = output;
-
-      if (complete === this.queue.length) {
-        this.resolve();
-      } else {
-        this.frameRequest = requestAnimationFrame(this.update);
-        this.frame++;
-      }
-    }
-
-    randomChar() {
-      return this.chars[Math.floor(Math.random() * this.chars.length)];
+  function updateWrapperWidth(activeEl) {
+    if (!textLoopWrapper || !activeEl) return;
+    const width = activeEl.offsetWidth;
+    if (width > 0) {
+      textLoopWrapper.style.width = `${width}px`;
     }
   }
 
-  // 1A. Hero Introduction Initial Decrypt Animation (Animates once and stays)
-  const heroIntroEl = document.getElementById('heroIntroTitle');
-  if (heroIntroEl) {
-    const introFx = new TextScramble(heroIntroEl);
+  function rotateTextLoop(nextIndex) {
+    if (textLoopItems.length === 0) return;
+    const currentItem = textLoopItems[currentLoopIndex];
+    const nextIdx = nextIndex !== undefined ? nextIndex : (currentLoopIndex + 1) % textLoopItems.length;
+    const nextItem = textLoopItems[nextIdx];
+
+    // 1. Current item exits to top with rotateX(-90deg) & blur(4px)
+    currentItem.classList.remove('active');
+    currentItem.classList.add('exit');
+
+    // 2. Next item animates in from bottom with rotateX(0deg) & blur(0px)
+    nextItem.classList.remove('exit');
+    nextItem.classList.add('active');
+
+    updateWrapperWidth(nextItem);
+    currentLoopIndex = nextIdx;
+
+    // Reset previous item classes after transition completes
     setTimeout(() => {
-      introFx.setText("Hi, I'm Mussie");
-    }, 150);
+      currentItem.classList.remove('exit');
+    }, 560);
   }
 
-  // 1B. Dynamic Headline Text Animation Loop
-  const headlineEl = document.getElementById('headlineDynamicText');
-  if (headlineEl) {
-    const headlineFx = new TextScramble(headlineEl);
-    const headlinePhrases = [
-      "fast web apps",
-      "intelligent AI tools",
-      "custom Telegram bots",
-      "scalable SaaS platforms",
-      "end-to-end automations"
-    ];
+  if (textLoopWrapper && textLoopItems.length > 0) {
+    // Set initial width
+    setTimeout(() => {
+      updateWrapperWidth(textLoopItems[0]);
+    }, 80);
 
-    let phraseIndex = 0;
-    let headlineLoopTimer = null;
+    // Auto-cycle loop
+    function startTextLoop() {
+      clearTimeout(textLoopTimer);
+      textLoopTimer = setInterval(() => {
+        rotateTextLoop();
+      }, 2800);
+    }
 
-    const cycleHeadline = () => {
-      clearTimeout(headlineLoopTimer);
-      phraseIndex = (phraseIndex + 1) % headlinePhrases.length;
-      headlineFx.setText(headlinePhrases[phraseIndex]).then(() => {
-        headlineLoopTimer = setTimeout(cycleHeadline, 3000);
-      });
-    };
+    startTextLoop();
 
-    // Start cycling headline after initial view
-    headlineLoopTimer = setTimeout(cycleHeadline, 3200);
+    // Click wrapper to immediately trigger next phrase
+    textLoopWrapper.addEventListener('click', () => {
+      rotateTextLoop();
+      startTextLoop();
+    });
 
-    // Clicking headline triggers immediate transition
-    headlineEl.addEventListener('click', () => {
-      cycleHeadline();
+    window.addEventListener('resize', () => {
+      const activeItem = document.querySelector('.text-loop-item.active');
+      if (activeItem) updateWrapperWidth(activeItem);
     });
   }
 
