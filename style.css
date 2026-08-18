@@ -4,25 +4,25 @@
 ═══════════════════════════════════════════════ */
 
 :root {
-  --navy: #050d1a;
-  --navy-2: #080f1f;
-  --navy-3: #0d1a30;
-  --navy-4: #112240;
-  --gold: #c9a84c;
-  --gold-light: #e8c96a;
-  --gold-glow: rgba(201, 168, 76, 0.25);
-  --cyan: #22d3ee;
-  --cyan-light: #67e8f9;
-  --cyan-glow: rgba(34, 211, 238, 0.2);
-  --text: #e2e8f0;
-  --text-muted: #8892a4;
-  --text-dim: #4a5568;
-  --border: rgba(255,255,255,0.07);
-  --card-bg: rgba(13, 26, 48, 0.7);
-  --glass: rgba(255,255,255,0.04);
+  --navy: #ffffff;
+  --navy-2: #f4fcf6;
+  --navy-3: #eef8f2;
+  --navy-4: #e0efe5;
+  --gold: #7dffb0;
+  --gold-light: #a3ffc6;
+  --gold-glow: rgba(125, 255, 176, 0.4);
+  --cyan: #0a0f0c;
+  --cyan-light: #333333;
+  --cyan-glow: rgba(10, 15, 12, 0.2);
+  --text: #040705;
+  --text-muted: #4a5568;
+  --text-dim: #718096;
+  --border: rgba(10, 15, 12, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --glass: rgba(255, 255, 255, 0.4);
   --radius: 16px;
   --radius-sm: 8px;
-  --shadow: 0 20px 60px rgba(0,0,0,0.5);
+  --shadow: 0 20px 60px rgba(0,0,0,0.1);
   --font: 'Outfit', sans-serif;
   --font-mono: 'Space Mono', monospace;
 }
@@ -37,6 +37,27 @@ body {
   color: var(--text);
   overflow-x: hidden;
   line-height: 1.7;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-image: 
+      linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, var(--gold) 2px, var(--gold) 4px);
+  background-size: 100% 100%, 100% 4px;
+  z-index: -2;
+  opacity: 0.15;
+}
+
+.matrix-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at center, transparent 0%, rgba(10, 15, 12, 0.05) 100%);
 }
 
 /* ═══ SCROLLBAR ═══ */
