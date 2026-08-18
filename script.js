@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Show Typing Indicator
         const typingDiv = document.createElement('div');
         typingDiv.className = 'chat-bubble bot-bubble';
-        typingDiv.innerHTML = `<p class="text-cyan">Analyzing financial data...</p>`;
+        typingDiv.innerHTML = `<p class="text-tertiary font-mono">Analyzing financial data...</p>`;
         eagleChatThread.appendChild(typingDiv);
         eagleChatThread.scrollTop = eagleChatThread.scrollHeight;
 

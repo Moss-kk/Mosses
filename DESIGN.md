@@ -1,33 +1,47 @@
-# MOSSes Portfolio — Hacker Aesthetic CRT/CLI
+# MOSSes Portfolio — TypeGallery Design System
 
 ```yaml
-version: "10.0.0"
-name: "Hacker Aesthetic CRT/CLI"
-description: "Terminal UI with CRT monitor effect, green phosphor text (#2CFF56) on deep terminal black (#050505), alert amber accents (#FFB200), ASCII art, scanline overlays, VT323 + JetBrains Mono typography, interactive Eagle Investments AI chat, solid opaque touch states on mobile, and smooth horizontal scroll strips."
+version: "11.0.0"
+name: "TypeGallery Design System"
+description: "Typography-forward, editorial, and refined portfolio design system for Mussie Kifle. Featuring warm cream surfaces (#F5F0E8), deep burgundy text (#3C1518), terracotta accents (#A44A3F), EB Garamond + Manrope + JetBrains Mono typography, 0px sharp print edges, zero drop shadows, editorial specimen project cards, and animated transitions."
 colors:
-  primary: "#050505"
-  secondary: "#111111"
-  surface: "#0D130E"
-  surface-card: "#121A14"
-  surface-raised: "#18221B"
-  text-phosphor: "#2CFF56"
-  text-phosphor-bright: "#00FF66"
-  accent-amber: "#FFB200"
-  error-red: "#FF3333"
-  cursor-white: "#FFFFFF"
-  border: "#1C3322"
-  border-active: "#2CFF56"
-  scanline: "rgba(0, 0, 0, 0.4)"
+  primary: "#3C1518"
+  secondary: "#F5F0E8"
+  tertiary: "#A44A3F"
+  surface-base: "#F5F0E8"
+  surface-card: "#FFFFFF"
+  surface-hover: "#EDE8DE"
+  surface-inverse: "#3C1518"
+  border-default: "#D6CFC4"
+  border-dark: "#3C1518"
+  border-accent: "#A44A3F"
+  color-info: "#8B7E74"
 typography:
-  headline: "'VT323', monospace"
-  code: "'JetBrains Mono', monospace"
-  body: "'JetBrains Mono', monospace"
+  headline: "'EB Garamond', Georgia, serif"
+  body: "'Manrope', -apple-system, sans-serif"
+  mono: "'JetBrains Mono', monospace"
+spacing:
+  base: "12px"
+  space-1: "4px"
+  space-2: "12px"
+  space-3: "24px"
+  space-4: "36px"
+  space-5: "48px"
+  space-6: "72px"
+  space-8: "96px"
+  space-10: "120px"
+radius: "0px"
+elevation: "shadow-none"
 ```
 
-## Enhancements
-1. **Removed**: Top "Available for freelance projects..." badge completely as requested.
-2. **Mobile Touch & Visibility Fix**: Solid opaque backgrounds (`#121A14` / `#050505`) on all mobile lists, navigation links, and cards so touching never makes them transparent or unreadable.
-3. **Mobile Side-Scrolling**: Interactive horizontal snap-scroll strips for tech tags, skill pills, and supporting projects on mobile screens.
-4. **CRT & ASCII Aesthetics**: Subtle scanlines overlay, retro terminal prompt headers, and phosphor glow effects.
-5. **Interactive Eagle AI Chat**: Live financial intelligence terminal with instant prompt buttons.
-6. **Separated Contacts**: Dedicated cards for Phone Number (`+251 97 882 0389`), Telegram (`@MOSS_K1`), Email, GitHub, and LinkedIn.
+## Editorial Principles & Structure
+1. **Typography as Structure**: Scale, generous leading (1.75 line-height on body text), and editorial column rhythm carry the visual architecture.
+2. **0px Geometric Sharpness**: All buttons, cards, images, inputs, and chips have 0px border-radius with flat, shadowless surfaces.
+3. **Animated Transitions**: Smooth color inversions on hover, animated underlines, and subtle letter-spacing transitions.
+4. **Editorial Featured Showcase**:
+   - *01. Addis Foodie* (AI Restaurant Discovery Platform)
+   - *02. Sador Dental Clinic* (Clinic Practice Management PWA)
+   - *03. Eagle Investments AI* (Editorial Financial Intelligence Chat)
+   - *04. Special Day*, *05. Ayche Mart*, *06. Alelgn Design*
+5. **Career Specimen & Experience**: Phoenixopia Software Solutions PLC, Lead Product Creator, Freelance systems, and AASTU Mechatronics Engineering.
+6. **Separated Contact Channels**: Phone (`+251 97 882 0389`), Telegram (`@MOSS_K1`), Email (`kiflemusse@gmail.com`), GitHub, and LinkedIn.
