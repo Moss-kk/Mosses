@@ -1,10 +1,178 @@
 /**
- * MOSSES PORTFOLIO — DEV FULL-STACK INTERACTIVE JAVASCRIPT
- * Mobile Navigation Drawer, Interactive Eagle AI Chat, Scroll-Spy & Mailto Form
+ * MOSSES PORTFOLIO — FLUID INTERACTIVE MOTION JAVASCRIPT (v13.0)
+ * Continuous Tabs Sliding Pill, Card Swipe Carousel, Scroll Reveals, Copy Toasts & AI Chat
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ─── 01. Mobile Navigation Drawer ───
+  // ─── 01. Continuous Tabs: Sliding Spring Active Pill ───
+  const tabsNav = document.getElementById('continuousTabsNav');
+  const tabButtons = document.querySelectorAll('.tab-pill-btn');
+  const slidingPill = document.getElementById('slidingActivePill');
+  const sections = document.querySelectorAll('section[id]');
+
+  function updateSlidingPill(activeBtn) {
+    if (!tabsNav || !slidingPill || !activeBtn) return;
+    const navRect = tabsNav.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
+
+    const leftOffset = btnRect.left - navRect.left;
+    const btnWidth = btnRect.width;
+
+    slidingPill.style.transform = `translateX(${leftOffset}px)`;
+    slidingPill.style.width = `${btnWidth}px`;
+    slidingPill.style.opacity = '1';
+  }
+
+  // Initialize pill position
+  const initialActive = document.querySelector('.tab-pill-btn.active') || tabButtons[0];
+  if (initialActive) {
+    setTimeout(() => updateSlidingPill(initialActive), 60);
+  }
+
+  // Handle Tab Click
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      tabButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateSlidingPill(btn);
+    });
+  });
+
+  // Scroll-Spy to update continuous tabs
+  function onScrollSpy() {
+    let currentId = '';
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 140;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentId = section.getAttribute('id');
+      }
+    });
+
+    if (currentId) {
+      tabButtons.forEach((btn) => {
+        if (btn.getAttribute('data-tab') === currentId) {
+          if (!btn.classList.contains('active')) {
+            tabButtons.forEach((b) => b.classList.remove('active'));
+            btn.classList.add('active');
+            updateSlidingPill(btn);
+          }
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', onScrollSpy, { passive: true });
+  window.addEventListener('resize', () => {
+    const currentActive = document.querySelector('.tab-pill-btn.active');
+    if (currentActive) updateSlidingPill(currentActive);
+  });
+
+  // ─── 02. Scroll Reveal Observer ───
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('is-revealed'));
+  }
+
+  // ─── 03. Interactive Project Card Swipe & Carousel ───
+  const carouselTrack = document.getElementById('projectCarouselTrack');
+  const prevBtn = document.getElementById('carouselPrevBtn');
+  const nextBtn = document.getElementById('carouselNextBtn');
+  const counterEl = document.getElementById('carouselCounter');
+  const carouselCards = document.querySelectorAll('#projectCarouselTrack .compact-card');
+
+  let currentSlide = 0;
+  const totalSlides = carouselCards.length;
+
+  function updateCarousel() {
+    if (counterEl) {
+      counterEl.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    }
+    if (carouselTrack && carouselCards[currentSlide]) {
+      carouselCards[currentSlide].scrollIntoView({
+        behavior: 'smooth',
+        inline: 'start',
+        block: 'nearest'
+      });
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    });
+  }
+
+  if (carouselTrack) {
+    carouselTrack.addEventListener('scroll', () => {
+      const scrollLeft = carouselTrack.scrollLeft;
+      const cardWidth = carouselCards[0]?.offsetWidth || 300;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      if (newIndex >= 0 && newIndex < totalSlides && newIndex !== currentSlide) {
+        currentSlide = newIndex;
+        if (counterEl) counterEl.textContent = `${currentSlide + 1} / ${totalSlides}`;
+      }
+    }, { passive: true });
+  }
+
+  // ─── 04. Copy to Clipboard with Toast Notification ───
+  const copyButtons = document.querySelectorAll('.copy-link-btn');
+  const toast = document.getElementById('toastNotification');
+  let toastTimer = null;
+
+  function showToast(msg) {
+    if (!toast) return;
+    toast.textContent = msg || 'Link copied to clipboard!';
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2400);
+  }
+
+  copyButtons.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const url = btn.getAttribute('data-url') || window.location.href;
+      try {
+        if (navigator.clipboard) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const input = document.createElement('input');
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          document.body.removeChild(input);
+        }
+        showToast(`Copied: ${url}`);
+      } catch (err) {
+        showToast('Link copied to clipboard!');
+      }
+    });
+  });
+
+  // ─── 05. Mobile Navigation Drawer ───
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const drawerCloseBtn = document.getElementById('drawerCloseBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
@@ -24,25 +192,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', openDrawer);
-  }
-
-  if (drawerCloseBtn) {
-    drawerCloseBtn.addEventListener('click', closeDrawer);
-  }
-
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
+  if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
   if (mobileDrawer) {
     mobileDrawer.addEventListener('click', (e) => {
-      if (e.target === mobileDrawer) {
-        closeDrawer();
-      }
+      if (e.target === mobileDrawer) closeDrawer();
     });
   }
-
-  mobileLinks.forEach((link) => {
-    link.addEventListener('click', closeDrawer);
-  });
+  mobileLinks.forEach((link) => link.addEventListener('click', closeDrawer));
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('open')) {
@@ -50,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ─── 02. Interactive Eagle Investments AI Chat Simulation ───
+  // ─── 06. Interactive Eagle Investments AI Chat Simulation ───
   const eagleChatThread = document.getElementById('eagleChatThread');
   const chatChips = document.querySelectorAll('.chat-chip');
 
@@ -82,45 +239,18 @@ document.addEventListener('DOMContentLoaded', () => {
         eagleChatThread.appendChild(typingDiv);
         eagleChatThread.scrollTop = eagleChatThread.scrollHeight;
 
-        // 3. Simulate response after brief delay
+        // 3. Simulate response
         setTimeout(() => {
           const answer = financialAiResponses[query] || 
             `Analyzing query regarding "${query}". Model recommends diversified treasury hedges and automated portfolio rebalancing.`;
           typingDiv.innerHTML = `<p>${answer}</p>`;
           eagleChatThread.scrollTop = eagleChatThread.scrollHeight;
-        }, 600);
+        }, 550);
       });
     });
   }
 
-  // ─── 03. Scroll-Spy Navigation Highlighting ───
-  const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
-  const sections = document.querySelectorAll('section[id]');
-
-  function updateActiveNav() {
-    let currentId = '';
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        currentId = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentId}`) {
-        link.classList.add('active');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
-  updateActiveNav();
-
-  // ─── 04. Contact Form Mailto Dispatch ───
+  // ─── 07. Contact Form Mailto Dispatch ───
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
 
