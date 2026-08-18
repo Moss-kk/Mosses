@@ -1,9 +1,9 @@
-# MOSSes Portfolio — Final Polish Design System
+# MOSSes Portfolio — Client-Focused & Conversion-First Design System
 
 ```yaml
-version: "5.0.0"
-name: "Clean Personal Developer Portfolio"
-description: "Polished, lightweight, recruiter-ready developer portfolio for Mussie Kifle. Mobile-first architecture, zero dashboard bloat, genuine project links, and honest conversion flows."
+version: "6.0.0"
+name: "Ultra-Clean Client-Focused Portfolio"
+description: "Ultra-clean, modern, minimalist developer portfolio for Mussie Kifle. Cut 60% of unnecessary copy, replaced dense systems theory with client-friendly value propositions (Web Apps, AI Bots, Automation), and optimized for high recruiter & client conversion."
 colors:
   bg: "#0B0C0F"
   bg-alt: "#101217"
@@ -17,7 +17,7 @@ colors:
   accent-glow: "rgba(255, 179, 71, 0.16)"
   border: "rgba(255, 255, 255, 0.08)"
   border-subtle: "rgba(255, 255, 255, 0.04)"
-  border-active: "rgba(255, 179, 71, 0.3)"
+  border-active: "rgba(255, 179, 71, 0.35)"
 typography:
   display: "'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
   body: "'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -29,8 +29,9 @@ layout:
   max-width: "1120px"
 ```
 
-## Principles
-
-1. **Content Over Decoration**: Highlight actual real-world projects with genuine demo & GitHub links. No fake dashboards or iframe inspector clutter.
-2. **Mobile First**: Clean mobile header (`Mussie Kifle ☰`), single-column layout, touch-friendly 48px buttons, zero horizontal overflow.
-3. **Honest UX**: Direct email client trigger with transparent messaging.
+## Structure
+1. **Hero**: Top availability badge, 1-sentence value proposition, 2 primary CTAs, 4 quick metrics.
+2. **Services ("What I Can Build For You")**: 3 client-friendly cards (Custom Web Applications, AI & Telegram Bots, End-to-End Automation).
+3. **Featured Projects**: Problem-focused cards with 1-sentence business impact, tech tags, and direct [Live Demo ↗] & [Source Code] buttons.
+4. **Skills / Stack**: Clean compact pills (Frontend, Backend & DB, AI & Automation).
+5. **Contact**: Frictionless message form + direct email, Telegram/WhatsApp, GitHub, and LinkedIn channels.
