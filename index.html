@@ -6,11 +6,11 @@
   <title>Mussie Kifle — Full-Stack Developer & AI Builder</title>
   
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Full-Stack Developer & AI Builder helping startups and businesses turn ideas into working software. Fast web apps, AI tools, and automation systems." />
-  <meta name="keywords" content="Mussie Kifle, Full-Stack Developer, AI Builder, Web Developer, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Supabase" />
+  <meta name="description" content="Mussie Kifle — Full-Stack Developer & AI Builder. I build fast web apps, AI tools, and automation systems using Next.js, TypeScript, Python, and Supabase." />
+  <meta name="keywords" content="Mussie Kifle, Full-Stack Developer, AI Builder, Web Developer, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Supabase, Phoenixopia" />
   <meta name="author" content="Mussie Kifle" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#120E0A" />
+  <meta name="theme-color" content="#000000" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -22,38 +22,40 @@
   <meta name="twitter:title" content="Mussie Kifle — Full-Stack Developer & AI Builder" />
   <meta name="twitter:description" content="I build fast web apps, AI tools, and automation systems that help businesses scale." />
 
-  <!-- Google Fonts: Space Grotesk, Playfair Display & JetBrains Mono -->
+  <!-- Google Fonts: JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Ambient Glow Background Overlays -->
-  <div class="ambient-glow-top" aria-hidden="true"></div>
-  <div class="ambient-glow-bottom" aria-hidden="true"></div>
+  <!-- Ambient Cyan Grid & Radial Background -->
+  <div class="cyan-ambient-glow" aria-hidden="true"></div>
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
 
   <!-- ══════════════════════════════════════════════════
-       01. LUXE FROSTED HEADER NAVIGATION
+       01. NAVBAR
   ══════════════════════════════════════════════════ -->
   <header class="site-header" id="siteHeader">
     <div class="site-container header-inner">
       
-      <!-- Brand Logo / Name -->
+      <!-- Brand Logo / Terminal Tag -->
       <a href="#hero" class="brand-link" aria-label="Mussie Kifle Home">
-        <span class="brand-name">Mussie Kifle</span>
+        <span class="brand-bracket text-cyan">&gt;</span>
+        <span class="brand-name">mussie.kifle<span class="cursor-blink">_</span></span>
       </a>
 
       <!-- Desktop Navigation Links -->
       <nav class="desktop-nav" aria-label="Main Navigation">
-        <a href="#hero" class="nav-link">Home</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#projects" class="nav-link">Work</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#hero" class="nav-link">~/home</a>
+        <a href="#services" class="nav-link">~/services</a>
+        <a href="#projects" class="nav-link">~/projects</a>
+        <a href="#experience" class="nav-link">~/experience</a>
+        <a href="#skills" class="nav-link">~/stack</a>
+        <a href="#contact" class="nav-link">~/contact</a>
       </nav>
 
       <!-- Desktop Action Buttons -->
@@ -65,14 +67,14 @@
         </a>
 
         <a href="mailto:kiflemusse@gmail.com?subject=Request%20CV%20—%20Mussie%20Kifle" class="btn-secondary btn-sm" aria-label="Request CV">
-          <span>CV</span>
+          <span>CV.pdf</span>
         </a>
 
         <a href="#contact" class="btn-primary btn-sm">
-          <span>Message Me</span>
+          <span>Fale Comigo</span>
         </a>
 
-        <!-- Simple Mobile Hamburger Button (>= 48px touch target) -->
+        <!-- Mobile Hamburger Button -->
         <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open Navigation Menu">
           <svg class="svg-icon hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
             <line x1="4" y1="7" x2="20" y2="7"></line>
@@ -84,29 +86,31 @@
 
     </div>
 
-    <!-- Mobile Full-Screen Navigation Drawer -->
+    <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="mobile-drawer-body">
         <div class="drawer-header">
-          <span class="drawer-brand">Mussie Kifle</span>
+          <span class="drawer-brand text-cyan">&gt; mussie.kifle</span>
           <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation">&times;</button>
         </div>
 
         <nav class="mobile-nav-links">
-          <a href="#hero" class="mobile-link">Home</a>
-          <a href="#services" class="mobile-link">Services</a>
-          <a href="#projects" class="mobile-link">Work</a>
-          <a href="#skills" class="mobile-link">Skills</a>
-          <a href="#contact" class="mobile-link">Contact</a>
+          <a href="#hero" class="mobile-link">~/home</a>
+          <a href="#services" class="mobile-link">~/services</a>
+          <a href="#projects" class="mobile-link">~/projects</a>
+          <a href="#experience" class="mobile-link">~/experience</a>
+          <a href="#skills" class="mobile-link">~/stack</a>
+          <a href="#contact" class="mobile-link">~/contact</a>
         </nav>
 
         <div class="drawer-footer">
           <a href="mailto:kiflemusse@gmail.com?subject=Request%20CV%20—%20Mussie%20Kifle" class="btn-secondary btn-full">
-            <span>Request CV</span>
+            <span>Download CV</span>
           </a>
           <div class="drawer-contact-meta">
-            <p>kiflemusse@gmail.com</p>
-            <p>+251 97 882 0389</p>
+            <p class="text-cyan">tel: +251 97 882 0389</p>
+            <p>tg: @MOSS_K1</p>
+            <p>mail: kiflemusse@gmail.com</p>
           </div>
         </div>
       </div>
@@ -116,64 +120,94 @@
   <main id="mainContent">
 
     <!-- ══════════════════════════════════════════════════
-         02. HERO SECTION (EDITORIAL LUXE & ATMOSPHERIC)
+         02. HERO SECTION (SPLIT-SCREEN WITH CODE ELEMENT)
     ══════════════════════════════════════════════════ -->
     <section class="hero-section" id="hero">
       <div class="site-container hero-container">
         
-        <!-- Top Availability Badge with Pulsing Green Indicator -->
-        <div class="hero-badge-wrap">
-          <div class="availability-badge mono-text">
-            <span class="status-indicator-dot"></span>
-            <span>Available for freelance projects &amp; full-time roles</span>
+        <!-- Left Column: Bio & Core Pitch -->
+        <div class="hero-text-col">
+          <!-- Terminal Status Pill -->
+          <div class="hero-badge-wrap">
+            <div class="availability-badge">
+              <span class="status-indicator-dot"></span>
+              <span>Available for freelance projects &amp; full-time roles</span>
+            </div>
+          </div>
+
+          <!-- Impactful Headline -->
+          <h1 class="hero-title">
+            I build fast web apps, <span class="text-cyan">AI tools</span>, and automation systems.
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="hero-subtitle">
+            Full-Stack Developer &amp; AI Builder helping startups and businesses turn ideas into production-ready software.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary hero-btn">
+              <span>View My Work →</span>
+            </a>
+
+            <a href="#contact" class="btn-secondary hero-btn">
+              <span>Let's Talk</span>
+            </a>
+          </div>
+
+          <!-- 4 Quick Metrics -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <strong class="stat-value text-cyan">4+ Years</strong>
+              <span class="stat-label">Experience</span>
+            </div>
+
+            <div class="stat-card">
+              <strong class="stat-value text-cyan">6+</strong>
+              <span class="stat-label">Live Projects</span>
+            </div>
+
+            <div class="stat-card">
+              <strong class="stat-value text-cyan">Full-Stack</strong>
+              <span class="stat-label">Engineering</span>
+            </div>
+
+            <div class="stat-card">
+              <strong class="stat-value text-cyan">Fast</strong>
+              <span class="stat-label">Turnaround</span>
+            </div>
           </div>
         </div>
 
-        <!-- Headline: Modern Sans + Elegant Italic Serif -->
-        <h1 class="hero-title">
-          <span class="title-sans">I build fast web apps,</span>
-          <span class="title-serif-italic">AI tools, &amp; automation systems.</span>
-        </h1>
-
-        <!-- 1-Sentence Subheadline -->
-        <p class="hero-subtitle">
-          Full-Stack Developer &amp; AI Builder helping startups and businesses turn ideas into working software.
-        </p>
-
-        <!-- Tap-Friendly Action CTAs -->
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary hero-btn">
-            <span>View My Work</span>
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </a>
-
-          <a href="#contact" class="btn-secondary hero-btn">
-            <span>Book a Call / Message Me</span>
-          </a>
-        </div>
-
-        <!-- Stat Strip (4 Quick Metrics as Frosted Pill Cards) -->
-        <div class="stats-grid">
-          <div class="stat-card">
-            <strong class="stat-value">4+ Years</strong>
-            <span class="stat-label">Experience</span>
-          </div>
-
-          <div class="stat-card">
-            <strong class="stat-value">6+</strong>
-            <span class="stat-label">Live Projects</span>
-          </div>
-
-          <div class="stat-card">
-            <strong class="stat-value">Full-Stack &amp; AI</strong>
-            <span class="stat-label">Engineering</span>
-          </div>
-
-          <div class="stat-card">
-            <strong class="stat-value">Fast</strong>
-            <span class="stat-label">Turnaround</span>
+        <!-- Right Column: Interactive Terminal Preview -->
+        <div class="hero-terminal-col">
+          <div class="terminal-window">
+            <div class="terminal-chrome">
+              <div class="chrome-dots">
+                <span class="dot d-red"></span>
+                <span class="dot d-yel"></span>
+                <span class="dot d-grn"></span>
+              </div>
+              <span class="terminal-title">mussie@workstation:~</span>
+              <span class="terminal-badge">zsh</span>
+            </div>
+            <div class="terminal-body">
+              <p class="term-line"><span class="term-prompt">&gt;</span> <span class="term-cmd">cat developer_profile.json</span></p>
+              <pre class="term-json"><code>{
+  <span class="j-key">"name"</span>: <span class="j-str">"Mussie Kifle"</span>,
+  <span class="j-key">"role"</span>: <span class="j-str">"Full-Stack Developer &amp; AI Builder"</span>,
+  <span class="j-key">"company"</span>: <span class="j-str">"Phoenixopia Software Solutions PLC"</span>,
+  <span class="j-key">"education"</span>: <span class="j-str">"AASTU Mechatronics (2023-2027)"</span>,
+  <span class="j-key">"stack"</span>: [
+    <span class="j-str">"Next.js"</span>, <span class="j-str">"React"</span>, <span class="j-str">"TypeScript"</span>,
+    <span class="j-str">"Python"</span>, <span class="j-str">"Supabase"</span>, <span class="j-str">"LLMs / AI"</span>
+  ],
+  <span class="j-key">"status"</span>: <span class="j-str text-green">"available_for_hire"</span>
+}</code></pre>
+              <p class="term-line"><span class="term-prompt">&gt;</span> <span class="term-cmd">curl -s https://api.mussie.dev/status</span></p>
+              <p class="term-response text-cyan">✓ 200 OK — Ready to build high-performance products.</p>
+            </div>
           </div>
         </div>
 
@@ -187,6 +221,7 @@
       <div class="site-container">
         
         <div class="section-header">
+          <div class="section-tag text-cyan">&gt; SERVICES</div>
           <h2 class="section-title">What I Can Build For You</h2>
           <p class="section-subtitle">
             High-impact digital software tailored to scale your operations and revenue.
@@ -206,9 +241,9 @@
             </div>
             <h3 class="service-title">Custom Web Applications</h3>
             <p class="service-desc">
-              Modern, responsive, and fast web apps built with Next.js, React, and Supabase.
+              Modern, responsive, and fast web apps built with Next.js, React, and Supabase with optimized performance and SEO.
             </p>
-            <div class="service-tags mono-text">
+            <div class="service-tags">
               <span>Next.js</span>
               <span>React</span>
               <span>TypeScript</span>
@@ -227,9 +262,9 @@
             </div>
             <h3 class="service-title">AI &amp; Telegram Bots</h3>
             <p class="service-desc">
-              Intelligent chatbots, automated customer service, and smart workflows using Python &amp; LLMs.
+              Intelligent chatbots, automated customer support, and customized agent workflows using Python, OpenAI APIs, and LLMs.
             </p>
-            <div class="service-tags mono-text">
+            <div class="service-tags">
               <span>OpenAI API</span>
               <span>Python</span>
               <span>Telegram API</span>
@@ -248,9 +283,9 @@
             </div>
             <h3 class="service-title">End-to-End Automation</h3>
             <p class="service-desc">
-              Connecting APIs, streamlining business processes, and building reliable digital tools.
+              Connecting APIs, streamlining business processes, database synchronization, and building reliable background pipelines.
             </p>
-            <div class="service-tags mono-text">
+            <div class="service-tags">
               <span>REST APIs</span>
               <span>Webhooks</span>
               <span>Workflows</span>
@@ -264,67 +299,66 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         04. SELECTED WORK (FEATURED REAL-WORLD PROJECTS)
+         04. FEATURED PROJECTS
     ══════════════════════════════════════════════════ -->
     <section class="section-wrap" id="projects">
       <div class="site-container">
         
         <div class="section-header">
-          <div class="section-eyebrow mono-text text-accent">SELECTED WORK</div>
-          <h2 class="section-title">Real products, platforms, and AI systems I've designed and built.</h2>
+          <div class="section-tag text-cyan">&gt; SELECTED_WORK</div>
+          <h2 class="section-title">Featured Projects &amp; Live Platforms</h2>
           <p class="section-subtitle">
-            From food discovery and healthcare management to AI-powered financial tools.
+            Real products, platforms, and AI systems I've designed and built.
           </p>
         </div>
 
-        <!-- Featured Projects List -->
         <div class="projects-list">
 
           <!-- PROJECT 01: ADDIS FOODIE -->
           <article class="project-showcase-card">
-            <!-- Real Project Screenshot Preview -->
-            <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Addis Foodie live app">
-              <img 
-                src="assets/projects/addis-foodie.webp" 
-                alt="Addis Foodie restaurant discovery platform interface" 
-                class="project-screenshot-img" 
-                loading="eager"
-                width="1440" 
-                height="900"
-                onerror="this.parentElement.classList.add('img-fallback');" 
-              />
-              <div class="screenshot-hover-overlay">
-                <span class="overlay-badge">View Project Live ↗</span>
-              </div>
-            </a>
+            <div class="project-visual-side">
+              <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Addis Foodie live app">
+                <img 
+                  src="assets/projects/addis-foodie.webp" 
+                  alt="Addis Foodie restaurant discovery platform interface" 
+                  class="project-screenshot-img" 
+                  loading="eager"
+                  width="1440" 
+                  height="900"
+                  onerror="this.parentElement.classList.add('img-fallback');" 
+                />
+                <div class="screenshot-hover-overlay">
+                  <span class="overlay-badge">View Project Live ↗</span>
+                </div>
+              </a>
+            </div>
 
-            <!-- Project Details & Structured Metadata -->
             <div class="project-body">
-              <div class="project-meta-top mono-text">
-                <span class="p-index">01</span>
+              <div class="project-meta-top">
+                <span class="p-index text-cyan">01 // FEATURED</span>
                 <span class="p-status"><span class="status-dot"></span> LIVE WEB APP</span>
               </div>
 
               <h3 class="project-heading">Addis Foodie</h3>
-              <p class="project-tagline mono-text">AI Restaurant Discovery Platform</p>
+              <p class="project-tagline text-cyan">AI Restaurant Discovery Platform</p>
 
               <p class="project-description">
-                A food discovery platform designed to help locals and visitors discover restaurants, cafes, menus, prices, offers, and food experiences across Addis Ababa.
+                A food discovery platform designed to help locals and visitors discover restaurants, cafes, menus, prices, offers, and food experiences across Addis Ababa with instant menu price checks and AI recommendations.
               </p>
 
               <!-- Structured Compact Metadata Grid -->
-              <div class="project-meta-grid mono-text">
+              <div class="project-meta-grid">
                 <div class="meta-item">
                   <span class="meta-label">MY ROLE</span>
-                  <strong class="meta-value">Full-Stack Development + AI</strong>
+                  <strong class="meta-value">Lead Full-Stack &amp; AI Product Developer</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">BUILT WITH</span>
-                  <strong class="meta-value">Next.js · TypeScript · AI · Supabase</strong>
+                  <strong class="meta-value">Next.js · TypeScript · Tailwind · AI · Supabase</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">KEY FEATURES</span>
-                  <strong class="meta-value">Search · Discovery · AI Recommendations · Menu Prices</strong>
+                  <strong class="meta-value">Restaurant Search · Menu Prices · AI Recommendations</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">STATUS</span>
@@ -332,7 +366,6 @@
                 </div>
               </div>
 
-              <!-- Direct Action Links -->
               <div class="project-links">
                 <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
                   <span>View Live ↗</span>
@@ -346,41 +379,41 @@
 
           <!-- PROJECT 02: SADOR DENTAL -->
           <article class="project-showcase-card">
-            <!-- Real Project Screenshot Preview -->
-            <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Sador Dental live clinic platform">
-              <img 
-                src="assets/projects/sador-dental.webp" 
-                alt="Sador Dental clinic practice management dashboard" 
-                class="project-screenshot-img" 
-                loading="lazy"
-                width="1440" 
-                height="900"
-                onerror="this.parentElement.classList.add('img-fallback');" 
-              />
-              <div class="screenshot-hover-overlay">
-                <span class="overlay-badge">View Project Live ↗</span>
-              </div>
-            </a>
+            <div class="project-visual-side">
+              <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Sador Dental live clinic platform">
+                <img 
+                  src="assets/projects/sador-dental.webp" 
+                  alt="Sador Dental clinic practice management dashboard" 
+                  class="project-screenshot-img" 
+                  loading="lazy"
+                  width="1440" 
+                  height="900"
+                  onerror="this.parentElement.classList.add('img-fallback');" 
+                />
+                <div class="screenshot-hover-overlay">
+                  <span class="overlay-badge">View Project Live ↗</span>
+                </div>
+              </a>
+            </div>
 
-            <!-- Project Details & Structured Metadata -->
             <div class="project-body">
-              <div class="project-meta-top mono-text">
-                <span class="p-index">02</span>
+              <div class="project-meta-top">
+                <span class="p-index text-cyan">02 // HEALTHCARE PWA</span>
                 <span class="p-status"><span class="status-dot"></span> LIVE CLINIC PWA</span>
               </div>
 
-              <h3 class="project-heading">Sador Dental</h3>
-              <p class="project-tagline mono-text">Dental Clinic Practice Management System</p>
+              <h3 class="project-heading">Sador Dental Clinic</h3>
+              <p class="project-tagline text-cyan">Clinic Practice Management System</p>
 
               <p class="project-description">
-                A modern clinic management platform designed to digitize patient registration, appointments, clinical records, invoices, and day-to-day dental clinic operations.
+                A modern clinical platform designed to digitize patient registration, appointment scheduling, electronic dental records, treatments, invoicing, and day-to-day dental clinic operations.
               </p>
 
               <!-- Structured Compact Metadata Grid -->
-              <div class="project-meta-grid mono-text">
+              <div class="project-meta-grid">
                 <div class="meta-item">
                   <span class="meta-label">MY ROLE</span>
-                  <strong class="meta-value">Full-Stack Development</strong>
+                  <strong class="meta-value">Full-Stack Development (Freelance Project)</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">BUILT WITH</span>
@@ -388,7 +421,7 @@
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">KEY FEATURES</span>
-                  <strong class="meta-value">Patient Records · Appointments · Invoices · Auth · PWA</strong>
+                  <strong class="meta-value">Patient Records · Appointments · Invoices · PWA Offline</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">STATUS</span>
@@ -396,7 +429,6 @@
                 </div>
               </div>
 
-              <!-- Direct Action Links -->
               <div class="project-links">
                 <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
                   <span>View Live ↗</span>
@@ -408,59 +440,79 @@
             </div>
           </article>
 
-          <!-- PROJECT 03: EAGLE INVESTMENTS AI -->
+          <!-- PROJECT 03: EAGLE INVESTMENTS AI (WITH INTERACTIVE CHAT PREVIEW) -->
           <article class="project-showcase-card">
-            <!-- Real Project Screenshot Preview -->
-            <a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Eagle Investments AI platform">
-              <img 
-                src="assets/projects/eagle-investments.webp" 
-                alt="Eagle Investments AI financial chatbot interface" 
-                class="project-screenshot-img" 
-                loading="lazy"
-                width="1440" 
-                height="900"
-                onerror="this.parentElement.classList.add('img-fallback');" 
-              />
-              <div class="screenshot-hover-overlay">
-                <span class="overlay-badge">View Project Live ↗</span>
-              </div>
-            </a>
+            <!-- Interactive Live Financial Chat UI Mockup & Real Product Asset -->
+            <div class="project-visual-side">
+              <div class="eagle-interactive-chat-container">
+                <div class="chat-header-bar">
+                  <div class="chat-bot-info">
+                    <span class="chat-bot-avatar">🦅</span>
+                    <div>
+                      <strong class="chat-bot-name">Eagle Investment Intelligence AI</strong>
+                      <span class="chat-bot-status text-green">● Online · Market LLM v2</span>
+                    </div>
+                  </div>
+                  <a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm" style="min-height: 32px; padding: 0.25rem 0.65rem; font-size: 0.75rem;">
+                    Launch App ↗
+                  </a>
+                </div>
 
-            <!-- Project Details & Structured Metadata -->
+                <!-- Live Chat Conversation Thread -->
+                <div class="chat-thread-box" id="eagleChatThread">
+                  <div class="chat-bubble bot-bubble">
+                    <p>👋 Hello! I am the Eagle Investments AI assistant. Ask me about East African treasury yields, equity valuation, startup funding rounds, or portfolio compounding.</p>
+                  </div>
+                  <div class="chat-bubble user-bubble">
+                    <p>How does compound interest accelerate early startup valuation?</p>
+                  </div>
+                  <div class="chat-bubble bot-bubble">
+                    <p>Compounding reinvested cash flows exponentializes equity value over 3–5 year horizons by reducing cost of debt and increasing internal rate of return (IRR).</p>
+                  </div>
+                </div>
+
+                <!-- Interactive Chips for Quick Queries -->
+                <div class="chat-chips-strip">
+                  <button type="button" class="chat-chip" data-prompt="What are treasury bill yields in East Africa?">Yields?</button>
+                  <button type="button" class="chat-chip" data-prompt="Explain dollar-cost averaging in emerging markets.">DCA Strategy</button>
+                  <button type="button" class="chat-chip" data-prompt="How do capital markets protect against local inflation?">Inflation Hedge</button>
+                </div>
+              </div>
+            </div>
+
             <div class="project-body">
-              <div class="project-meta-top mono-text">
-                <span class="p-index">03</span>
-                <span class="p-status"><span class="status-dot"></span> FINTECH AI</span>
+              <div class="project-meta-top">
+                <span class="p-index text-cyan">03 // FINTECH AI</span>
+                <span class="p-status"><span class="status-dot"></span> LIVE / MVP</span>
               </div>
 
               <h3 class="project-heading">Eagle Investments AI</h3>
-              <p class="project-tagline mono-text">Financial Intelligence &amp; AI Chatbot</p>
+              <p class="project-tagline text-cyan">Financial Intelligence &amp; AI Chatbot</p>
 
               <p class="project-description">
-                An AI-powered financial intelligence platform designed to make investment information and capital-market knowledge easier to understand through conversational AI and financial data.
+                An AI-powered financial intelligence platform designed to make investment education and capital-market knowledge accessible through conversational AI and structured market data.
               </p>
 
               <!-- Structured Compact Metadata Grid -->
-              <div class="project-meta-grid mono-text">
+              <div class="project-meta-grid">
                 <div class="meta-item">
                   <span class="meta-label">MY ROLE</span>
-                  <strong class="meta-value">AI Product Development + Product Engineering</strong>
+                  <strong class="meta-value">AI Product Development + Full-Stack Engineering</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">BUILT WITH</span>
-                  <strong class="meta-value">Python · LLMs · FlutterFlow · REST API</strong>
+                  <strong class="meta-value">Python · LLMs · FlutterFlow · REST API · Custom Agents</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">KEY FEATURES</span>
-                  <strong class="meta-value">Conversational AI · Market Data · Interactive Chatbot</strong>
+                  <strong class="meta-value">Conversational AI · Financial Market Data · Interactive Bot</strong>
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">STATUS</span>
-                  <strong class="meta-value text-green">● Live / MVP</strong>
+                  <strong class="meta-value text-green">● Live Platform</strong>
                 </div>
               </div>
 
-              <!-- Direct Action Links -->
               <div class="project-links">
                 <a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
                   <span>View Live ↗</span>
@@ -471,11 +523,9 @@
 
         </div>
 
-        <!-- ══════════════════════════════════════════════════
-             MORE PROJECTS (SUPPORTING SHOWCASE)
-        ══════════════════════════════════════════════════ -->
+        <!-- More Supporting Projects -->
         <div class="additional-projects">
-          <h3 class="sub-heading">More Projects</h3>
+          <h3 class="sub-heading">&gt; MORE_CLIENT_PROJECTS</h3>
           
           <div class="compact-projects-grid">
             
@@ -484,7 +534,7 @@
               <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-img-wrap" aria-label="Special Day Wedding Hub preview">
                 <img 
                   src="assets/projects/special-day.webp" 
-                  alt="Special Day wedding hub interface" 
+                  alt="Special Day celebration hub interface" 
                   class="compact-img" 
                   loading="lazy" 
                   width="720" 
@@ -493,16 +543,16 @@
                 />
               </a>
               <div class="compact-card-body">
-                <div class="compact-top mono-text">
-                  <span class="text-accent">04</span>
+                <div class="compact-top">
+                  <span class="text-cyan">04 // EVENT HUB</span>
                   <span class="text-green">&bull; LIVE VERCEL</span>
                 </div>
                 <h4 class="compact-title">Special Day Wedding Hub</h4>
-                <p class="compact-desc">Interactive bilingual celebration hub with synchronized countdown and Telegram bot integration.</p>
-                <div class="compact-tags mono-text">
+                <p class="compact-desc">Interactive bilingual celebration platform with synchronized live countdown and Telegram bot RSVP automation.</p>
+                <div class="compact-tags">
                   <span>React</span><span>Tailwind</span><span>Telegram API</span>
                 </div>
-                <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link mono-text">View Live ↗</a>
+                <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link">View Live ↗</a>
               </div>
             </div>
 
@@ -520,16 +570,16 @@
                 />
               </a>
               <div class="compact-card-body">
-                <div class="compact-top mono-text">
-                  <span class="text-accent">05</span>
+                <div class="compact-top">
+                  <span class="text-cyan">05 // RETAIL PWA</span>
                   <span class="text-green">&bull; LIVE VERCEL</span>
                 </div>
                 <h4 class="compact-title">Ayche Mart Showcase</h4>
-                <p class="compact-desc">Digital storefront card with fast QR routing across Telegram and social retail channels.</p>
-                <div class="compact-tags mono-text">
+                <p class="compact-desc">Digital storefront card with fast QR routing across Telegram channels and social retail checkout points.</p>
+                <div class="compact-tags">
                   <span>Next.js</span><span>Tailwind CSS</span><span>QR App</span>
                 </div>
-                <a href="https://ayche.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link mono-text">View Live ↗</a>
+                <a href="https://ayche.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link">View Live ↗</a>
               </div>
             </div>
 
@@ -547,16 +597,16 @@
                 />
               </a>
               <div class="compact-card-body">
-                <div class="compact-top mono-text">
-                  <span class="text-accent">06</span>
+                <div class="compact-top">
+                  <span class="text-cyan">06 // BRANDING HUB</span>
                   <span class="text-green">&bull; LIVE VERCEL</span>
                 </div>
                 <h4 class="compact-title">Alelgn Design Links</h4>
-                <p class="compact-desc">Responsive branding showcase and digital link hub for creative design services.</p>
-                <div class="compact-tags mono-text">
+                <p class="compact-desc">Responsive branding showcase and digital link hub engineered for creative design studios and freelance portfolios.</p>
+                <div class="compact-tags">
                   <span>HTML5 / CSS3</span><span>Branding</span><span>QR Hub</span>
                 </div>
-                <a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link mono-text">View Live ↗</a>
+                <a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link">View Live ↗</a>
               </div>
             </div>
 
@@ -567,52 +617,78 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         05. SKILLS / STACK (COMPACT & VISUAL)
+         05. WORK EXPERIENCE & CAREER TIMELINE
     ══════════════════════════════════════════════════ -->
-    <section class="section-wrap" id="skills">
+    <section class="section-wrap" id="experience">
       <div class="site-container">
         
         <div class="section-header">
-          <h2 class="section-title">Skills &amp; Stack</h2>
+          <div class="section-tag text-cyan">&gt; EXPERIENCE</div>
+          <h2 class="section-title">Work Experience &amp; Engineering Track Record</h2>
           <p class="section-subtitle">
-            Modern tools and technologies I use to build scalable products.
+            From startup software engineering to independent product development.
           </p>
         </div>
 
-        <div class="skills-categories-grid">
+        <div class="experience-timeline">
           
-          <div class="skill-category">
-            <h3 class="category-name mono-text">01 // FRONTEND</h3>
-            <div class="skill-pills">
-              <span class="pill">React</span>
-              <span class="pill">Next.js</span>
-              <span class="pill">TypeScript</span>
-              <span class="pill">Tailwind CSS</span>
-              <span class="pill">HTML5 / CSS3</span>
-              <span class="pill">PWA</span>
+          <!-- Experience 1: Phoenixopia Software Solutions PLC -->
+          <div class="exp-item">
+            <div class="exp-meta-bar">
+              <span class="exp-role text-cyan">Software Engineer / Full-Stack &amp; AI Builder</span>
+              <span class="exp-period">Present</span>
+            </div>
+            <strong class="exp-company">Phoenixopia Software Solutions PLC</strong>
+            <p class="exp-desc">
+              Building scalable web applications, client solutions, and intelligent backend automation systems. Implementing modern React/Next.js frontends, PostgreSQL/Supabase database schemas, and AI workflow integrations for enterprise clients.
+            </p>
+            <div class="exp-tech-tags">
+              <span>Next.js</span><span>React</span><span>TypeScript</span><span>Python</span><span>Supabase</span><span>AI Integration</span>
             </div>
           </div>
 
-          <div class="skill-category">
-            <h3 class="category-name mono-text">02 // BACKEND &amp; DB</h3>
-            <div class="skill-pills">
-              <span class="pill">Node.js</span>
-              <span class="pill">Python</span>
-              <span class="pill">PostgreSQL</span>
-              <span class="pill">Supabase</span>
-              <span class="pill">REST APIs</span>
-              <span class="pill">User Auth</span>
+          <!-- Experience 2: Addis Foodie & Startup Products -->
+          <div class="exp-item">
+            <div class="exp-meta-bar">
+              <span class="exp-role text-cyan">Lead Full-Stack Developer &amp; Product Creator</span>
+              <span class="exp-period">2024 — Present</span>
+            </div>
+            <strong class="exp-company">Addis Foodie &amp; Eagle Investments AI</strong>
+            <p class="exp-desc">
+              Architected and deployed full-stack products from concept to production. Engineered AI recommendations, search indexes, menu pricing engines, and financial chatbot interfaces serving thousands of requests.
+            </p>
+            <div class="exp-tech-tags">
+              <span>Next.js</span><span>LLMs</span><span>Python</span><span>Tailwind CSS</span><span>PostgreSQL</span>
             </div>
           </div>
 
-          <div class="skill-category">
-            <h3 class="category-name mono-text">03 // AI &amp; AUTOMATION</h3>
-            <div class="skill-pills">
-              <span class="pill">OpenAI API</span>
-              <span class="pill">Telegram Bots</span>
-              <span class="pill">AI Agents</span>
-              <span class="pill">Python Automation</span>
-              <span class="pill">Webhooks</span>
+          <!-- Experience 3: Freelance Full-Stack Solutions -->
+          <div class="exp-item">
+            <div class="exp-meta-bar">
+              <span class="exp-role text-cyan">Freelance Full-Stack &amp; Automation Engineer</span>
+              <span class="exp-period">2022 — Present</span>
+            </div>
+            <strong class="exp-company">Independent Client Deployments</strong>
+            <p class="exp-desc">
+              Delivered custom web applications, clinical practice management tools (Sador Dental Clinic PWA), digital storefronts (Ayche Mart), branding hubs (Alelgn Design), and Telegram event bots (Special Day) for business owners and startups.
+            </p>
+            <div class="exp-tech-tags">
+              <span>Next.js</span><span>PWA</span><span>Supabase</span><span>Telegram Bot API</span><span>REST APIs</span>
+            </div>
+          </div>
+
+          <!-- Education: AASTU Mechatronics -->
+          <div class="exp-item">
+            <div class="exp-meta-bar">
+              <span class="exp-role text-cyan">B.Sc. Mechatronics Engineering Candidate</span>
+              <span class="exp-period">2023 — 2027 (Expected)</span>
+            </div>
+            <strong class="exp-company">Addis Ababa Science and Technology University (AASTU)</strong>
+            <p class="exp-desc">
+              Rigorous engineering education in software systems, robotics, control theory, algorithm optimization, and embedded electronics.
+            </p>
+            <div class="exp-tech-tags">
+              <span>Algorithms</span><span>Systems Design</span><span>MATLAB</span><span>C++</span><span>Embedded Systems</span>
             </div>
           </div>
 
@@ -622,7 +698,76 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         06. CONTACT SECTION (FRICTIONLESS)
+         06. TECH STACK / SKILLS
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap" id="skills">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <div class="section-tag text-cyan">&gt; TECH_STACK</div>
+          <h2 class="section-title">Technical Skills &amp; Languages</h2>
+          <p class="section-subtitle">
+            Battle-tested frameworks, languages, databases, and AI tooling.
+          </p>
+        </div>
+
+        <div class="skills-categories-grid">
+          
+          <div class="skill-category">
+            <h3 class="category-name text-cyan">01 // FRONTEND</h3>
+            <div class="skill-pills">
+              <span class="pill">React</span>
+              <span class="pill">Next.js</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">JavaScript (ES6+)</span>
+              <span class="pill">Tailwind CSS</span>
+              <span class="pill">HTML5 / CSS3</span>
+              <span class="pill">PWA</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-name text-cyan">02 // BACKEND &amp; DB</h3>
+            <div class="skill-pills">
+              <span class="pill">Node.js</span>
+              <span class="pill">Python</span>
+              <span class="pill">PostgreSQL</span>
+              <span class="pill">Supabase</span>
+              <span class="pill">REST APIs</span>
+              <span class="pill">User Auth / JWT</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-name text-cyan">03 // AI &amp; AUTOMATION</h3>
+            <div class="skill-pills">
+              <span class="pill">OpenAI API</span>
+              <span class="pill">Telegram Bots</span>
+              <span class="pill">AI Agents</span>
+              <span class="pill">Python Automation</span>
+              <span class="pill">LLM Prompting</span>
+              <span class="pill">Webhooks</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-name text-cyan">04 // TOOLS &amp; DEPLOYMENT</h3>
+            <div class="skill-pills">
+              <span class="pill">Git / GitHub</span>
+              <span class="pill">Vercel</span>
+              <span class="pill">Linux / Bash</span>
+              <span class="pill">Figma</span>
+              <span class="pill">Docker Basics</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         07. CONTACT SECTION (SEPARATED PHONE & TELEGRAM)
     ══════════════════════════════════════════════════ -->
     <section class="section-wrap contact-section" id="contact">
       <div class="site-container">
@@ -631,13 +776,43 @@
           <div class="contact-grid">
             
             <div class="contact-info-col">
+              <div class="section-tag text-cyan">&gt; GET_IN_TOUCH</div>
               <h2 class="contact-title">Let's build something great.</h2>
               <p class="contact-desc">
-                Have a project in mind or looking for a full-stack engineer? Send me a message and let's discuss your timeline and goals.
+                Have a project, idea, or looking for a full-stack engineer? Connect directly through any of these channels:
               </p>
 
+              <!-- Dedicated Separated Contact Channels -->
               <div class="contact-channel-cards">
-                <a href="mailto:kiflemusse@gmail.com" class="channel-card">
+                
+                <!-- PHONE NUMBER CARD -->
+                <a href="tel:+251978820389" class="channel-card" aria-label="Call Mussie Kifle">
+                  <div class="channel-icon">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div class="channel-meta">
+                    <span class="channel-lbl">DIRECT PHONE / WHATSAPP</span>
+                    <strong class="channel-val text-cyan">+251 97 882 0389</strong>
+                  </div>
+                </a>
+
+                <!-- TELEGRAM CARD -->
+                <a href="https://t.me/MOSS_K1" target="_blank" rel="noopener noreferrer" class="channel-card" aria-label="Message on Telegram">
+                  <div class="channel-icon">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.939z"/>
+                    </svg>
+                  </div>
+                  <div class="channel-meta">
+                    <span class="channel-lbl">TELEGRAM</span>
+                    <strong class="channel-val text-cyan">@MOSS_K1</strong>
+                  </div>
+                </a>
+
+                <!-- EMAIL CARD -->
+                <a href="mailto:kiflemusse@gmail.com" class="channel-card" aria-label="Send email">
                   <div class="channel-icon">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -645,34 +820,24 @@
                     </svg>
                   </div>
                   <div class="channel-meta">
-                    <span class="channel-lbl mono-text">EMAIL</span>
+                    <span class="channel-lbl">EMAIL</span>
                     <strong class="channel-val">kiflemusse@gmail.com</strong>
                   </div>
                 </a>
 
-                <a href="https://t.me/MOSS_K1" target="_blank" rel="noopener noreferrer" class="channel-card">
-                  <div class="channel-icon">
-                    <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.939z"/>
-                    </svg>
-                  </div>
-                  <div class="channel-meta">
-                    <span class="channel-lbl mono-text">TELEGRAM / WHATSAPP</span>
-                    <strong class="channel-val">t.me/MOSS_K1 &bull; +251 97 882 0389</strong>
-                  </div>
-                </a>
-
-                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="channel-card">
+                <!-- GITHUB & LINKEDIN CARD -->
+                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="channel-card" aria-label="Visit GitHub Profile">
                   <div class="channel-icon">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
                   </div>
                   <div class="channel-meta">
-                    <span class="channel-lbl mono-text">GITHUB</span>
+                    <span class="channel-lbl">GITHUB</span>
                     <strong class="channel-val">github.com/Moss-kk</strong>
                   </div>
                 </a>
+
               </div>
             </div>
 
@@ -680,28 +845,28 @@
             <div class="contact-form-col">
               <form class="clean-form" id="contactForm">
                 <div class="form-group">
-                  <label for="senderName" class="form-label mono-text">NAME *</label>
-                  <input type="text" id="senderName" name="name" class="form-control" placeholder="Your Name" required />
+                  <label for="senderName" class="form-label">&gt; YOUR_NAME *</label>
+                  <input type="text" id="senderName" name="name" class="form-control" placeholder="e.g. Alex Johnson" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="senderEmail" class="form-label mono-text">EMAIL *</label>
-                  <input type="email" id="senderEmail" name="email" class="form-control" placeholder="you@company.com" required />
+                  <label for="senderEmail" class="form-label">&gt; YOUR_EMAIL *</label>
+                  <input type="email" id="senderEmail" name="email" class="form-control" placeholder="alex@company.com" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="projectScope" class="form-label mono-text">TOPIC</label>
+                  <label for="projectScope" class="form-label">&gt; TOPIC / INQUIRY</label>
                   <select id="projectScope" name="scope" class="form-control">
                     <option value="Custom Web Application">Custom Web Application</option>
-                    <option value="AI / Telegram Bot">AI / Telegram Bot</option>
-                    <option value="Workflow Automation">Workflow Automation</option>
+                    <option value="AI / Telegram Bot Development">AI / Telegram Bot Development</option>
                     <option value="Full-Time / Contract Role">Full-Time / Contract Role</option>
-                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="End-to-End Automation">End-to-End Automation</option>
+                    <option value="General Engineering Inquiry">General Engineering Inquiry</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="senderMessage" class="form-label mono-text">MESSAGE *</label>
+                  <label for="senderMessage" class="form-label">&gt; MESSAGE *</label>
                   <textarea id="senderMessage" name="message" rows="3" class="form-control" placeholder="Tell me about your project, goals, or timeline..." required></textarea>
                 </div>
 
@@ -709,7 +874,7 @@
                   <span>Send Message (Open Email) →</span>
                 </button>
 
-                <div class="form-status mono-text" id="formFeedback"></div>
+                <div class="form-status" id="formFeedback"></div>
               </form>
             </div>
 
@@ -722,23 +887,24 @@
   </main>
 
   <!-- ══════════════════════════════════════════════════
-       07. SIMPLE FOOTER
+       08. FULL FOOTER
   ══════════════════════════════════════════════════ -->
   <footer class="site-footer" id="siteFooter">
     <div class="site-container footer-inner">
       <div class="footer-left">
-        <span class="f-name">Mussie Kifle</span>
-        <span class="f-title">Full-Stack Developer &amp; AI Builder</span>
+        <span class="f-name text-cyan">&gt; mussie.kifle</span>
+        <span class="f-title">Full-Stack Developer &amp; AI Builder &bull; Phoenixopia Software Solutions PLC</span>
       </div>
 
       <div class="footer-links">
         <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/mussie-k-shimelis-436892373" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://t.me/MOSS_K1" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="tel:+251978820389">Phone</a>
         <a href="mailto:kiflemusse@gmail.com">Email</a>
       </div>
 
-      <div class="footer-copy mono-text">
+      <div class="footer-copy">
         <span>&copy; 2026 Mussie Kifle. All rights reserved.</span>
       </div>
     </div>

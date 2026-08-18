@@ -1,30 +1,49 @@
-# MOSSes Portfolio — Project Showcase Upgrade & Visual Experience
+# MOSSes Portfolio — Dev Full-Stack (Dark & Cyan)
 
 ```yaml
-version: "8.0.0"
-name: "Visual Project Showcase Portfolio"
-description: "Upgraded project section featuring real, high-resolution desktop screenshots of live products (Addis Foodie, Sador Dental, Eagle Investments AI, Special Day, Ayche Mart, Alelgn Design), structured role/stack/features metadata, subtle hover micro-interactions, and 100% mobile-first single-column responsive layout."
+version: "9.0.0"
+name: "Portfolio Dev Full-Stack"
+description: "Developer portfolio, full-stack, projects gallery, clean layout, minimal, dark and cyan (#00BCD4), code, tech stack, personal brand. Features JetBrains Mono typography, interactive Eagle Investments AI chat UI, dedicated Phoenixopia Software Solutions experience, separated Phone and Telegram contacts, and 100% mobile-first architecture."
 colors:
-  bg: "#120E0A"
-  surface: "rgba(255, 255, 255, 0.05)"
-  surface-hover: "rgba(255, 255, 255, 0.09)"
-  surface-card: "rgba(24, 18, 14, 0.75)"
-  fg: "#FFFFFF"
-  fg-subtle: "rgba(255, 255, 255, 0.75)"
-  fg-muted: "rgba(255, 255, 255, 0.45)"
-  accent: "#EA580C"
-  accent-hover: "#F97316"
-  accent-glow: "rgba(234, 88, 12, 0.35)"
-  border: "rgba(255, 255, 255, 0.12)"
-  border-active: "rgba(249, 115, 22, 0.45)"
+  primary: "#000000"
+  secondary: "#12151B"
+  surface: "#181C24"
+  surface-hover: "#222733"
+  surface-card: "#151820"
+  tertiary: "#00BCD4"
+  cyan-glow: "rgba(0, 188, 212, 0.25)"
+  cyan-subtle: "rgba(0, 188, 212, 0.12)"
+  neutral: "#FFFFFF"
+  text-muted: "#9EABB8"
+  border: "#252B37"
+  border-cyan: "rgba(0, 188, 212, 0.4)"
 typography:
-  headline-sans: "'Space Grotesk', -apple-system, sans-serif"
-  headline-serif-italic: "'Playfair Display', Georgia, serif"
-  body: "'Space Grotesk', -apple-system, sans-serif"
-  mono: "'JetBrains Mono', monospace"
+  primary: "'JetBrains Mono', monospace"
+  code: "'JetBrains Mono', monospace"
+rounded:
+  sm: "6px"
+  md: "8px"
+  lg: "12px"
+layout:
+  max-width: "1180px"
+  mobile-first: true
 ```
 
-## Project Presentation
-1. **Real Project Screenshots**: 100% width, 16:9 aspect ratio, subtle border radius, gentle 1.02 desktop hover scale, native fallback support.
-2. **Compact Metadata Grid**: Role, Built With, Key Features, and Live Status.
-3. **Hierarchy**: 3 Large Featured Projects + 3 Supporting Projects.
+## Structure & Enhancements
+1. **Header & Hero**: JetBrains Mono terminal badges, split-screen code preview, direct CTAs (`View My Work →` and `Let's Talk`).
+2. **Services (3 Cards)**: Custom Web Apps, AI & Telegram Bots, End-to-End Automation with Cyan highlights.
+3. **Featured Projects**:
+   - Addis Foodie (AI Restaurant Discovery Platform)
+   - Sador Dental Clinic (Practice Management PWA)
+   - Eagle Investments AI (with built-in Interactive Financial Chat Interface)
+   - More Projects: Special Day, Ayche Mart, Alelgn Design
+4. **Experience & Career Timeline**:
+   - **Phoenixopia Software Solutions PLC** (Software Engineer / Full-Stack & AI Builder)
+   - **Independent & Startup Products** (Addis Foodie, Eagle Investments, Client Systems)
+   - **AASTU** — B.Sc. Mechatronics Engineering (2023–2027)
+5. **Separated Contact Channels**:
+   - Phone Number: `+251 97 882 0389` (Direct Call / WhatsApp)
+   - Telegram: `t.me/MOSS_K1`
+   - Email: `kiflemusse@gmail.com`
+   - GitHub: `github.com/Moss-kk`
+   - LinkedIn: `linkedin.com/in/mussie-k-shimelis-436892373`
