@@ -1,11 +1,11 @@
 /**
- * MOSSES PORTFOLIO — FLUID INTERACTIVE MOTION JAVASCRIPT (v14.0)
- * TextScramble & TextLoop Engine, Mobile CardSwipe with Dot Pagination,
+ * MOSSES PORTFOLIO — PRODUCT SHOWCASE & DYNAMIC HEADLINE JAVASCRIPT (v15.0)
+ * Headline TextScramble Loop, Hero Intro Decrypt, Mobile CardSwipe with Dot Pagination,
  * Continuous Floating Pill Tabs, Copy Toasts & Interactive AI Chat
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ─── 01. TextScramble & TextLoop Engine ───
+  // ─── 01. TextScramble Engine ───
   class TextScramble {
     constructor(el) {
       this.el = el;
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 0; i < length; i++) {
         const from = oldText[i] || '';
         const to = newText[i] || '';
-        const start = Math.floor(Math.random() * 20);
-        const end = start + Math.floor(Math.random() * 20);
+        const start = Math.floor(Math.random() * 16);
+        const end = start + Math.floor(Math.random() * 16);
         this.queue.push({ from, to, start, end });
       }
 
@@ -68,37 +68,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const scrambleEl = document.getElementById('heroTextScramble');
-  const heroBadge = document.getElementById('heroTextLoopBadge');
+  // 1A. Hero Introduction Initial Decrypt Animation (Animates once and stays)
+  const heroIntroEl = document.getElementById('heroIntroTitle');
+  if (heroIntroEl) {
+    const introFx = new TextScramble(heroIntroEl);
+    setTimeout(() => {
+      introFx.setText("Hi, I'm Mussie");
+    }, 150);
+  }
 
-  if (scrambleEl) {
-    const fx = new TextScramble(scrambleEl);
-    const phrases = [
-      "Hi, I'm Mussie — Full-Stack Developer & AI Builder",
-      "What can I build for you today?",
-      "Custom Web Apps • Next.js & Supabase",
-      "Intelligent AI & Telegram Bots",
-      "End-to-End Business Automation"
+  // 1B. Dynamic Headline Text Animation Loop
+  const headlineEl = document.getElementById('headlineDynamicText');
+  if (headlineEl) {
+    const headlineFx = new TextScramble(headlineEl);
+    const headlinePhrases = [
+      "fast web apps",
+      "intelligent AI tools",
+      "custom Telegram bots",
+      "scalable SaaS platforms",
+      "end-to-end automations"
     ];
 
-    let counter = 0;
-    let loopTimeout = null;
+    let phraseIndex = 0;
+    let headlineLoopTimer = null;
 
-    const nextPhrase = () => {
-      clearTimeout(loopTimeout);
-      fx.setText(phrases[counter]).then(() => {
-        loopTimeout = setTimeout(nextPhrase, 3200);
+    const cycleHeadline = () => {
+      clearTimeout(headlineLoopTimer);
+      phraseIndex = (phraseIndex + 1) % headlinePhrases.length;
+      headlineFx.setText(headlinePhrases[phraseIndex]).then(() => {
+        headlineLoopTimer = setTimeout(cycleHeadline, 3000);
       });
-      counter = (counter + 1) % phrases.length;
     };
 
-    nextPhrase();
+    // Start cycling headline after initial view
+    headlineLoopTimer = setTimeout(cycleHeadline, 3200);
 
-    if (heroBadge) {
-      heroBadge.addEventListener('click', () => {
-        nextPhrase();
-      });
-    }
+    // Clicking headline triggers immediate transition
+    headlineEl.addEventListener('click', () => {
+      cycleHeadline();
+    });
   }
 
   // ─── 02. Mobile CardSwipe Dot Pagination Synchronization ───

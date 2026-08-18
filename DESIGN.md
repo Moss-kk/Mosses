@@ -1,25 +1,19 @@
-# MOSSes Portfolio — Text Loop, Scramble & Interactive Card Swipe Motion
+# MOSSes Portfolio — Hero Headline Animation, App Window Mockups & Live Demos
 
 ```yaml
-version: "14.0.0"
-name: "Text Loop, Scramble & Card Swipe Portfolio"
-description: "Interactive portfolio featuring TextLoop / TextScramble character decoding in Hero, Continuous Floating Pill Tabs with spring sliding indicator, Mobile Side-Scroll CardSwipe for Services, Projects & Experience with active dot pagination, and 3D spring hover physics."
+version: "15.0.0"
+name: "Product-Framed Live Showcase & Animated Hero"
+description: "Prominent Hero Introduction ('Hi, I'm Mussie — Full-Stack Developer & AI Builder'), Dynamic Headline Text Animation with Scramble/Loop, Realistic App Window Browser Mockups with traffic lights and URL bars for live project screenshots, and clean direct live product actions (removed GitHub project redirects)."
 components:
-  text-loop-scramble:
-    phrases:
-      - "Hi, I'm Mussie — Full-Stack Developer & AI Builder"
-      - "Custom Web Apps • Next.js & Supabase"
-      - "AI Workflows & Telegram Bots"
-      - "End-to-End Business Automation"
-    animation: "character scramble decrypt + fade slide transition"
-  card-swipe-mobile:
-    sections: ["Services & Capabilities", "Featured & Supporting Projects", "Work Experience"]
-    behavior: "touch swipe, drag constraint, scroll-snap & active dot indicator tracking"
-  continuous-tabs:
-    layout: "floating pill navigation with spring-animated active indicator"
+  hero:
+    intro-badge: "Prominent, larger 'Hi, I'm Mussie — Full-Stack Developer & AI Builder' introduction"
+    headline-animation: "Dynamic animated loop cycling through 'fast web apps', 'intelligent AI tools', 'custom Telegram bots', 'scalable SaaS platforms', and 'end-to-end automations'"
+  project-mockups:
+    frame: "Realistic browser window mockup with traffic lights (red/yellow/green), secure SSL URL bar, and live badge"
+    actions: "Direct live product demo launch [ View Live ↗ ] and [ Copy Link 🔗 ] (GitHub redirects removed from project cards)"
 ```
 
-## Motion Design Guidelines
-1. **Hero Text Scramble & Loop**: Cycles through introduction and key service capabilities with a matrix/decrypt character scramble transition.
-2. **Mobile CardSwipe**: Services, Projects, and Work Experience support horizontal touch-swipe gestures with active dot pagination indicators on mobile.
-3. **Card Physics**: 3D tilt perspective, smooth spring hover lifting, and tactile click states.
+## Enhancements
+1. **Hero Headline Motion**: Dynamic animated phrases cycling smoothly inside the main serif headline.
+2. **Product App Mockup Frames**: Realistic macOS-style browser chrome framing each live screenshot with a secure URL bar.
+3. **Focused Direct Actions**: Clean `View Live ↗` and `Copy Link 🔗` CTAs on all featured and supporting project cards.

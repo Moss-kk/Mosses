@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
-   MOSSES PORTFOLIO — TEXT SCRAMBLE, LOOP & CARD SWIPE MOTION (v14.0)
-   Hero Character Decrypt TextScramble & TextLoop Badge
-   Mobile Side-Scroll CardSwipe for Services, Projects & Experience
-   Continuous Floating Pill Tabs · Spring Sliding Indicator
+   MOSSES PORTFOLIO — PRODUCT-FRAMED SHOWCASE & ANIMATED HERO (v15.0)
+   Prominent Hero Introduction & Dynamic Headline TextScramble
+   Realistic macOS App Browser Window Mockups for Screenshots
+   Focused Live Product Launches & Copy Link Controls
    Warm Terracotta (#C2410C) & Source Sans 3 / Playfair Display
    ═══════════════════════════════════════════════════════════════ */
 
@@ -532,7 +532,7 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-/* ─── 05. Hero Section & TextLoop / TextScramble ─── */
+/* ─── 05. Hero Section & Prominent Intro ─── */
 .hero-section {
   width: 100%;
   padding-top: clamp(2.5rem, 6vw, 5.5rem);
@@ -554,47 +554,43 @@ button, input, select, textarea {
   width: 100%;
 }
 
-/* TextLoop & TextScramble Badge */
-.text-loop-badge {
+/* Prominent Intro Header */
+.hero-intro-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.intro-greeting-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--font-code);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--primary);
-  background: rgba(194, 65, 12, 0.08);
-  border: 1px solid rgba(194, 65, 12, 0.22);
+  background: rgba(194, 65, 12, 0.09);
+  border: 1px solid rgba(194, 65, 12, 0.25);
   border-radius: var(--radius-full);
-  padding: 0.45rem 1.05rem;
-  width: fit-content;
-  max-width: 100%;
-  cursor: pointer;
-  user-select: none;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
   transition: all var(--trans-fast);
 }
 
-.text-loop-badge:hover {
-  background: rgba(194, 65, 12, 0.14);
+.intro-greeting-pill:hover {
+  background: rgba(194, 65, 12, 0.15);
   border-color: var(--primary);
-  transform: translateY(-1px);
 }
 
-.scramble-container {
-  display: inline-block;
-  min-height: 1.3em;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.scramble-text {
-  display: inline-block;
-  letter-spacing: -0.01em;
+.intro-sub-role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
 .pill-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   background-color: var(--primary);
   border-radius: var(--radius-full);
   flex-shrink: 0;
@@ -605,6 +601,16 @@ button, input, select, textarea {
   font-size: clamp(2.5rem, 7.5vw, 4.25rem);
   line-height: 1.08;
   color: var(--text-primary);
+}
+
+.headline-dynamic-phrase {
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(194, 65, 12, 0.35);
+  text-underline-offset: 6px;
+  transition: opacity 180ms ease;
+  will-change: opacity;
 }
 
 .hero-subtitle {
@@ -960,7 +966,7 @@ button, input, select, textarea {
   color: var(--primary);
 }
 
-/* ─── 07. Featured Projects ─── */
+/* ─── 07. Featured Projects (Realistic App Browser Window Framing) ─── */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -987,6 +993,91 @@ button, input, select, textarea {
   width: 100%;
 }
 
+/* Realistic Browser Mockup Frame */
+.browser-mockup-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.browser-mockup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.browser-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.b-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
+.b-red { background: #FF5F56; border: 1px solid #E0443E; }
+.b-yellow { background: #FFBD2E; border: 1px solid #DEA123; }
+.b-green { background: #27C93F; border: 1px solid #1AAB29; }
+
+.browser-url-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.75rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  max-width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.url-lock-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.browser-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(194, 65, 12, 0.08);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.browser-mockup-header-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.75rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.browser-url-text {
+  font-size: 0.68rem;
+  color: var(--neutral);
+}
+
 .project-screenshot-wrap {
   position: relative;
   width: 100%;
@@ -994,7 +1085,6 @@ button, input, select, textarea {
   overflow: hidden;
   background-color: var(--surface-raised);
   display: block;
-  border-bottom: 1px solid var(--border);
 }
 
 .project-screenshot-img {
@@ -1361,7 +1451,6 @@ button, input, select, textarea {
   background-color: var(--surface-raised);
   overflow: hidden;
   display: block;
-  border-bottom: 1px solid var(--border);
 }
 
 .compact-img {
@@ -1933,6 +2022,10 @@ button, input, select, textarea {
   .project-screenshot-wrap {
     height: 100%;
     aspect-ratio: auto;
+  }
+
+  .browser-mockup-frame {
+    height: 100%;
     border-bottom: none;
     border-right: 1px solid var(--border);
   }

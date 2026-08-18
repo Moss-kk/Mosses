@@ -6,7 +6,7 @@
   <title>Mussie Kifle — Full-Stack Developer &amp; AI Builder</title>
   
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Hi, I am Mussie Kifle — Full-Stack Developer &amp; AI Builder. I build fast web apps, AI tools, and automation systems that help businesses scale." />
+  <meta name="description" content="Hi, I'm Mussie Kifle — Full-Stack Developer &amp; AI Builder. I build fast web apps, AI tools, and automation systems that help businesses scale." />
   <meta name="keywords" content="Mussie Kifle, Full-Stack Developer, AI Builder, Web Developer, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Supabase, Phoenixopia" />
   <meta name="author" content="Mussie Kifle" />
   <meta name="robots" content="index, follow" />
@@ -119,7 +119,7 @@
   <main id="mainContent">
 
     <!-- ══════════════════════════════════════════════════
-         02. HERO SECTION WITH TEXT SCRAMBLE & TEXT LOOP
+         02. HERO SECTION WITH PROMINENT INTRO & HEADLINE ANIMATION
     ══════════════════════════════════════════════════ -->
     <section class="hero-section reveal-on-scroll" id="hero">
       <div class="site-container hero-container">
@@ -127,22 +127,23 @@
         <!-- Left Column: Bio & Core Pitch -->
         <div class="hero-text-col">
           
-          <!-- Interactive TextLoop / TextScramble Badge -->
-          <div class="text-loop-badge font-code" id="heroTextLoopBadge" title="Click to cycle next phrase">
-            <span class="pill-dot"></span>
-            <span class="scramble-container">
-              <span id="heroTextScramble" class="scramble-text">Hi, I'm Mussie — Full-Stack Developer</span>
-            </span>
+          <!-- Prominent Introduction Banner -->
+          <div class="hero-intro-header">
+            <div class="intro-greeting-pill font-code">
+              <span class="pill-dot"></span>
+              <span class="intro-title" id="heroIntroTitle">Hi, I'm Mussie</span>
+            </div>
+            <span class="intro-sub-role font-body">Full-Stack Developer &amp; AI Builder</span>
           </div>
 
-          <!-- Playfair Display Headline -->
-          <h1 class="hero-title font-serif">
-            I build fast web apps, <span class="text-terracotta">AI tools</span>, &amp; automation systems.
+          <!-- Playfair Display Dynamic Headline with TextScramble/Loop Animation -->
+          <h1 class="hero-title font-serif" id="heroMainTitle">
+            I build <span class="text-terracotta headline-dynamic-phrase" id="headlineDynamicText">fast web apps</span>, AI tools, &amp; automation systems.
           </h1>
 
           <!-- Source Sans 3 Subheadline -->
           <p class="hero-subtitle">
-            Full-Stack Developer &amp; AI Builder helping startups and businesses turn ideas into working software with speed, craft, and precision.
+            Helping startups and businesses turn ideas into scalable, high-performance working software with speed, craft, and precision.
           </p>
 
           <!-- CTAs -->
@@ -348,7 +349,7 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         04. FEATURED PROJECTS (INTERACTIVE SHOWCASE)
+         04. FEATURED PROJECTS (APP WINDOW BROWSER MOCKUPS)
     ══════════════════════════════════════════════════ -->
     <section class="section-wrap reveal-on-scroll" id="projects">
       <div class="site-container">
@@ -363,23 +364,42 @@
 
         <div class="projects-list">
 
-          <!-- PROJECT 01: ADDIS FOODIE -->
+          <!-- PROJECT 01: ADDIS FOODIE (REAL APP WINDOW FRAME) -->
           <article class="project-showcase-card interactive-hover-card">
             <div class="project-visual-side">
-              <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Addis Foodie live app">
-                <img 
-                  src="assets/projects/addis-foodie.webp" 
-                  alt="Addis Foodie restaurant discovery platform interface" 
-                  class="project-screenshot-img" 
-                  loading="eager"
-                  width="1440" 
-                  height="900"
-                  onerror="this.parentElement.classList.add('img-fallback');" 
-                />
-                <div class="screenshot-hover-overlay">
-                  <span class="overlay-badge">View Live Project &rarr;</span>
+              <div class="browser-mockup-frame">
+                <!-- Browser Window Top Bar -->
+                <div class="browser-mockup-header">
+                  <div class="browser-dots">
+                    <span class="b-dot b-red"></span>
+                    <span class="b-dot b-yellow"></span>
+                    <span class="b-dot b-green"></span>
+                  </div>
+                  <div class="browser-url-bar font-code">
+                    <svg class="url-lock-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                    <span>https://addis-foodie.vercel.app/</span>
+                  </div>
+                  <span class="browser-badge font-code">LIVE APP</span>
                 </div>
-              </a>
+
+                <!-- Viewport with Image -->
+                <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Addis Foodie live app">
+                  <img 
+                    src="assets/projects/addis-foodie.webp" 
+                    alt="Addis Foodie restaurant discovery platform interface" 
+                    class="project-screenshot-img" 
+                    loading="eager"
+                    width="1440" 
+                    height="900"
+                    onerror="this.parentElement.classList.add('img-fallback');" 
+                  />
+                  <div class="screenshot-hover-overlay">
+                    <span class="overlay-badge">Launch Live Product &rarr;</span>
+                  </div>
+                </a>
+              </div>
             </div>
 
             <div class="project-body">
@@ -419,9 +439,6 @@
                 <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
                   <span>View Live ↗</span>
                 </a>
-                <a href="https://github.com/Moss-kk/Addis_Foodie" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm">
-                  <span>GitHub ↗</span>
-                </a>
                 <button type="button" class="btn-secondary btn-sm copy-link-btn" data-url="https://addis-foodie.vercel.app/">
                   <span>Copy Link 🔗</span>
                 </button>
@@ -429,23 +446,42 @@
             </div>
           </article>
 
-          <!-- PROJECT 02: SADOR DENTAL CLINIC -->
+          <!-- PROJECT 02: SADOR DENTAL CLINIC (REAL APP WINDOW FRAME) -->
           <article class="project-showcase-card interactive-hover-card">
             <div class="project-visual-side">
-              <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Sador Dental live clinic platform">
-                <img 
-                  src="assets/projects/sador-dental.webp" 
-                  alt="Sador Dental clinic practice management dashboard" 
-                  class="project-screenshot-img" 
-                  loading="lazy"
-                  width="1440" 
-                  height="900"
-                  onerror="this.parentElement.classList.add('img-fallback');" 
-                />
-                <div class="screenshot-hover-overlay">
-                  <span class="overlay-badge">View Live Project &rarr;</span>
+              <div class="browser-mockup-frame">
+                <!-- Browser Window Top Bar -->
+                <div class="browser-mockup-header">
+                  <div class="browser-dots">
+                    <span class="b-dot b-red"></span>
+                    <span class="b-dot b-yellow"></span>
+                    <span class="b-dot b-green"></span>
+                  </div>
+                  <div class="browser-url-bar font-code">
+                    <svg class="url-lock-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                    <span>https://sador-dental.vercel.app/</span>
+                  </div>
+                  <span class="browser-badge font-code">CLINIC PWA</span>
                 </div>
-              </a>
+
+                <!-- Viewport with Image -->
+                <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-screenshot-wrap" aria-label="Visit Sador Dental live clinic platform">
+                  <img 
+                    src="assets/projects/sador-dental.webp" 
+                    alt="Sador Dental clinic practice management dashboard" 
+                    class="project-screenshot-img" 
+                    loading="lazy"
+                    width="1440" 
+                    height="900"
+                    onerror="this.parentElement.classList.add('img-fallback');" 
+                  />
+                  <div class="screenshot-hover-overlay">
+                    <span class="overlay-badge">Launch Clinic PWA &rarr;</span>
+                  </div>
+                </a>
+              </div>
             </div>
 
             <div class="project-body">
@@ -484,9 +520,6 @@
               <div class="project-links">
                 <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
                   <span>View Live ↗</span>
-                </a>
-                <a href="https://github.com/Moss-kk/sador_dental" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm">
-                  <span>GitHub ↗</span>
                 </a>
                 <button type="button" class="btn-secondary btn-sm copy-link-btn" data-url="https://sador-dental.vercel.app/">
                   <span>Copy Link 🔗</span>
@@ -603,17 +636,27 @@
             
             <!-- Slide 01: Special Day -->
             <div class="compact-card interactive-hover-card" data-slide-index="0">
-              <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-img-wrap" aria-label="Special Day Wedding Hub preview">
-                <img 
-                  src="assets/projects/special-day.webp" 
-                  alt="Special Day wedding hub interface" 
-                  class="compact-img" 
-                  loading="lazy" 
-                  width="720" 
-                  height="450" 
-                  onerror="this.parentElement.classList.add('img-fallback');" 
-                />
-              </a>
+              <div class="browser-mockup-frame">
+                <div class="browser-mockup-header-compact">
+                  <div class="browser-dots">
+                    <span class="b-dot b-red"></span>
+                    <span class="b-dot b-yellow"></span>
+                    <span class="b-dot b-green"></span>
+                  </div>
+                  <span class="browser-url-text font-code">special-day-net.vercel.app</span>
+                </div>
+                <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-img-wrap" aria-label="Special Day Wedding Hub preview">
+                  <img 
+                    src="assets/projects/special-day.webp" 
+                    alt="Special Day wedding hub interface" 
+                    class="compact-img" 
+                    loading="lazy" 
+                    width="720" 
+                    height="450" 
+                    onerror="this.parentElement.classList.add('img-fallback');" 
+                  />
+                </a>
+              </div>
               <div class="compact-card-body">
                 <div class="compact-top">
                   <span class="text-terracotta font-code">04 // EVENT HUB</span>
@@ -635,17 +678,27 @@
 
             <!-- Slide 02: Ayche Mart -->
             <div class="compact-card interactive-hover-card" data-slide-index="1">
-              <a href="https://ayche.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-img-wrap" aria-label="Ayche Mart Showcase preview">
-                <img 
-                  src="assets/projects/ayche-mart.webp" 
-                  alt="Ayche Mart digital storefront interface" 
-                  class="compact-img" 
-                  loading="lazy" 
-                  width="720" 
-                  height="450" 
-                  onerror="this.parentElement.classList.add('img-fallback');" 
-                />
-              </a>
+              <div class="browser-mockup-frame">
+                <div class="browser-mockup-header-compact">
+                  <div class="browser-dots">
+                    <span class="b-dot b-red"></span>
+                    <span class="b-dot b-yellow"></span>
+                    <span class="b-dot b-green"></span>
+                  </div>
+                  <span class="browser-url-text font-code">ayche.vercel.app</span>
+                </div>
+                <a href="https://ayche.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-img-wrap" aria-label="Ayche Mart Showcase preview">
+                  <img 
+                    src="assets/projects/ayche-mart.webp" 
+                    alt="Ayche Mart digital storefront interface" 
+                    class="compact-img" 
+                    loading="lazy" 
+                    width="720" 
+                    height="450" 
+                    onerror="this.parentElement.classList.add('img-fallback');" 
+                  />
+                </a>
+              </div>
               <div class="compact-card-body">
                 <div class="compact-top">
                   <span class="text-terracotta font-code">05 // RETAIL PWA</span>
@@ -667,17 +720,27 @@
 
             <!-- Slide 03: Alelgn Design -->
             <div class="compact-card interactive-hover-card" data-slide-index="2">
-              <a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-img-wrap" aria-label="Alelgn Design preview">
-                <img 
-                  src="assets/projects/alelgn-design.webp" 
-                  alt="Alelgn Design branding link hub interface" 
-                  class="compact-img" 
-                  loading="lazy" 
-                  width="720" 
-                  height="450" 
-                  onerror="this.parentElement.classList.add('img-fallback');" 
-                />
-              </a>
+              <div class="browser-mockup-frame">
+                <div class="browser-mockup-header-compact">
+                  <div class="browser-dots">
+                    <span class="b-dot b-red"></span>
+                    <span class="b-dot b-yellow"></span>
+                    <span class="b-dot b-green"></span>
+                  </div>
+                  <span class="browser-url-text font-code">alelgn-links.vercel.app</span>
+                </div>
+                <a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-img-wrap" aria-label="Alelgn Design preview">
+                  <img 
+                    src="assets/projects/alelgn-design.webp" 
+                    alt="Alelgn Design branding link hub interface" 
+                    class="compact-img" 
+                    loading="lazy" 
+                    width="720" 
+                    height="450" 
+                    onerror="this.parentElement.classList.add('img-fallback');" 
+                  />
+                </a>
+              </div>
               <div class="compact-card-body">
                 <div class="compact-top">
                   <span class="text-terracotta font-code">06 // BRANDING HUB</span>
