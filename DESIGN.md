@@ -1,54 +1,57 @@
-# HELIOS-9 // MISSION CONTROL — Design System
+# MOSSes Portfolio — Engineering Design System
 
 ```yaml
-version: "alpha"
-name: "HELIOS-9 // MISSION CONTROL"
-description: "Interactive/Animated aerospace mission control style with CSS Grid, solar telemetry, and high-energy amber HUD interfaces."
+version: "2.0.0"
+name: "Editorial Engineering"
+description: "Mobile-first, high-precision editorial engineering portfolio. Dark near-black canvas with warm amber accent, strict 0px-to-8px geometry, and complete mobile viewport responsiveness."
 colors:
-  slate: "#0C0F14"
-  panel: "#11151C"
-  panel2: "#141922"
-  solar-amber: "#FFB347"
-  cream-text: "#E8DCC8"
-  muted-radar: "#8A8272"
-  line: "rgba(255, 179, 71, 0.16)"
-  line-soft: "rgba(255, 179, 71, 0.08)"
+  bg: "#0e0e0d"
+  surface: "#171715"
+  surface-raised: "#20201d"
+  fg: "#f5f2eb"
+  fg-subtle: "#cfcac2"
+  fg-muted: "#8e8e86"
+  accent: "#d49a3d"
+  accent-hover: "#e5a93c"
+  accent-glow: "rgba(212, 154, 61, 0.2)"
+  border: "#2a2a27"
+  border-light: "#3a3a37"
 typography:
-  display: "Space Grotesk, sans-serif"
-  body: "Space Grotesk, sans-serif"
-  mono: "JetBrains Mono, monospace"
-rounded:
-  sm: "4px"
-  md: "8px"
-  lg: "16px"
-spacing:
-  sm: "1rem"
-  md: "2rem"
-  lg: "4rem"
+  display: "'Barlow', 'Space Grotesk', -apple-system, sans-serif"
+  body: "'Barlow', 'Space Grotesk', -apple-system, sans-serif"
+  mono: "'JetBrains Mono', 'IBM Plex Mono', monospace"
+layout:
+  mobile-first: true
+  mobile-pad: "1rem"
+  desktop-pad: "1.5rem"
+  max-width: "1240px"
 ```
 
-## Overview
+## Architecture & Principles
 
-HELIOS-9 // MISSION CONTROL — Interactive/Animated style inspired by modern aerospace command modules, orbital telemetry stations, and solar energy grids. High visual precision, dynamic CSS grid layouts, real-time telemetry streams, and smooth micro-animations.
+1. **Mobile-First Viewport System**:
+   - Base CSS defines full-width (`width: 100%`) single-column layouts with consistent padding (`1rem` / `16px`).
+   - Breakpoints (`768px` tablet, `1024px` desktop) progressively enhance into multi-column asymmetric layouts.
+   - Zero horizontal overflow; zero half-width squished containers.
 
-- **Density:** 5/10 — Balanced Telemetry Grid
-- **Variance:** 6/10 — Structured Mission Modules
-- **Motion:** 8/10 — Animated Radar & Telemetry HUDs
-- **Style:** Interactive / Animated / Mission Control
-- **Keywords:** helios, mission, control, interactive, animated, gradient, grid-layout, telemetry
+2. **Visual Identity**:
+   - Technical, credible, editorial, and engineering-driven.
+   - Near-black canvas (`#0e0e0d`), dark surfaces (`#171715`), warm cream text (`#f5f2eb`), and restrained warm amber/bronze accent (`#d49a3d`, 5–10% of UI).
+   - Abstract technical engineering schematic (coordinate crosshairs, MK monogram, system modules) replacing any personal photos.
 
-## Color Tokens
-
-- **Deep Space Slate** (`#0C0F14`): Primary background canvas
-- **Telemetry Panel** (`#11151C`): Main structural cards & containment grid
-- **Subsystem Panel** (`#141922`): Elevated interactive surfaces & secondary modules
-- **Solar Amber Accent** (`#FFB347`): High-energy primary interactive accent & live beacon
-- **Warm Stellar Cream** (`#E8DCC8`): High-contrast primary readable typography
-- **Radar Wash Grey** (`#8A8272`): Secondary telemetry labels, coordinate axes, and muted rules
-- **HUD Grid Lines** (`rgba(255, 179, 71, 0.16)`): Hairline structural grid & wireframe overlays
-
-## Layout & Effects
-
-- **Grid Modules:** CSS Grid telemetry arrays with responsive 1-column mobile collapse.
-- **HUD Animations:** Radar sweeps, solar orbit rings, live telemetry tickers.
-- **Corner Radii:** 8px base panel radius with 4px inner control chips.
+3. **Content Hierarchy**:
+   - **Hero**: Mussie Kifle · Software Engineer · AI Product Builder · Mechatronics Engineer.
+   - **Philosophy**: Engineering × Software × AI (Systems-Level Architecture, Applied AI & Automation, Production Full-Stack Agility).
+   - **Features (3 Core Pillars)**:
+     - `01 // SOFTWARE ENGINEERING`
+     - `02 // AI + AUTOMATION`
+     - `03 // ENGINEERING + ROBOTICS`
+   - **Featured Projects**:
+     - Flagship: `01 ADDIS FOODIE`, `02 SADOR DENTAL`, `03 EAGLE INVESTMENTS AI`
+     - Secondary: `04 SPECIAL DAY`, `05 AYCHE MART`, `06 ALELGN DESIGN`
+   - **Experience & Education**:
+     - Eagle Investments (Co-Founder & AI Product Development)
+     - Phoenixopia & Independent Development (4+ Years Development Experience)
+     - AASTU B.Sc. Mechatronics Engineering (2023–2027, Expected Graduation: 2027)
+   - **Additional Expertise**: Photography & Visual Storytelling (3+ years), Brand & Graphic Design.
+   - **Final Contact**: LET'S BUILD SOMETHING. Direct email, phone, Telegram, LinkedIn, and GitHub.

@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * HELIOS-9 // MISSION CONTROL — INTERACTIVE TELEMETRY CONTROLLER
+ * MOSSES PORTFOLIO — INTERACTIVE CONTROLLER
  * Live Frame Inspector · Filtering · CV Modal · Telemetry Clock
  * ═══════════════════════════════════════════════════════════════
  */
@@ -77,9 +77,9 @@ function initMobileDrawer() {
  * 03. Project Category Filtering
  */
 function initProjectFiltering() {
-  const filterTabs = document.querySelectorAll('.filter-btn');
-  const primaryCards = document.querySelectorAll('.mission-card');
-  const secondaryCards = document.querySelectorAll('.sub-mission-card');
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const primaryCards = document.querySelectorAll('.project-case-card');
+  const secondaryCards = document.querySelectorAll('.sec-card');
 
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -92,7 +92,7 @@ function initProjectFiltering() {
       primaryCards.forEach(card => {
         const cat = card.getAttribute('data-category') || '';
         if (filterVal === 'all' || cat.includes(filterVal)) {
-          card.style.display = 'grid';
+          card.style.display = window.innerWidth >= 1024 ? 'grid' : 'flex';
         } else {
           card.style.display = 'none';
         }
@@ -174,7 +174,7 @@ function initLivePreviewModal() {
     }
   });
 
-  // Desktop vs Mobile Viewport Mode
+  // Desktop vs Mobile Viewport Toggle
   if (desktopViewBtn && mobileViewBtn && frameWrapper) {
     desktopViewBtn.addEventListener('click', () => {
       desktopViewBtn.classList.add('active');
@@ -250,32 +250,32 @@ function initContactForm() {
 
     if (!name || !email || !message) {
       if (feedback) {
-        feedback.className = 'form-status-line error mono-text';
-        feedback.textContent = 'TELEMETRY ERROR: Please fill in all required mission fields.';
+        feedback.className = 'form-status error mono-text';
+        feedback.textContent = 'ERROR: Please fill in all required fields.';
       }
       return;
     }
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Transmitting Telemetry...</span>';
+      submitBtn.innerHTML = '<span>Preparing Transmission...</span>';
     }
 
-    const mailSubject = encodeURIComponent(`[HELIOS-9 MISSION] ${scope} — ${name}`);
-    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMission Scope: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
+    const mailSubject = encodeURIComponent(`[PORTFOLIO CONTACT] ${scope} — ${name}`);
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
     const mailUrl = `mailto:kiflemusse@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
     setTimeout(() => {
       if (feedback) {
-        feedback.className = 'form-status-line success mono-text';
-        feedback.innerHTML = `✓ MISSION DATA DISPATCHED. Launching email client to send to <strong>kiflemusse@gmail.com</strong>...`;
+        feedback.className = 'form-status success mono-text';
+        feedback.innerHTML = `✓ DISPATCH READY. Opening your email client to send to <strong>kiflemusse@gmail.com</strong>...`;
       }
 
       window.location.href = mailUrl;
 
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Transmission Dispatched &check;</span>';
+        submitBtn.innerHTML = '<span>Message Sent &check;</span>';
       }
 
       form.reset();
