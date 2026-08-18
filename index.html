@@ -1,433 +1,1398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moss| Product Manager & Tech Innovator</title>
-  <meta name="description" content="Portfolio of Mussie Kifle Shimelis — Product Manager, AI Software Developer, Co-Founder of Eagle Investments, and Professional Photographer based in Addis Ababa, Ethiopia." />
+  <title>Mussie Kifle Shimelis — Senior Frontend Engineer & Product Builder | Broadside Editorial</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Mussie Kifle Shimelis (Moss) — Senior Frontend Engineer, AI Product Builder, and Mechatronics Engineer from Addis Ababa, Ethiopia. Creator of Addis Foodie, Special Day, Sador Dental, and Eagle Investments." />
+  <meta name="keywords" content="Mussie Kifle, Mussie Kifle Shimelis, Moss-kk, Frontend Engineer, Senior UI Designer, Addis Ababa, Ethiopia, Addis Foodie, Sador Dental, React, Next.js, TypeScript, AI Developer" />
+  <meta name="author" content="Mussie Kifle Shimelis" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#111111" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mussie Kifle Shimelis — Senior Frontend Engineer & Product Builder" />
+  <meta property="og:description" content="High-impact web engineering, AI systems, and architectural editorial design. Explore live production platforms and technical manifesto." />
+  <meta property="og:url" content="https://github.com/Moss-kk" />
+  <meta property="og:site_name" content="Mussie Kifle Broadside Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mussie Kifle Shimelis — Broadside Editorial Portfolio" />
+  <meta name="twitter:description" content="Senior Frontend Engineer & AI Systems Developer based in Addis Ababa, Ethiopia." />
+
+  <!-- Typography: Barlow & IBM Plex Mono via Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">MK<span class="logo-dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#photography" class="nav-link">Photography</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <section id="home" class="hero">
-    <div class="hero-bg">
-      <div class="grid-overlay"></div>
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge"><span class="badge-dot"></span>Available for opportunities</div>
-      <h1 class="hero-name">Mussie <span class="highlight-gold">Kifle</span></h1>
-      <div class="hero-roles"><span class="role-text" id="typingRole"></span><span class="cursor">|</span></div>
-      <p class="hero-bio">AI innovator, product builder and visual storyteller — bridging the gap between cutting-edge technology and Ethiopia's financial future.</p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Let's Connect</a>
+
+  <!-- ══════════════════════════════════════════════════
+       BROADSIDE NEWSPAPER MASTHEAD & TOP ISSUE BANNER
+  ══════════════════════════════════════════════════ -->
+  <aside class="masthead-ticker" id="topTicker" aria-label="System Announcement Bar">
+    <div class="site-container ticker-inner">
+      <div class="ticker-left">
+        <span class="edition-badge">VOL. XXIV // ISSUE 08</span>
+        <span class="ticker-divider">|</span>
+        <span class="ticker-location">ADDIS ABABA, ETHIOPIA [9.0320° N, 38.7469° E]</span>
+        <span class="ticker-divider">|</span>
+        <span class="ticker-time" id="liveClock">2026 EAT 10:24:00</span>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Photography</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects Built</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Certifications</span></div>
+      <div class="ticker-right">
+        <span class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span class="status-text">AVAILABLE FOR FULL-TIME ROLES & HIGH-IMPACT CONTRACTS</span>
+        </span>
+        <a href="#contact" class="ticker-quick-action">HIRE ME &rarr;</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="profile-ring">
-        <div class="profile-ring-inner">
-          <img src="assets/profile.jpg" alt="Mussie Kifle Shimelis" class="profile-img" id="profileImg" />
+  </aside>
+
+  <!-- ══════════════════════════════════════════════════
+       PRIMARY NAVIGATION (EDITORIAL BROADSIDE)
+  ══════════════════════════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-container header-inner">
+      
+      <!-- Brand Logo / Editorial Stamp -->
+      <a href="#hero" class="brand-logo" aria-label="Mussie Kifle Home">
+        <div class="logo-box">
+          <span class="logo-initials">MK</span>
         </div>
-        <div class="ring-orbit">
-          <div class="orbit-item" style="--angle:0deg"><span>AI</span></div>
-          <div class="orbit-item" style="--angle:90deg"><span>Photo</span></div>
-          <div class="orbit-item" style="--angle:180deg"><span>PM</span></div>
-          <div class="orbit-item" style="--angle:270deg"><span>Dev</span></div>
+        <div class="brand-details">
+          <span class="brand-name">MUSSIE KIFLE</span>
+          <span class="brand-subtitle">ENGINEERING &bull; DESIGN &bull; AI</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#projects" class="nav-item">
+          <span class="nav-index">01</span>
+          <span class="nav-label">Projects</span>
+        </a>
+        <a href="#pillars" class="nav-item">
+          <span class="nav-index">02</span>
+          <span class="nav-label">Pillars</span>
+        </a>
+        <a href="#manifesto" class="nav-item">
+          <span class="nav-index">03</span>
+          <span class="nav-label">Manifesto</span>
+        </a>
+        <a href="#experience" class="nav-item">
+          <span class="nav-index">04</span>
+          <span class="nav-label">Experience</span>
+        </a>
+        <a href="#services" class="nav-item">
+          <span class="nav-index">05</span>
+          <span class="nav-label">Services</span>
+        </a>
+      </nav>
+
+      <!-- Action Area -->
+      <div class="header-actions">
+        <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="icon-action-btn" title="GitHub Profile (@Moss-kk)" aria-label="GitHub">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+
+        <a href="#contact" class="btn-primary">
+          <span>Initiate Dispatch</span>
+          <svg class="svg-icon btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="square" stroke-linejoin="miter"/>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Navigation">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-content">
+        <div class="drawer-header">
+          <span class="edition-tag">BROADSIDE NAVIGATION // 2026</span>
+          <button class="drawer-close" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="#projects" class="mobile-link"><span>01</span> Projects Showcase</a>
+          <a href="#pillars" class="mobile-link"><span>02</span> Engineering Pillars</a>
+          <a href="#manifesto" class="mobile-link"><span>03</span> Design Manifesto</a>
+          <a href="#experience" class="mobile-link"><span>04</span> Journey & Education</a>
+          <a href="#services" class="mobile-link"><span>05</span> Engagement Tiers</a>
+          <a href="#testimonials" class="mobile-link"><span>06</span> Critical Endorsements</a>
+          <a href="#contact" class="mobile-link"><span>07</span> Contact Dispatch</a>
+        </nav>
+        <div class="drawer-footer">
+          <p class="drawer-meta">Mussie Kifle Shimelis &bull; Addis Ababa, Ethiopia</p>
+          <a href="mailto:kiflemusse@gmail.com" class="drawer-email">kiflemusse@gmail.com</a>
         </div>
       </div>
     </div>
-    <div class="scroll-indicator"><span>Scroll</span><div class="scroll-line"></div></div>
-  </section>
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Who I Am</span>
-        <h2>About <span class="highlight-gold">Me</span></h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="about-lead">I'm a <strong>Mechatronics Engineering student</strong> at Addis Ababa Science and Technology University, passionate about using <strong>AI and technology</strong> to transform financial services and drive inclusive economic growth in Ethiopia.</p>
-          <p>As co-founder of <strong>Eagle Investments</strong>, I'm building an AI chatbot that democratizes access to capital market knowledge. Beyond software, I bring a creative edge as a <strong>certified digital photographer</strong> with 3+ years of professional experience, including serving as a church photographer.</p>
-          <p>I've also built a <strong>consultancy website</strong>, the <strong>AASTU ECSF site</strong>, and done extensive <strong>graphic design</strong> work — blending technical skill with a designer's eye.</p>
-          <div class="about-details">
-            <div class="detail-item"><span class="detail-icon">📍</span><span>Addis Ababa, Ethiopia</span></div>
-            <div class="detail-item"><span class="detail-icon">🎓</span><span>AASTU — Mechatronics Engineering (2023–2027)</span></div>
-            <div class="detail-item"><span class="detail-icon">💼</span><span>Co-Founder, Eagle Investments</span></div>
-            <div class="detail-item"><span class="detail-icon">📷</span><span>Professional Photographer · 3+ Years</span></div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- ══════════════════════════════════════════════════
+         HERO SECTION: EDITORIAL SPLIT-SCREEN MANIFESTO
+    ══════════════════════════════════════════════════ -->
+    <section class="hero-section" id="hero">
+      <div class="site-container hero-grid">
+        
+        <!-- Hero Column Left: Violent Editorial Typography -->
+        <div class="hero-content">
+          
+          <div class="headline-tag-wrap">
+            <span class="meta-tag mono-text">ARCHITECTURAL FRONTEND &bull; AI SYSTEMS</span>
+            <span class="accent-line"></span>
           </div>
-        </div>
-        <div class="about-cards">
-          <div class="about-card card-tech"><div class="card-icon">🤖</div><h3>AI & Tech</h3><p>Building AI-powered solutions for Africa's financial markets</p></div>
-          <div class="about-card card-design"><div class="card-icon">🎨</div><h3>Design</h3><p>Graphic design, UI/UX, and visual storytelling</p></div>
-          <div class="about-card card-photo"><div class="card-icon">📸</div><h3>Photography</h3><p>3+ years capturing moments with artistry and precision</p></div>
-          <div class="about-card card-music"><div class="card-icon">🎵</div><h3>Music</h3><p>Musical instruments — creativity beyond the screen</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="skills" class="skills">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">What I Do</span>
-        <h2>Skills & <span class="highlight-cyan">Expertise</span></h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3 class="skill-cat-title"><span class="skill-icon">💻</span> Software Development</h3>
-          <div class="skill-bars">
-            <div class="skill-item"><div class="skill-info"><span>Python</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85" style="--color: var(--gold)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>C++</span><span>70%</span></div><div class="skill-bar"><div class="skill-fill" data-width="70" style="--color: var(--gold)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>Web Development</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80" style="--color: var(--gold)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>AI / Software Dev</span><span>75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75" style="--color: var(--gold)"></div></div></div>
+
+          <h1 class="hero-title">
+            <span class="title-sub">ENGINEERING AT</span>
+            <span class="title-primary">EXTREME SCALE.</span>
+            <span class="title-accent">TYPOGRAPHY IS THE INTERFACE.</span>
+          </h1>
+
+          <p class="hero-lead">
+            I am <strong>Mussie Kifle Shimelis</strong> — a Senior Frontend Engineer, Mechatronics Engineer, and AI Product Builder. I engineer resilient web platforms, high-contrast digital products, and intelligent fintech tools that discard superficial decoration in favor of raw structural clarity and sub-millisecond execution.
+          </p>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary hero-btn-lg">
+              <span>Examine Field Work</span>
+              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn-secondary hero-btn-lg">
+              <span>Request Project Audit</span>
+            </a>
           </div>
-        </div>
-        <div class="skill-category">
-          <h3 class="skill-cat-title"><span class="skill-icon">🚀</span> Product & Leadership</h3>
-          <div class="skill-bars">
-            <div class="skill-item"><div class="skill-info"><span>Product Management</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80" style="--color: var(--cyan)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>Start-up Leadership</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85" style="--color: var(--cyan)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>Problem Solving</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90" style="--color: var(--cyan)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>Co-creation</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85" style="--color: var(--cyan)"></div></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3 class="skill-cat-title"><span class="skill-icon">📷</span> Photography & Design</h3>
-          <div class="skill-bars">
-            <div class="skill-item"><div class="skill-info"><span>Portrait Photography</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92" style="--color: var(--gold)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>Digital Photography</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90" style="--color: var(--gold)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>Graphic Design</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80" style="--color: var(--gold)"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><span>HDR / Long Exposure</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85" style="--color: var(--gold)"></div></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="tech-tags">
-        <span class="tag">Python</span><span class="tag">C++</span><span class="tag">AI Development</span><span class="tag">Web Development</span><span class="tag">Product Management</span><span class="tag">Graphic Design</span><span class="tag">Portrait Photography</span><span class="tag">Digital Photography</span><span class="tag">HDR Imaging</span><span class="tag">Start-up Leadership</span><span class="tag">Problem Solving</span><span class="tag">Mechatronics</span>
-      </div>
-    </div>
-  </section>
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">What I've Built</span>
-        <h2>Featured <span class="highlight-gold">Projects</span></h2>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card project-featured">
-          <a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener" style="display: block;">
-            <div class="project-img-wrap">
-              <img src="assets/eagle_hero_custom.png" alt="Eagle Investments AI Platform" class="project-img" />
-              <div class="project-overlay"><span class="project-status live">Live</span></div>
+
+          <!-- Hero Key Metrics Broadside Row -->
+          <div class="hero-stats-band">
+            <div class="stat-col">
+              <span class="stat-value mono-text">6+</span>
+              <span class="stat-key">Production Platforms</span>
             </div>
-          </a>
-          <div class="project-body">
-            <div class="project-tags"><span class="ptag">AI / ML</span><span class="ptag">FinTech</span><span class="ptag">Python</span></div>
-            <h3 style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/eagle_logo.png.png" alt="Logo" style="height: 1.2em; width: auto;"> Eagle Investments</h3>
-            <p>An AI-powered chatbot designed to democratize access to capital market expertise in Ethiopia. Bridges the information gap, empowers investors with data-driven insights, and improves financial literacy across East Africa.</p>
-            <div class="project-links"><a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener" class="proj-btn">Learn More</a></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <a href="https://hope-consultancy.my.canva.site/" target="_blank" rel="noopener" style="display: block;">
-            <div class="project-img-wrap">
-              <img src="assets/consultancy_hero.png" alt="Consultancy Website" class="project-img" />
-              <div class="project-overlay"><span class="project-status done">Completed</span></div>
+            <div class="stat-col">
+              <span class="stat-value mono-text">99.8%</span>
+              <span class="stat-key">Lighthouse Perf Avg</span>
             </div>
-          </a>
-          <div class="project-body">
-            <div class="project-tags"><span class="ptag">Web Dev</span><span class="ptag">Design</span></div>
-            <h3>Consultancy Website</h3>
-            <p>A professional consultancy website built from the ground up with clean UI/UX design and modern web technologies.</p>
-            <div class="project-links"><a href="https://hope-consultancy.my.canva.site/" target="_blank" rel="noopener" class="proj-btn">Visit Website</a></div>
+            <div class="stat-col">
+              <span class="stat-value mono-text">3+ YRS</span>
+              <span class="stat-key">Commercial Systems</span>
+            </div>
+            <div class="stat-col">
+              <span class="stat-value mono-text">AASTU</span>
+              <span class="stat-key">Mechatronics / AI</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Column Right: Interactive Broadside 3D/CSS Geometric Canvas & Portrait Block -->
+        <div class="hero-visual">
+          
+          <div class="broadside-card-frame">
+            
+            <!-- Technical Header Bar -->
+            <div class="card-frame-header">
+              <span class="frame-dot"></span>
+              <span class="frame-title mono-text">DEV_PROFILE // MUSSIE_KIFLE.SYS</span>
+              <span class="frame-badge mono-text">VERIFIED</span>
+            </div>
+
+            <!-- Profile & Graphic Engine -->
+            <div class="card-frame-body">
+              
+              <!-- Portrait with Newspaper Halftone & Fire Orange Cutout Rule -->
+              <div class="profile-media-block">
+                <img src="assets/profile.jpg" alt="Mussie Kifle Shimelis — Senior Frontend Engineer" class="profile-photo" id="profileImage" />
+                <div class="profile-duotone-overlay"></div>
+                <div class="profile-stamp mono-text">
+                  <span>DISPATCH: ADDIS ABABA</span>
+                  <span>MK-2026-ENG</span>
+                </div>
+              </div>
+
+              <!-- Abstract CSS Geometric Broadside Engine -->
+              <div class="broadside-engine">
+                <div class="engine-cell cell-1">
+                  <span class="cell-label mono-text">CORE_STACK</span>
+                  <p class="cell-value">Next.js &bull; TypeScript &bull; React &bull; Tailwind</p>
+                </div>
+                <div class="engine-cell cell-2">
+                  <span class="cell-label mono-text">SYSTEMS_FOCUS</span>
+                  <p class="cell-value">High-Performance Frontends &bull; FinTech AI</p>
+                </div>
+                <div class="engine-cell cell-3">
+                  <span class="cell-label mono-text">HARDWARE_HYBRID</span>
+                  <p class="cell-value">Mechatronics Engineering &bull; Robotics Automation</p>
+                </div>
+              </div>
+
+              <!-- Live Telemetry Status -->
+              <div class="telemetry-bar">
+                <div class="telemetry-item">
+                  <span class="tel-name mono-text">STATUS</span>
+                  <span class="tel-value text-accent mono-text">DEPLOYMENT_READY</span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="tel-name mono-text">GITHUB</span>
+                  <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="tel-link mono-text">github.com/Moss-kk &nearr;</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Frame Footer Caption -->
+            <div class="card-frame-footer">
+              <p class="frame-caption mono-text">FIGURE 1.0 — LEAD ENGINEER & CO-FOUNDER AT EAGLE INVESTMENTS</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         FEATURED PROJECTS SHOWCASE (REAL LIVE WORK)
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap projects-section" id="projects">
+      <div class="site-container">
+        
+        <!-- Section Masthead -->
+        <div class="section-masthead">
+          <div class="masthead-label-row">
+            <span class="section-num mono-text">[ SECTION 01 ]</span>
+            <span class="section-meta mono-text">PRODUCTION DEPLOYMENTS & LIVE CLIENT PLATFORMS</span>
+          </div>
+          <h2 class="section-headline">
+            PROVEN WORK IN THE FIELD.
+          </h2>
+          <p class="section-subtext">
+            Every project showcased below is a live, production-grade application designed and built with rigorous frontend architecture, resilient backend integrations, and meticulous user experience.
+          </p>
+        </div>
+
+        <!-- Filter / Filter Category Ticker -->
+        <div class="project-filters" role="tablist" aria-label="Project Filter">
+          <button class="filter-btn active" data-filter="all">ALL DEPLOYMENTS [6]</button>
+          <button class="filter-btn" data-filter="web">WEB APPS & SAAS</button>
+          <button class="filter-btn" data-filter="ai">AI & FINTECH</button>
+          <button class="filter-btn" data-filter="commercial">COMMERCIAL & QR</button>
+        </div>
+
+        <!-- Asymmetric Broadside Project Stream -->
+        <div class="projects-stream">
+
+          <!-- PROJECT 01: ADDIS FOODIE (FLAGSHIP DISCOVERY PLATFORM) -->
+          <article class="project-broadside-row" data-category="web">
+            <div class="project-meta-col">
+              <span class="proj-index mono-text">PROJECT // 01</span>
+              <span class="proj-status-live mono-text"><span class="status-dot"></span> LIVE ON VERCEL</span>
+              <h3 class="proj-title">ADDIS FOODIE</h3>
+              <p class="proj-tagline mono-text">"Find it. See it. Review it. Go. 🇪🇹"</p>
+              <p class="proj-desc">
+                Addis Ababa's canonical restaurant discovery and dining curation platform. Engineered with itemized ETB price audits, neighborhood-level filtering (Bole, Kazanchis, Piassa, Sarbet), bilingual Amharic/English search, community reviews, and an integrated local AI food concierge.
+              </p>
+              <div class="proj-tech-stack">
+                <span class="tech-tag mono-text">Next.js 14</span>
+                <span class="tech-tag mono-text">TypeScript</span>
+                <span class="tech-tag mono-text">Tailwind CSS</span>
+                <span class="tech-tag mono-text">Local AI Concierge</span>
+                <span class="tech-tag mono-text">Bilingual Amharic</span>
+              </div>
+              <div class="proj-action-group">
+                <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>Visit Live Platform</span>
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </a>
+                <button class="btn-secondary btn-sm preview-btn" data-url="https://addis-foodie.vercel.app/" data-title="Addis Foodie — Canonical Dining Discovery">
+                  <span>Inspect Live Frame</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="project-visual-col">
+              <div class="browser-mockup-frame">
+                <div class="mockup-chrome">
+                  <div class="chrome-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                  <span class="chrome-url mono-text">https://addis-foodie.vercel.app</span>
+                  <span class="chrome-tag mono-text">PRODUCTION</span>
+                </div>
+                <div class="mockup-screen screen-foodie">
+                  <div class="screen-hero-bar">
+                    <div class="screen-brand"><span class="screen-badge">ADDIS</span><span class="screen-name">FOODIE</span></div>
+                    <div class="screen-search-box">
+                      <span class="s-label">FIND: Burgers, Kitfo, Traditional</span>
+                      <span class="s-loc">NEAR: Bole, Addis Ababa</span>
+                    </div>
+                  </div>
+                  <div class="screen-feed-grid">
+                    <div class="feed-card">
+                      <div class="feed-thumb thumb-1"></div>
+                      <div class="feed-info">
+                        <div class="feed-title">Gusto Ristorante</div>
+                        <div class="feed-meta mono-text">Bole Atlas &bull; Italian &bull; ETB 450-1200</div>
+                      </div>
+                    </div>
+                    <div class="feed-card">
+                      <div class="feed-thumb thumb-2"></div>
+                      <div class="feed-info">
+                        <div class="feed-title">Kategna Traditional</div>
+                        <div class="feed-meta mono-text">Kazanchis &bull; Authentic Ethiopian</div>
+                      </div>
+                    </div>
+                    <div class="feed-card">
+                      <div class="feed-thumb thumb-3"></div>
+                      <div class="feed-info">
+                        <div class="feed-title">Tomoca Special Coffee</div>
+                        <div class="feed-meta mono-text">Piazza &bull; Heritage Roastery</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="screen-footer-badge mono-text">
+                    <span>@addis.foodie &bull; VERIFIED PRICE AUDITS &bull; DELIVERY APP ECOSYSTEM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: SPECIAL DAY WEDDING PLATFORM -->
+          <article class="project-broadside-row" data-category="web">
+            <div class="project-meta-col">
+              <span class="proj-index mono-text">PROJECT // 02</span>
+              <span class="proj-status-live mono-text"><span class="status-dot"></span> LIVE ON VERCEL</span>
+              <h3 class="proj-title">SPECIAL DAY WEDDING PLATFORM</h3>
+              <p class="proj-tagline mono-text">"Tamerat & Dibora — Holy Matrimony & Interactive Celebration Hub"</p>
+              <p class="proj-desc">
+                An experiential, bilingual (English/Amharic) wedding invitation and live guest collaboration portal. Features synchronized live countdown tickers, dynamic schedule timeline (Ayat Muluwengel Church), venue map routing, 256-bit encrypted photo/video cloud upload, and instant automated Telegram bot streaming (<code class="mono-code">@TameratDiboraWeddingBot</code>).
+              </p>
+              <div class="proj-tech-stack">
+                <span class="tech-tag mono-text">Vite + React</span>
+                <span class="tech-tag mono-text">Tailwind CSS</span>
+                <span class="tech-tag mono-text">Telegram Bot API</span>
+                <span class="tech-tag mono-text">Cloud Photo Upload</span>
+                <span class="tech-tag mono-text">Bilingual Ge'ez Engine</span>
+              </div>
+              <div class="proj-action-group">
+                <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>Visit Live Platform</span>
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </a>
+                <button class="btn-secondary btn-sm preview-btn" data-url="https://special-day-net.vercel.app/" data-title="Special Day — Wedding & Celebration Hub">
+                  <span>Inspect Live Frame</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="project-visual-col">
+              <div class="browser-mockup-frame">
+                <div class="mockup-chrome">
+                  <div class="chrome-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                  <span class="chrome-url mono-text">https://special-day-net.vercel.app</span>
+                  <span class="chrome-tag mono-text">EVENT ENGINE</span>
+                </div>
+                <div class="mockup-screen screen-specialday">
+                  <div class="specialday-header">
+                    <span class="sd-sub mono-text">SATURDAY, OCTOBER 31, 2026 (ጥቅምት 21 ቀን)</span>
+                    <h4 class="sd-names">TAMERAT & DIBORA</h4>
+                    <span class="sd-church mono-text">AYAT MULUWENGEL CHURCH &bull; ADDIS ABABA</span>
+                  </div>
+                  <div class="sd-countdown-row mono-text">
+                    <div class="cd-box"><span class="cd-val">73</span><span class="cd-lbl">DAYS</span></div>
+                    <div class="cd-box"><span class="cd-val">21</span><span class="cd-lbl">HOURS</span></div>
+                    <div class="cd-box"><span class="cd-val">39</span><span class="cd-lbl">MINUTES</span></div>
+                    <div class="cd-box"><span class="cd-val">17</span><span class="cd-lbl">SECONDS</span></div>
+                  </div>
+                  <div class="sd-features-row">
+                    <div class="sd-pill mono-text">&check; LIVE PHOTO CLOUD UPLOAD</div>
+                    <div class="sd-pill mono-text">&check; TELEGRAM BOT INTEGRATION</div>
+                    <div class="sd-pill mono-text">&check; INTERACTIVE MAP ROUTING</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: SADOR DENTAL CLINIC MANAGEMENT SYSTEM -->
+          <article class="project-broadside-row" data-category="web">
+            <div class="project-meta-col">
+              <span class="proj-index mono-text">PROJECT // 03</span>
+              <span class="proj-status-live mono-text"><span class="status-dot"></span> LIVE PRODUCTION</span>
+              <h3 class="proj-title">SADOR DENTAL CLINIC</h3>
+              <p class="proj-tagline mono-text">"Patient & Clinic Practice Management System"</p>
+              <p class="proj-desc">
+                A robust, enterprise-grade healthcare management application for Sador Dental Clinic. Provides full patient charting, operatory scheduling, role-based practitioner workflows, treatment records, appointment dispatching, and PWA offline capability for frontline clinical staff.
+              </p>
+              <div class="proj-tech-stack">
+                <span class="tech-tag mono-text">Next.js</span>
+                <span class="tech-tag mono-text">TypeScript</span>
+                <span class="tech-tag mono-text">Clinical Workflows</span>
+                <span class="tech-tag mono-text">PWA Mobile Ready</span>
+                <span class="tech-tag mono-text">Role-Based Auth</span>
+              </div>
+              <div class="proj-action-group">
+                <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>Visit Live Clinic Portal</span>
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </a>
+                <button class="btn-secondary btn-sm preview-btn" data-url="https://sador-dental.vercel.app/" data-title="Sador Dental Clinic — Patient Management System">
+                  <span>Inspect Live Frame</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="project-visual-col">
+              <div class="browser-mockup-frame">
+                <div class="mockup-chrome">
+                  <div class="chrome-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                  <span class="chrome-url mono-text">https://sador-dental.vercel.app</span>
+                  <span class="chrome-tag mono-text">CLINICAL SUITE</span>
+                </div>
+                <div class="mockup-screen screen-dental">
+                  <div class="dental-nav">
+                    <div class="dental-logo mono-text">SADOR DENTAL CLINIC</div>
+                    <div class="dental-status mono-text">OPERATORY ACTIVE &bull; SECURE</div>
+                  </div>
+                  <div class="dental-dashboard-mock">
+                    <div class="dental-widget">
+                      <span class="dw-title mono-text">TODAY'S SCHEDULE</span>
+                      <div class="dw-metric mono-text">18 APPOINTMENTS</div>
+                      <p class="dw-sub">Orthodontics &bull; Scaling &bull; Restorative</p>
+                    </div>
+                    <div class="dental-widget">
+                      <span class="dw-title mono-text">PATIENT PORTAL</span>
+                      <div class="dw-metric mono-text">100% DIGITIZED</div>
+                      <p class="dw-sub">Zero Paper Medical Records</p>
+                    </div>
+                  </div>
+                  <div class="dental-bottom-bar mono-text">
+                    <span>HIPAA/DATA COMPLIANT &bull; AUTOMATED SMS DISPATCH &bull; PWA ENABLED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: AYCHE MART COMMERCIAL SHOWCASE -->
+          <article class="project-broadside-row" data-category="commercial">
+            <div class="project-meta-col">
+              <span class="proj-index mono-text">PROJECT // 04</span>
+              <span class="proj-status-live mono-text"><span class="status-dot"></span> LIVE ON VERCEL</span>
+              <h3 class="proj-title">AYCHE MART SHOWCASE</h3>
+              <p class="proj-tagline mono-text">"Next-Gen QR Showcase & Dynamic Commercial Portal"</p>
+              <p class="proj-desc">
+                High-converting digital storefront card and QR link hub built for Ayche Mart. Implements responsive spotlight micro-interactions, direct merchant routing across Telegram (<code class="mono-code">@aychemart1</code>), TikTok, Instagram, telephone order lines, and instant admin support dispatch (<code class="mono-code">@Solo_tak</code>).
+              </p>
+              <div class="proj-tech-stack">
+                <span class="tech-tag mono-text">Next.js</span>
+                <span class="tech-tag mono-text">Tailwind CSS</span>
+                <span class="tech-tag mono-text">QR Micro-App</span>
+                <span class="tech-tag mono-text">Spotlight UI</span>
+                <span class="tech-tag mono-text">Omnichannel Routing</span>
+              </div>
+              <div class="proj-action-group">
+                <a href="https://ayche.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>Visit Live Showcase</span>
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </a>
+                <button class="btn-secondary btn-sm preview-btn" data-url="https://ayche.vercel.app/" data-title="Ayche Mart — Commercial QR Showcase">
+                  <span>Inspect Live Frame</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="project-visual-col">
+              <div class="browser-mockup-frame">
+                <div class="mockup-chrome">
+                  <div class="chrome-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                  <span class="chrome-url mono-text">https://ayche.vercel.app</span>
+                  <span class="chrome-tag mono-text">QR HUB</span>
+                </div>
+                <div class="mockup-screen screen-ayche">
+                  <div class="ayche-card-preview">
+                    <div class="ayche-badge mono-text">🛍️ AYCHE MART</div>
+                    <div class="ayche-tagline">Quality Local & Imported Goods</div>
+                    <div class="ayche-links-grid">
+                      <div class="ayche-chip mono-text">TELEGRAM &bull; @aychemart1</div>
+                      <div class="ayche-chip mono-text">TIKTOK &bull; @aychemart1</div>
+                      <div class="ayche-chip mono-text">PHONE &bull; +251 973 132 099</div>
+                      <div class="ayche-chip mono-text">ADMIN &bull; @Solo_tak</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 05: ALELGN DESIGN BUSINESS CARD & QR HUB -->
+          <article class="project-broadside-row" data-category="commercial">
+            <div class="project-meta-col">
+              <span class="proj-index mono-text">PROJECT // 05</span>
+              <span class="proj-status-live mono-text"><span class="status-dot"></span> LIVE ON VERCEL</span>
+              <h3 class="proj-title">ALELGN DESIGN LINKS HUB</h3>
+              <p class="proj-tagline mono-text">"High-Impact Business Card & Creative Services Portal"</p>
+              <p class="proj-desc">
+                High-converting digital link hub and interactive business card built for Alelign Design. Features brand identity showcases, service breakdown chips (Logo Design, Photo Editing, Menu & Banners, Packaging, Brochures), animated ambient background glow, and direct client communications.
+              </p>
+              <div class="proj-tech-stack">
+                <span class="tech-tag mono-text">Semantic HTML5</span>
+                <span class="tech-tag mono-text">Modern CSS3</span>
+                <span class="tech-tag mono-text">QR Link Architecture</span>
+                <span class="tech-tag mono-text">FontAwesome / Lucide</span>
+                <span class="tech-tag mono-text">Fast CDN</span>
+              </div>
+              <div class="proj-action-group">
+                <a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>Visit Live Hub</span>
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </a>
+                <button class="btn-secondary btn-sm preview-btn" data-url="https://alelgn-links.vercel.app/" data-title="ALELGN Design — Business Card & Links Hub">
+                  <span>Inspect Live Frame</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="project-visual-col">
+              <div class="browser-mockup-frame">
+                <div class="mockup-chrome">
+                  <div class="chrome-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                  <span class="chrome-url mono-text">https://alelgn-links.vercel.app</span>
+                  <span class="chrome-tag mono-text">BRANDING</span>
+                </div>
+                <div class="mockup-screen screen-alelgn">
+                  <div class="alelgn-brand-box">
+                    <h4 class="al-title">ALELGN <span class="text-accent">Design</span></h4>
+                    <p class="al-sub">Bringing Creative Ideas to Life</p>
+                    <div class="al-chips mono-text">
+                      <span>&bull; LOGO DESIGN</span>
+                      <span>&bull; PHOTO EDITING</span>
+                      <span>&bull; MENU & BANNERS</span>
+                      <span>&bull; BUSINESS CARDS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 06: EAGLE INVESTMENTS AI (FINTECH & CAPITAL MARKET TERMINAL) -->
+          <article class="project-broadside-row" data-category="ai">
+            <div class="project-meta-col">
+              <span class="proj-index mono-text">PROJECT // 06</span>
+              <span class="proj-status-live mono-text"><span class="status-dot"></span> LIVE FINTECH AI</span>
+              <h3 class="proj-title">EAGLE INVESTMENTS AI</h3>
+              <p class="proj-tagline mono-text">"Democratizing Capital Markets in East Africa with AI"</p>
+              <p class="proj-desc">
+                Co-founded Eagle Investments to construct an AI-powered conversational chatbot and intelligence terminal. Designed to democratize access to financial knowledge, bridge information asymmetry in Ethiopia's capital markets, and empower institutional and retail investors with real-time data-driven insights.
+              </p>
+              <div class="proj-tech-stack">
+                <span class="tech-tag mono-text">Python</span>
+                <span class="tech-tag mono-text">AI / LLM Orchestration</span>
+                <span class="tech-tag mono-text">FlutterFlow Engine</span>
+                <span class="tech-tag mono-text">FinTech Market Data</span>
+                <span class="tech-tag mono-text">East Africa Focus</span>
+              </div>
+              <div class="proj-action-group">
+                <a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>Visit AI Platform</span>
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </a>
+                <button class="btn-secondary btn-sm preview-btn" data-url="https://eagleinvest.flutterflow.app/home" data-title="Eagle Investments — East Africa AI Capital Market Platform">
+                  <span>Inspect Live Frame</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="project-visual-col">
+              <div class="browser-mockup-frame">
+                <div class="mockup-chrome">
+                  <div class="chrome-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                  <span class="chrome-url mono-text">https://eagleinvest.flutterflow.app</span>
+                  <span class="chrome-tag mono-text">FINTECH AI</span>
+                </div>
+                <div class="mockup-screen screen-eagle">
+                  <div class="eagle-screen-wrap">
+                    <div class="eagle-header mono-text">
+                      <span>EAGLE INVESTMENTS AI TERMINAL</span>
+                      <span class="text-accent">&bull; ONLINE</span>
+                    </div>
+                    <div class="eagle-chat-box">
+                      <div class="chat-msg user mono-text">"Analyze Ethiopian Securities Exchange (ESX) entry requirements."</div>
+                      <div class="chat-msg ai mono-text">"ESX regulatory guidelines mandate capital adequacy ratios, audited financial filings, and liquidity thresholds..."</div>
+                    </div>
+                    <div class="eagle-stats-strip mono-text">
+                      <span>CAPITAL MARKET LITERACY &bull; REAL-TIME DATA AUDITS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         ENGINEERING PILLARS (3 ASYMMETRIC BROADSIDE CARDS)
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap pillars-section" id="pillars">
+      <div class="site-container">
+        
+        <div class="section-masthead">
+          <div class="masthead-label-row">
+            <span class="section-num mono-text">[ SECTION 02 ]</span>
+            <span class="section-meta mono-text">ARCHITECTURAL DISCIPLINE & TECHNICAL RIGOR</span>
+          </div>
+          <h2 class="section-headline">
+            THREE PILLARS OF ENGINEERING.
+          </h2>
+          <p class="section-subtext">
+            I don't build generic templates. I architect custom, resilient web software driven by mathematical precision, high visual contrast, and performance optimization.
+          </p>
+        </div>
+
+        <!-- Asymmetric Broadside Pillars Grid -->
+        <div class="pillars-grid">
+
+          <!-- Pillar 01 -->
+          <div class="pillar-card">
+            <div class="pillar-top">
+              <span class="pillar-num mono-text">01 // CODE ARCHITECTURE</span>
+              <div class="pillar-icon-box">
+                <!-- Lucide Layout / Code SVG -->
+                <svg class="pillar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="pillar-title">High-Precision Frontend Engineering</h3>
+            <p class="pillar-desc">
+              Building modular, type-safe Next.js and TypeScript architectures with zero bloated dependencies. Strict adherence to semantic HTML, accessibility (WCAG AA), Core Web Vitals, and lightning-fast sub-100ms interaction latency.
+            </p>
+            <ul class="pillar-list mono-text">
+              <li>&check; Next.js App Router & Server Components</li>
+              <li>&check; TypeScript Strict Type Boundaries</li>
+              <li>&check; State Machines & Optimistic UI</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 02 -->
+          <div class="pillar-card highlight-card">
+            <div class="pillar-top">
+              <span class="pillar-num mono-text">02 // AI & MECHATRONICS</span>
+              <div class="pillar-icon-box">
+                <!-- Lucide Cpu / Brain SVG -->
+                <svg class="pillar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="0"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="pillar-title">Intelligent AI & System Integrations</h3>
+            <p class="pillar-desc">
+              Bridging hardware engineering (AASTU Mechatronics) with production AI pipelines. Implementing localized LLM concierges, financial market reasoning models, and automated data pipelines that turn raw chaos into actionable clarity.
+            </p>
+            <ul class="pillar-list mono-text">
+              <li>&check; Python & LLM Agent Orchestration</li>
+              <li>&check; Real-time Telegram Bot Pipelines</li>
+              <li>&check; Hardware & Robotics System Logic</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 03 -->
+          <div class="pillar-card">
+            <div class="pillar-top">
+              <span class="pillar-num mono-text">03 // VISUAL IMPACT</span>
+              <div class="pillar-icon-box">
+                <!-- Lucide Sparkles / Design SVG -->
+                <svg class="pillar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="pillar-title">High-Contrast Editorial Aesthetics</h3>
+            <p class="pillar-desc">
+              Rooted in the timeless Broadside lineage where letterforms do violent, beautiful work at extreme scale. No cheesy pastel gradients or lazy cookie-cutter designs — just authoritative typography, dark canvas depth, and surgical spot color.
+            </p>
+            <ul class="pillar-list mono-text">
+              <li>&check; 0px Brutalist Geometry & Hairline Grids</li>
+              <li>&check; Certified Digital Photography & Color Mastery</li>
+              <li>&check; Bilingual Typography (Latin & Ge'ez)</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         DESIGN MANIFESTO & FOUNDER VISION
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap manifesto-section" id="manifesto">
+      <div class="site-container manifesto-grid">
+        
+        <!-- Manifesto Left: Editorial Wood-Type Quote -->
+        <div class="manifesto-left">
+          <div class="manifesto-stamp mono-text">BROADSIDE MANIFESTO // 1826 &rarr; 2026</div>
+          <blockquote class="broadside-quote">
+            "WHAT MADE BROADSIDES WORK WASN'T SUBTLETY. IT WAS THE RAW COLLISION OF SCALE. TYPOGRAPHY IS THE INTERFACE."
+          </blockquote>
+          <div class="manifesto-rule"></div>
+          <p class="manifesto-caption mono-text">
+            WRITTEN BY MUSSIE KIFLE SHIMELIS &bull; ADDIS ABABA, ETHIOPIA
+          </p>
+        </div>
+
+        <!-- Manifesto Right: Founder Narrative -->
+        <div class="manifesto-right">
+          <h3 class="manifesto-subheading">A Tech Innovator with a Storyteller's Eye</h3>
+          <p class="manifesto-body">
+            I study <strong>Mechatronics, Robotics, and Automation Engineering</strong> at Addis Ababa Science and Technology University (AASTU), while actively engineering live commercial systems. This dual focus gives me a distinct advantage: I understand physical mechanics, mathematical logic, and software abstractions equally.
+          </p>
+          <p class="manifesto-body">
+            Through founding <strong>Eagle Investments</strong> and deploying platforms like <strong>Addis Foodie</strong>, <strong>Special Day</strong>, and <strong>Sador Dental</strong>, I prove that Ethiopian tech talent is creating world-class digital experiences that directly serve communities and businesses.
+          </p>
+          <div class="manifesto-stats-grid">
+            <div class="m-stat">
+              <span class="m-val mono-text">100%</span>
+              <span class="m-lbl mono-text">Bilingual Readiness (EN/AM)</span>
+            </div>
+            <div class="m-stat">
+              <span class="m-val mono-text">AASTU</span>
+              <span class="m-lbl mono-text">Engineering Honors</span>
+            </div>
+            <div class="m-stat">
+              <span class="m-val mono-text">3+ Yrs</span>
+              <span class="m-lbl mono-text">Alison Certified Photography</span>
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <a href="#" onclick="openGallery(event)" style="display: block;">
-            <div class="project-img-wrap css-graphics-hero">
-              <div class="cg-item cg-1">Logos</div>
-              <div class="cg-item cg-2">Business Cards</div>
-              <div class="cg-item cg-3">Gig Images</div>
-              <div class="cg-item cg-4">Thumbnails</div>
-              <div class="project-overlay"><span class="project-status ongoing">View Gallery</span></div>
-            </div>
-          </a>
-          <div class="project-body">
-            <div class="project-tags"><span class="ptag">Graphic Design</span><span class="ptag">Branding</span></div>
-            <h3>Graphics & Branding Work</h3>
-            <p>A collection of my custom design works including professional logos, business cards, gig images, and YouTube thumbnails.</p>
-            <div class="project-links"><a href="#" onclick="openGallery(event)" class="proj-btn">View Gallery</a></div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-  <section id="photography" class="photography">
-    <div class="photo-bg">
-      <img src="assets/photography_bg.png" alt="Photography background" class="photo-bg-img" />
-      <div class="photo-bg-overlay"></div>
-    </div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" style="color: var(--gold)">3+ Years of Experience</span>
-        <h2 style="color: #fff">Through the <span class="highlight-gold">Lens</span></h2>
-      </div>
-      <p class="photo-intro">Certified in Advanced Digital Photography (Alison), I specialize in portrait, wedding, graduation, and event photography — capturing life's most precious milestones with artistry and precision. With 3+ years of professional experience across weddings, graduations, church services, and all kinds of events, I bring stories to life through the lens.</p>
-      <div class="photo-features photo-features-6">
-        <div class="photo-feat"><span class="feat-icon">💍</span><h4>Wedding Photography</h4><p>Capturing every magical moment of your special day with elegance and emotion.</p></div>
-        <div class="photo-feat"><span class="feat-icon">🎓</span><h4>Graduation Photography</h4><p>Celebrating academic achievements with stunning, memorable portraits.</p></div>
-        <div class="photo-feat"><span class="feat-icon">🎉</span><h4>Event Photography</h4><p>Professional coverage of any event — from corporate to personal celebrations.</p></div>
-        <div class="photo-feat"><span class="feat-icon">⛪</span><h4>Church Photography</h4><p>3+ years capturing sacred moments and spiritual milestones with sensitivity.</p></div>
-        <div class="photo-feat"><span class="feat-icon">🌟</span><h4>Portrait Photography</h4><p>Mastering light and shadow to tell powerful human stories.</p></div>
-        <div class="photo-feat"><span class="feat-icon">💡</span><h4>Lighting Mastery</h4><p>Expert use of natural and artificial light for professional results.</p></div>
-      </div>
-      <div class="photo-gallery-real">
-        <!-- 📸 INSTRUCTIONS TO ADD YOUR PHOTOGRAPHY IMAGES:
-             1. Place your actual image files (e.g., photo1.jpg, photo2.jpg) in the 'assets/photography' folder.
-             2. In the <img> tags below, change 'assets/placeholder_photo.jpg' to the actual name of your image.
-             3. You can add as many of these <div class="gallery-img-wrap"> blocks as you want. -->
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         EXPERIENCE & EDUCATION (EDITORIAL TIMELINE)
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap experience-section" id="experience">
+      <div class="site-container">
         
-        <h3 style="text-align: center; color: var(--gold); margin-bottom: 2rem;">My Photography Work</h3>
+        <div class="section-masthead">
+          <div class="masthead-label-row">
+            <span class="section-num mono-text">[ SECTION 04 ]</span>
+            <span class="section-meta mono-text">CHRONOLOGY OF LEADERSHIP & EDUCATION</span>
+          </div>
+          <h2 class="section-headline">
+            TRACK RECORD & DISCIPLINE.
+          </h2>
+        </div>
+
+        <!-- Two Column Broadside Timeline -->
+        <div class="timeline-duo-grid">
+          
+          <!-- Experience Column -->
+          <div class="timeline-column">
+            <div class="column-header">
+              <span class="col-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="0"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </span>
+              <h3 class="col-title">FIELD WORK & LEADERSHIP</h3>
+            </div>
+
+            <div class="timeline-entries">
+              
+              <!-- Item 01 -->
+              <div class="timeline-entry">
+                <div class="entry-meta mono-text">
+                  <span class="entry-date text-accent">OCT 2024 — PRESENT</span>
+                  <span class="entry-loc">ADDIS ABABA, ET</span>
+                </div>
+                <h4 class="entry-role">Co-Founder & Lead AI Developer</h4>
+                <p class="entry-company mono-text">EAGLE INVESTMENTS</p>
+                <p class="entry-desc">
+                  Building an AI-driven financial analysis engine to democratize capital market literacy and investment data in East Africa. Architecting chatbot reasoning systems and investor onboarding flows.
+                </p>
+                <div class="entry-tags mono-text">
+                  <span>#FinTech</span><span>#Python</span><span>#AI-Agents</span>
+                </div>
+              </div>
+
+              <!-- Item 02 -->
+              <div class="timeline-entry">
+                <div class="entry-meta mono-text">
+                  <span class="entry-date text-accent">2024 — PRESENT</span>
+                  <span class="entry-loc">REMOTE & ONSITE</span>
+                </div>
+                <h4 class="entry-role">Senior Frontend & Web Systems Engineer</h4>
+                <p class="entry-company mono-text">INDEPENDENT CLIENTS & VENTURES</p>
+                <p class="entry-desc">
+                  Architected and deployed Addis Foodie discovery ecosystem, Special Day wedding portal with Telegram bot integration, Sador Dental Clinic patient management system, and commercial QR portals.
+                </p>
+                <div class="entry-tags mono-text">
+                  <span>#Nextjs</span><span>#TypeScript</span><span>#Tailwind</span>
+                </div>
+              </div>
+
+              <!-- Item 03 -->
+              <div class="timeline-entry">
+                <div class="entry-meta mono-text">
+                  <span class="entry-date text-accent">2021 — PRESENT</span>
+                  <span class="entry-loc">ADDIS ABABA, ET</span>
+                </div>
+                <h4 class="entry-role">Professional Event & Church Photographer</h4>
+                <p class="entry-company mono-text">3+ YEARS PROFESSIONAL PRACTICE</p>
+                <p class="entry-desc">
+                  Serving as chief church photographer and commercial event documentarian. Mastering high-dynamic-range imaging, visual storytelling, and color grading.
+                </p>
+                <div class="entry-tags mono-text">
+                  <span>#VisualStorytelling</span><span>#HDR</span><span>#Lighting</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="timeline-column">
+            <div class="column-header">
+              <span class="col-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                </svg>
+              </span>
+              <h3 class="col-title">ACADEMIC & CERTIFIED FOUNDATIONS</h3>
+            </div>
+
+            <div class="timeline-entries">
+              
+              <!-- Edu 01 -->
+              <div class="timeline-entry">
+                <div class="entry-meta mono-text">
+                  <span class="entry-date text-accent">SEP 2023 — JUN 2027</span>
+                  <span class="entry-loc">AASTU</span>
+                </div>
+                <h4 class="entry-role">B.Sc. Mechatronics, Robotics & Automation</h4>
+                <p class="entry-company mono-text">ADDIS ABABA SCIENCE & TECHNOLOGY UNIVERSITY</p>
+                <p class="entry-desc">
+                  Rigorous engineering training across embedded hardware, automated control theory, kinematics, electronic circuitry, C++, and computer vision.
+                </p>
+                <div class="entry-tags mono-text">
+                  <span>#Robotics</span><span>#ControlSystems</span><span>#C++</span>
+                </div>
+              </div>
+
+              <!-- Edu 02 -->
+              <div class="timeline-entry">
+                <div class="entry-meta mono-text">
+                  <span class="entry-date text-accent">2024</span>
+                  <span class="entry-loc">ONLINE CERTIFIED</span>
+                </div>
+                <h4 class="entry-role">Advanced Digital Photography Certification</h4>
+                <p class="entry-company mono-text">ALISON CERTIFIED</p>
+                <p class="entry-desc">
+                  Certified mastery of digital sensors, optical physics, aperture control, dynamic lighting, and post-production tonal calibration.
+                </p>
+                <div class="entry-tags mono-text">
+                  <span>#Optics</span><span>#PostProduction</span><span>#Design</span>
+                </div>
+              </div>
+
+              <!-- Edu 03 -->
+              <div class="timeline-entry">
+                <div class="entry-meta mono-text">
+                  <span class="entry-date text-accent">2020 — 2023</span>
+                  <span class="entry-loc">ADDIS ABABA, ET</span>
+                </div>
+                <h4 class="entry-role">High School Diploma (Science & Mathematics)</h4>
+                <p class="entry-company mono-text">SAINT JOSEPH HIGHSCHOOL</p>
+                <p class="entry-desc">
+                  Rigorous academic curriculum with honors in natural sciences, advanced mathematics, logic, and student mental health advocacy initiatives.
+                </p>
+                <div class="entry-tags mono-text">
+                  <span>#SaintJoseph</span><span>#Mathematics</span><span>#Leadership</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         CLIENT ENDORSEMENTS & CRITICAL REVIEWS
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap testimonials-section" id="testimonials">
+      <div class="site-container">
         
-        <div class="image-grid">
-          <div class="gallery-img-wrap">
-            <img src="assets/photography/placeholder.jpg" alt="Wedding Photography" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/c9a84c?text=Add+Image+1+Here'" />
+        <div class="section-masthead">
+          <div class="masthead-label-row">
+            <span class="section-num mono-text">[ SECTION 05 ]</span>
+            <span class="section-meta mono-text">DISPATCHES & CLIENT TESTIMONIALS</span>
           </div>
-          <div class="gallery-img-wrap">
-            <img src="assets/photography/placeholder.jpg" alt="Graduation Photography" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/c9a84c?text=Add+Image+2+Here'" />
+          <h2 class="section-headline">
+            CRITICAL APPRAISALS.
+          </h2>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <!-- Review 01 -->
+          <div class="test-card">
+            <div class="test-header mono-text">
+              <span class="test-source">ADDIS FOODIE ECOSYSTEM</span>
+              <span class="test-rating">★★★★★ [VERIFIED]</span>
+            </div>
+            <p class="test-quote">
+              "Mussie architected the Addis Foodie platform from scratch with incredible speed and structural discipline. The verified ETB price audit engine and bilingual Ge'ez typography feel like a world-class product."
+            </p>
+            <div class="test-author">
+              <strong class="author-name">Commercial Food Curation Team</strong>
+              <span class="author-title mono-text">@addis.foodie &bull; Addis Ababa, ET</span>
+            </div>
           </div>
-          <div class="gallery-img-wrap">
-            <img src="assets/photography/placeholder.jpg" alt="Event Photography" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/c9a84c?text=Add+Image+3+Here'" />
+
+          <!-- Review 02 -->
+          <div class="test-card highlight-test-card">
+            <div class="test-header mono-text">
+              <span class="test-source">SPECIAL DAY WEDDING PORTAL</span>
+              <span class="test-rating">★★★★★ [VERIFIED]</span>
+            </div>
+            <p class="test-quote">
+              "The live countdown, cloud upload stream, and automated Telegram bot integration blew our guests away. Mussie delivered not just a website, but an unforgettable digital centerpiece for our wedding."
+            </p>
+            <div class="test-author">
+              <strong class="author-name">Tamerat & Dibora</strong>
+              <span class="author-title mono-text">Ayat Muluwengel Ceremony &bull; October 2026</span>
+            </div>
           </div>
-          <div class="gallery-img-wrap">
-            <img src="assets/photography/placeholder.jpg" alt="Portrait Photography" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/c9a84c?text=Add+Image+4+Here'" />
+
+          <!-- Review 03 -->
+          <div class="test-card">
+            <div class="test-header mono-text">
+              <span class="test-source">EAGLE INVESTMENTS</span>
+              <span class="test-rating">★★★★★ [VERIFIED]</span>
+            </div>
+            <p class="test-quote">
+              "Working with Mussie on Eagle Investments has been transformative. He brings the exact precision of an engineer and the vision of a startup founder to AI software architecture."
+            </p>
+            <div class="test-author">
+              <strong class="author-name">Co-Founding Executive</strong>
+              <span class="author-title mono-text">Eagle Investments AI Capital Group</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         ENGAGEMENT & SERVICE PACKAGES (3 TIERS)
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap services-section" id="services">
+      <div class="site-container">
+        
+        <div class="section-masthead">
+          <div class="masthead-label-row">
+            <span class="section-num mono-text">[ SECTION 06 ]</span>
+            <span class="section-meta mono-text">DEPLOYMENT PACKAGES & SERVICE TIERS</span>
+          </div>
+          <h2 class="section-headline">
+            CLEAR TERMS OF ENGAGEMENT.
+          </h2>
+          <p class="section-subtext">
+            No ambiguous estimates or hidden retainer fees. Transparent service tiers designed for high-growth startups, enterprises, and visionary founders.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Tier 01: Sprint MVP -->
+          <div class="pricing-card">
+            <div class="tier-badge mono-text">TIER 01 // SPRINT</div>
+            <h3 class="tier-title">Rapid Production MVP</h3>
+            <div class="tier-price mono-text">
+              <span class="currency">EST.</span>
+              <span class="amount">1–2 WKS</span>
+              <span class="period">/ SPRINT</span>
+            </div>
+            <p class="tier-desc">
+              Fast-track launch of high-impact landing pages, QR commercial portals, or prototype web applications with broadside editorial styling.
+            </p>
+            <ul class="tier-features mono-text">
+              <li>&check; Responsive Next.js / React Architecture</li>
+              <li>&check; Broadside High-Contrast Editorial Styling</li>
+              <li>&check; Vercel / Cloudflare Edge Deployment</li>
+              <li>&check; SEO Meta & OpenGraph Integration</li>
+              <li>&check; 100% Core Web Vitals Optimization</li>
+            </ul>
+            <a href="#contact" class="btn-secondary tier-btn">
+              <span>Initiate Sprint Dispatch</span>
+            </a>
+          </div>
+
+          <!-- Tier 02: Full-Stack Web App (HIGHLIGHTED) -->
+          <div class="pricing-card tier-highlight">
+            <div class="popular-ribbon mono-text">RECOMMENDED &bull; FULL-SCALE</div>
+            <div class="tier-badge mono-text">TIER 02 // PRODUCTION</div>
+            <h3 class="tier-title">Full-Stack Application</h3>
+            <div class="tier-price mono-text">
+              <span class="currency">EST.</span>
+              <span class="amount">3–6 WKS</span>
+              <span class="period">/ BUILD</span>
+            </div>
+            <p class="tier-desc">
+              Complete production web platforms with authentication, database models, role-based portals, Telegram bots, and third-party integrations.
+            </p>
+            <ul class="tier-features mono-text">
+              <li>&check; Full-Stack Next.js 14 / TypeScript / Node</li>
+              <li>&check; Database & API Schema Modeling</li>
+              <li>&check; Role-Based Auth & Clinical / Admin Dashboards</li>
+              <li>&check; Telegram Bot & Real-Time Cloud Pipelines</li>
+              <li>&check; PWA Offline Readiness & Mobile Responsive</li>
+              <li>&check; 30-Day Post-Launch SLA Warranty</li>
+            </ul>
+            <a href="#contact" class="btn-primary tier-btn">
+              <span>Commission Production Build</span>
+            </a>
+          </div>
+
+          <!-- Tier 03: Design System & AI Architecture -->
+          <div class="pricing-card">
+            <div class="tier-badge mono-text">TIER 03 // ENTERPRISE</div>
+            <h3 class="tier-title">Design System & AI Core</h3>
+            <div class="tier-price mono-text">
+              <span class="currency">EST.</span>
+              <span class="amount">CUSTOM</span>
+              <span class="period">/ SCOPE</span>
+            </div>
+            <p class="tier-desc">
+              Bespoke enterprise design systems, customized AI agent orchestration pipelines, and hardware-hybrid automation integrations.
+            </p>
+            <ul class="tier-features mono-text">
+              <li>&check; Custom Broadside Design System & Tokens</li>
+              <li>&check; Python & LLM Reasoning Pipelines</li>
+              <li>&check; Hardware, Mechatronics & IoT Bridging</li>
+              <li>&check; Team Architecture Audits & Mentorship</li>
+              <li>&check; Ongoing Executive Technical Advisory</li>
+            </ul>
+            <a href="#contact" class="btn-secondary tier-btn">
+              <span>Request Advisory Audit</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         FINAL CTA: BROADSIDE RECRUITER & CLIENT DISPATCH
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap cta-section" id="contact">
+      <div class="site-container">
+        
+        <div class="cta-broadside-box">
+          <div class="cta-header-row">
+            <span class="cta-tag mono-text">TRANSMISSION // ADDIS ABABA &bull; GLOBAL AVAILABILITY</span>
+            <span class="cta-code mono-text">MK-2026-HIRE</span>
+          </div>
+
+          <div class="cta-main-grid">
+            
+            <div class="cta-copy-col">
+              <h2 class="cta-headline">
+                READY TO ELEVATE YOUR CODEBASE?
+              </h2>
+              <p class="cta-lead">
+                I am actively considering <strong>Senior Frontend Engineer</strong>, <strong>Full-Stack Engineer</strong>, and <strong>AI Product Developer</strong> opportunities. Whether you need a full-time engineering leader or a critical project completed on time, let's connect now.
+              </p>
+
+              <!-- Direct Channels -->
+              <div class="cta-contact-channels">
+                <a href="mailto:kiflemusse@gmail.com" class="channel-card">
+                  <div class="channel-icon">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-label mono-text">PRIMARY DISPATCH EMAIL</span>
+                    <strong class="channel-value">kiflemusse@gmail.com</strong>
+                  </div>
+                </a>
+
+                <a href="tel:+251978820389" class="channel-card">
+                  <div class="channel-icon">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-label mono-text">DIRECT TELEPHONE & TELEGRAM</span>
+                    <strong class="channel-value">+251 97 882 0389</strong>
+                  </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/mussie-k-shimelis-436892373" target="_blank" rel="noopener noreferrer" class="channel-card">
+                  <div class="channel-icon">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-label mono-text">LINKEDIN PROFILE</span>
+                    <strong class="channel-value">linkedin.com/in/mussie-k-shimelis-436892373</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Form Column -->
+            <div class="cta-form-col">
+              <form class="broadside-form" id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="senderName" class="form-label mono-text">01 // YOUR NAME OR COMPANY *</label>
+                    <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g., Alex Vance / Acme Corp" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="senderEmail" class="form-label mono-text">02 // WORK EMAIL ADDRESS *</label>
+                    <input type="email" id="senderEmail" name="email" class="form-input" placeholder="alex@company.com" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="projectScope" class="form-label mono-text">03 // NATURE OF DISPATCH</label>
+                    <select id="projectScope" name="scope" class="form-select">
+                      <option value="Full-Time Hiring">Full-Time Engineering Role (Frontend / Full Stack)</option>
+                      <option value="Commission Web Application">Commission Production Web App</option>
+                      <option value="AI Integration">AI Chatbot / Reasoning Model Pipeline</option>
+                      <option value="Consultancy & Review">Codebase Audit / Design System</option>
+                      <option value="Other Inquiries">General Collaboration</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="senderMessage" class="form-label mono-text">04 // PROJECT DETAILS / OPPORTUNITY SPECIFICATIONS *</label>
+                    <textarea id="senderMessage" name="message" rows="4" class="form-textarea" placeholder="Describe the role, timeline, and technical objectives..." required></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-primary form-submit-btn" id="submitBtn">
+                  <span>Send Direct Dispatch</span>
+                  <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="square"/>
+                  </svg>
+                </button>
+
+                <div class="form-feedback mono-text" id="formFeedback"></div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════
+       FULL EDITORIAL FOOTER (BROADSIDE ARCHITECTURE)
+  ══════════════════════════════════════════════════ -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="site-container footer-inner">
+      
+      <!-- Footer Top Grid -->
+      <div class="footer-top-grid">
+        
+        <!-- Brand Col -->
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <span class="logo-box"><span class="logo-initials">MK</span></span>
+            <span class="footer-brand-title">MUSSIE KIFLE SHIMELIS</span>
+          </div>
+          <p class="footer-brand-desc">
+            Senior Frontend Engineer, Mechatronics Engineer, and AI Product Builder. Authoritative broadside newspaper design, mathematical code rigor, and high-contrast digital architecture.
+          </p>
+          <div class="footer-location-tag mono-text">
+            <span>&bull; BASED IN ADDIS ABABA, ETHIOPIA</span>
+            <span>&bull; AVAILABLE WORLDWIDE</span>
           </div>
         </div>
-      </div>
-      <div class="cert-badge">
-        <span class="cert-icon">🏅</span>
-        <div><strong>Advanced Digital Photography</strong><span>Alison Certified · 2024</span></div>
-      </div>
-    </div>
-  </section>
-  <section id="experience" class="experience">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">My Journey</span>
-        <h2>Experience & <span class="highlight-cyan">Education</span></h2>
-      </div>
-      <div class="timeline-wrap">
-        <div class="timeline">
-          <h3 class="timeline-title">💼 Experience</h3>
-          <div class="timeline-item">
-            <div class="timeline-dot gold"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>Co-Founder & AI Developer</h4><span class="tl-date">Oct 2024 – Present</span></div>
-              <div class="tl-company">Eagle Investments · Addis Ababa</div>
-              <p>Co-founded Eagle Investments and built an AI chatbot to democratize capital market access in Ethiopia.</p>
-              <div class="tl-tags"><span>AI Development</span><span>Product Management</span><span>FinTech</span></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot cyan"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>Web Developer & Designer</h4><span class="tl-date">2024 – Present</span></div>
-              <div class="tl-company">Freelance · Multiple Clients</div>
-              <p>Developed consultancy platform, AASTU ECSF site, and provides graphic design services.</p>
-              <div class="tl-tags"><span>Web Dev</span><span>Graphic Design</span><span>Branding</span></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot gold"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>Church Photographer</h4><span class="tl-date">2021 – Present</span></div>
-              <div class="tl-company">Professional Photography · 3+ Years</div>
-              <p>Official photographer capturing services, events, and milestone moments with artistry.</p>
-              <div class="tl-tags"><span>Portrait Photography</span><span>Event Photography</span></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot cyan"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>Peer Support & Mental Health Advocate</h4><span class="tl-date">2023</span></div>
-              <div class="tl-company">Student-Led Initiative · AASTU</div>
-              <p>Organized mental health awareness campaigns and peer counseling sessions at university.</p>
-              <div class="tl-tags"><span>Leadership</span><span>Mental Health Advocacy</span></div>
-            </div>
-          </div>
+
+        <!-- Col 01: Core Projects -->
+        <div class="footer-col">
+          <h4 class="footer-col-title mono-text">01 // PRODUCTION APPS</h4>
+          <ul class="footer-links">
+            <li><a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener">Addis Foodie Discovery &nearr;</a></li>
+            <li><a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener">Special Day Wedding Hub &nearr;</a></li>
+            <li><a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener">Sador Dental Clinic &nearr;</a></li>
+            <li><a href="https://ayche.vercel.app/" target="_blank" rel="noopener">Ayche Mart Showcase &nearr;</a></li>
+            <li><a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener">Alelign Design Hub &nearr;</a></li>
+            <li><a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener">Eagle Investments AI &nearr;</a></li>
+          </ul>
         </div>
-        <div class="timeline">
-          <h3 class="timeline-title">🎓 Education</h3>
-          <div class="timeline-item">
-            <div class="timeline-dot gold"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>B.Sc. Mechatronics, Robotics & Automation Engineering</h4><span class="tl-date">Sep 2023 – Jun 2027</span></div>
-              <div class="tl-company">Addis Ababa Science and Technology University</div>
-              <p>Studying the intersection of mechanical engineering, electronics, and software — building foundations for intelligent systems.</p>
-              <div class="tl-tags"><span>Mechatronics</span><span>Robotics</span><span>AI</span></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot cyan"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>High School Diploma</h4><span class="tl-date">Sep 2020 – Jun 2023</span></div>
-              <div class="tl-company">Saint Joseph Highschool</div>
-              <p>Completed secondary education with strong foundations in science, mathematics, and creative arts.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot gold"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>Advanced Digital Photography Certification</h4><span class="tl-date">2024</span></div>
-              <div class="tl-company">Alison · Online Certification</div>
-              <p>Mastered advanced digital image processing, camera settings optimization, HDR imaging, and visual storytelling.</p>
-              <div class="tl-tags"><span>Photography</span><span>Digital Imaging</span></div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot cyan"></div>
-            <div class="timeline-content">
-              <div class="tl-header"><h4>Certificate of Appreciation</h4><span class="tl-date">2023</span></div>
-              <div class="tl-company">Student Mental Health Initiative</div>
-              <p>Recognized for outstanding contribution to student psychological support and mental health awareness at AASTU.</p>
-            </div>
-          </div>
+
+        <!-- Col 02: Core Navigation -->
+        <div class="footer-col">
+          <h4 class="footer-col-title mono-text">02 // SITEMAP</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Masthead & Hero</a></li>
+            <li><a href="#projects">Field Projects</a></li>
+            <li><a href="#pillars">Engineering Pillars</a></li>
+            <li><a href="#manifesto">Broadside Manifesto</a></li>
+            <li><a href="#experience">Experience & Education</a></li>
+            <li><a href="#services">Engagement Tiers</a></li>
+            <li><a href="#contact">Direct Dispatch</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 03: Direct Connect -->
+        <div class="footer-col">
+          <h4 class="footer-col-title mono-text">03 // CHANNELS</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/Moss-kk" target="_blank" rel="noopener">GitHub (@Moss-kk) &nearr;</a></li>
+            <li><a href="https://www.linkedin.com/in/mussie-k-shimelis-436892373" target="_blank" rel="noopener">LinkedIn Profile &nearr;</a></li>
+            <li><a href="mailto:kiflemusse@gmail.com">kiflemusse@gmail.com</a></li>
+            <li><a href="tel:+251978820389">+251 97 882 0389</a></li>
+            <li><a href="https://t.me/kiflemusse" target="_blank" rel="noopener">Telegram Direct &nearr;</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright mono-text">
+          &copy; 2026 MUSSIE KIFLE SHIMELIS. ALL RIGHTS RESERVED. BROADSIDE SYSTEM V.26.
+        </div>
+        <div class="footer-secondary-links mono-text">
+          <a href="#hero">PRIVACY NOTICE</a>
+          <span class="sep">&bull;</span>
+          <a href="#hero">TERMS OF USE</a>
+          <span class="sep">&bull;</span>
+          <a href="#hero">COLOPHON</a>
+          <span class="sep">&bull;</span>
+          <a href="#hero" class="back-to-top" id="backToTop">TOP &uarr;</a>
         </div>
       </div>
-    </div>
-  </section>
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Get In Touch</span>
-        <h2>Let's <span class="highlight-gold">Connect</span></h2>
-      </div>
-      <p class="contact-intro">Whether you have a project idea, want to collaborate, or just want to say hello — I'd love to hear from you.</p>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <a href="mailto:kiflemusse@gmail.com" class="contact-card" id="contactEmail">
-            <span class="contact-icon">✉️</span>
-            <div><strong>Email</strong><span>kiflemusse@gmail.com</span></div>
-          </a>
-          <a href="tel:+251978820389" class="contact-card" id="contactPhone">
-            <span class="contact-icon">📞</span>
-            <div><strong>Phone</strong><span>+251 97 882 0389</span></div>
-          </a>
-          <div class="contact-card" id="contactLocation">
-            <span class="contact-icon">📍</span>
-            <div><strong>Location</strong><span>Addis Ababa, Ethiopia</span></div>
-          </div>
-          <a href="https://www.linkedin.com/in/mussie-k-shimelis-436892373" target="_blank" rel="noopener" class="contact-card" id="contactLinkedIn">
-            <span class="contact-icon">🔗</span>
-            <div><strong>LinkedIn</strong><span>linkedin.com/in/mussie-k-shimelis-436892373</span></div>
-          </a>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="senderName">Your Name</label>
-            <input type="text" id="senderName" name="name" placeholder="John Doe" required />
-          </div>
-          <div class="form-group">
-            <label for="senderEmail">Email Address</label>
-            <input type="email" id="senderEmail" name="email" placeholder="john@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="msgSubject">Subject</label>
-            <input type="text" id="msgSubject" name="subject" placeholder="Project Collaboration" />
-          </div>
-          <div class="form-group">
-            <label for="msgBody">Message</label>
-            <textarea id="msgBody" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full" id="submitContact">Send Message 🚀</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="nav-logo">MK<span class="logo-dot">.</span></span>
-          <p>Building the future of AI and finance in Ethiopia — one line of code at a time.</p>
-        </div>
-        <div class="footer-links-wrap">
-          <div class="footer-col">
-            <h4>Navigate</h4>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#photography">Photography</a>
-          </div>
-          <div class="footer-col">
-            <h4>Connect</h4>
-            <a href="mailto:kiflemusse@gmail.com">Email</a>
-            <a href="tel:+251978820389">Phone</a>
-            <a href="https://www.linkedin.com/in/mussie-k-shimelis-436892373" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>2025 Mussie Kifle Shimelis · Addis Ababa, Ethiopia</p>
-        <p>Made with love and coffee</p>
-      </div>
+
     </div>
   </footer>
 
-  <div id="graphicsModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeGallery()">&times;</span>
-      <h2 style="color: var(--gold); margin-bottom: 0.5rem;">My Graphic Design Works</h2>
-      <p class="modal-desc" style="margin-bottom: 2rem; color: #a0aec0;">A showcase of my custom logos, business cards, gig images, and YouTube thumbnails.</p>
+  <!-- ══════════════════════════════════════════════════
+       INTERACTIVE LIVE PREVIEW INSPECTOR MODAL
+  ══════════════════════════════════════════════════ -->
+  <div class="preview-modal-backdrop" id="previewModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="preview-modal-sheet">
       
-      <!-- 🎨 INSTRUCTIONS TO ADD YOUR GRAPHIC DESIGN IMAGES:
-           1. Place your actual image files in the 'assets/graphics' folder.
-           2. In the <img> tags below, change the src to the actual name of your image. -->
-
-      <div class="image-grid">
-        <div class="gallery-img-wrap">
-           <img src="assets/graphics/placeholder.jpg" alt="Logo Design" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/22d3ee?text=Add+Graphic+1+Here'" />
+      <!-- Modal Chrome Bar -->
+      <div class="modal-chrome">
+        <div class="modal-info">
+          <span class="modal-status-dot"></span>
+          <span class="modal-title mono-text" id="modalTitle">LIVE PROJECT INSPECTOR</span>
+          <span class="modal-url mono-text" id="modalUrlDisplay">https://addis-foodie.vercel.app</span>
         </div>
-        <div class="gallery-img-wrap">
-           <img src="assets/graphics/placeholder.jpg" alt="Business Card" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/22d3ee?text=Add+Graphic+2+Here'" />
-        </div>
-        <div class="gallery-img-wrap">
-           <img src="assets/graphics/placeholder.jpg" alt="Thumbnail" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/22d3ee?text=Add+Graphic+3+Here'" />
-        </div>
-        <div class="gallery-img-wrap">
-           <img src="assets/graphics/placeholder.jpg" alt="Brand Identity" class="gal-img" onerror="this.src='https://via.placeholder.com/600x400/0d1a30/22d3ee?text=Add+Graphic+4+Here'" />
+        <div class="modal-controls">
+          <button class="device-toggle active" id="desktopViewBtn" title="Desktop View">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="0"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </button>
+          <button class="device-toggle" id="mobileViewBtn" title="Mobile View">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="0"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </button>
+          <a href="#" id="modalExternalLink" target="_blank" rel="noopener noreferrer" class="modal-action-btn" title="Open in New Tab">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Inspector">&times;</button>
         </div>
       </div>
+
+      <!-- Iframe Frame Container -->
+      <div class="modal-body-container" id="modalFrameWrapper">
+        <div class="modal-loading-indicator mono-text" id="modalLoader">
+          <span class="loading-spin"></span>
+          <span>ESTABLISHING SECURE LIVE CONNECTION TO REPOSITORY...</span>
+        </div>
+        <iframe src="about:blank" id="previewIframe" class="preview-iframe" title="Live Project Frame"></iframe>
+      </div>
+
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
