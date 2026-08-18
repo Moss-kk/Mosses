@@ -1,45 +1,44 @@
-# MOSSes Portfolio — Clean Client-Focused Design System
+# MOSSes Portfolio — Clean, Modern & Professional Developer Portfolio
 
 ```yaml
-version: "3.0.0"
-name: "Clean Modern Minimalist & Client-Focused"
-description: "Ultra-clean, high-converting, minimalist portfolio for Mussie Kifle. Punchy conversion copywriting, generous whitespace, interactive CSS elements, and 100% mobile responsiveness."
+version: "4.0.0"
+name: "Clean Modern Personal Portfolio"
+description: "Ultra-clean, premium, developer portfolio for Mussie Kifle. Fast, mobile-first, generous whitespace, large crisp typography, and zero dashboard clutter."
 colors:
-  bg: "#0C0F14"
-  surface: "#11151C"
-  surface-raised: "#161B24"
-  surface-hover: "#1D232F"
+  bg: "#0B0C0F"
+  bg-alt: "#101217"
+  surface: "#141720"
+  surface-hover: "#1A1E29"
+  fg: "#F5F5F5"
+  fg-subtle: "#C5C5C5"
+  fg-muted: "#858585"
   accent: "#FFB347"
   accent-hover: "#FFC872"
-  accent-glow: "rgba(255, 179, 71, 0.2)"
-  fg: "#F4EFE6"
-  fg-subtle: "#C5BDB0"
-  fg-muted: "#888275"
-  border: "rgba(255, 179, 71, 0.12)"
-  border-subtle: "#1C222D"
+  accent-glow: "rgba(255, 179, 71, 0.18)"
+  border: "rgba(255, 255, 255, 0.08)"
+  border-active: "rgba(255, 179, 71, 0.35)"
 typography:
-  display: "'Space Grotesk', -apple-system, sans-serif"
-  body: "'Space Grotesk', -apple-system, sans-serif"
+  display: "'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+  body: "'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
   mono: "'JetBrains Mono', monospace"
 layout:
   mobile-first: true
-  mobile-pad: "1rem"
-  desktop-pad: "1.5rem"
-  max-width: "1200px"
+  mobile-padding: "16px"
+  desktop-padding: "24px"
+  max-width: "1140px"
 ```
 
-## Core Strategy & Copywriting
+## Core Principles
 
-1. **Client-Focused Value Proposition**:
-   - Shift from academic jargon to clear business outcomes: *"I build fast web apps, AI tools, and automation systems that grow your business."*
-   - Clear, bite-sized value cards: Custom Web Apps, AI & Telegram Bots, End-to-End Automation.
+1. **Content > Decoration**:
+   - Clean, direct, recruiter-friendly personal developer portfolio.
+   - Zero dashboard noise, fake terminals, or "SYSTEM CORE" gimmicks.
+   - Immediate understanding: *Who is Mussie? Full-Stack Developer & AI Builder. What does he build? Web apps, AI tools, and automation.*
 
-2. **Visual Hierarchy & Minimalism**:
-   - Dark aerospace theme (`#0C0F14` canvas, `#11151C` panels, `#FFB347` warm solar amber accent).
-   - Interactive 3D CSS solar radar core in the hero (no personal photos).
-   - Clean, direct project cards with 2-sentence problem/solution statements and live preview links.
+2. **Mobile-First Excellence**:
+   - Header: Simple `Mussie Kifle` on left, clean hamburger `☰` on right.
+   - 100% full-width project cards on mobile with zero horizontal scrolling.
+   - Tap-friendly action buttons (min 48px height).
 
-3. **100% Mobile Responsiveness**:
-   - Zero horizontal overflow.
-   - 1-column mobile layout expanding cleanly to 2-3 columns on desktop.
-   - Touch-friendly action buttons (min 44px height).
+3. **High Performance & Accessibility**:
+   - Semantic HTML5, dark high-contrast theme, fast loading, accessible ARIA tags.

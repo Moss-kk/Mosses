@@ -6,11 +6,11 @@
   <title>Mussie Kifle — Full-Stack Developer & AI Builder</title>
   
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Mussie Kifle — Full-Stack Developer & AI Builder. I build fast web apps, AI tools, and workflow automations that help businesses scale." />
-  <meta name="keywords" content="Mussie Kifle, Full-Stack Developer, AI Builder, Web Apps, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Addis Ababa" />
+  <meta name="description" content="Mussie Kifle — Full-Stack Developer & AI Builder. I build fast web apps, AI tools, and automation systems that help startups and businesses grow." />
+  <meta name="keywords" content="Mussie Kifle, Full-Stack Developer, AI Builder, Web Developer, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Addis Ababa" />
   <meta name="author" content="Mussie Kifle" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0C0F14" />
+  <meta name="theme-color" content="#0B0C0F" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -25,7 +25,7 @@
   <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -33,329 +33,139 @@
 <body>
 
   <!-- ══════════════════════════════════════════════════
-       01. FLOATING PILL NAVBAR (Navigation5 Style)
+       01. CLEAN HEADER NAVIGATION
   ══════════════════════════════════════════════════ -->
-  <div class="floating-nav-wrapper">
-    <header class="floating-nav-pill" id="siteHeader">
+  <header class="site-header" id="siteHeader">
+    <div class="site-container header-inner">
       
-      <!-- Brand Logo Section -->
-      <a href="#hero" class="nav-brand-group" aria-label="Mussie Kifle Home">
-        <div class="logo-pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
-        </div>
-        <div class="brand-name-wrap">
-          <span class="nav-brand-name">Mussie Kifle</span>
-          <span class="nav-brand-badge mono-text">AI &bull; FULL-STACK</span>
-        </div>
+      <!-- Brand Logo / Name -->
+      <a href="#hero" class="brand-link" aria-label="Mussie Kifle Home">
+        <span class="brand-name">Mussie Kifle</span>
       </a>
 
-      <!-- Desktop Floating Links (Pills) -->
-      <nav class="desktop-pill-nav" aria-label="Main Navigation">
-        <a href="#services" class="pill-nav-link">Services</a>
-        <a href="#workflow" class="pill-nav-link">
-          Workflow
-          <span class="nav-badge-api mono-text">SYSTEMS</span>
-        </a>
-        <a href="#projects" class="pill-nav-link">Work</a>
-        <a href="#skills" class="pill-nav-link">Stack</a>
-        <a href="#contact" class="pill-nav-link">Contact</a>
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
-      <!-- Action Buttons Group -->
-      <div class="nav-actions-group">
-        <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" title="GitHub (@Moss-kk)" aria-label="GitHub Profile">
+      <!-- Desktop Action Buttons -->
+      <div class="header-actions">
+        <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="icon-btn" title="GitHub Profile" aria-label="GitHub">
           <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
           </svg>
         </a>
 
-        <a href="#cvModal" class="btn-pill-secondary cv-btn-trigger">
+        <a href="#cvModal" class="btn-secondary btn-sm cv-btn-trigger">
           <span>CV</span>
         </a>
 
-        <a href="#contact" class="btn-pill-primary">
-          <span>Get in Touch</span>
+        <a href="#contact" class="btn-primary btn-sm">
+          <span>Let's Talk</span>
         </a>
 
-        <!-- Mobile Menu Toggle Button (>= 44x44px touch target) -->
-        <button class="mobile-pill-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <!-- Simple Mobile Hamburger Button (>= 48px touch target) -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+          <svg class="svg-icon hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
         </button>
       </div>
 
-    </header>
-  </div>
+    </div>
 
-  <!-- Mobile Drawer Overlay -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="mobile-drawer-body">
-      <div class="drawer-top">
-        <div class="logo-pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="svg-icon">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+    <!-- Clean Mobile Full-Screen Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-body">
+        <div class="drawer-header">
+          <span class="drawer-brand">Mussie Kifle</span>
+          <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation">&times;</button>
         </div>
-        <span class="drawer-tag mono-text">NAVIGATION</span>
-        <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation">&times;</button>
-      </div>
 
-      <nav class="mobile-nav-list">
-        <a href="#hero" class="mobile-nav-link">Home</a>
-        <a href="#services" class="mobile-nav-link">Services</a>
-        <a href="#workflow" class="mobile-nav-link">Workflow Systems</a>
-        <a href="#projects" class="mobile-nav-link">Featured Work</a>
-        <a href="#skills" class="mobile-nav-link">Tech Stack</a>
-        <a href="#contact" class="mobile-nav-link">Contact</a>
-      </nav>
+        <nav class="mobile-nav-links">
+          <a href="#hero" class="mobile-link">Home</a>
+          <a href="#projects" class="mobile-link">Selected Work</a>
+          <a href="#about" class="mobile-link">About Me</a>
+          <a href="#skills" class="mobile-link">Skills</a>
+          <a href="#contact" class="mobile-link">Contact</a>
+        </nav>
 
-      <div class="drawer-bottom">
-        <a href="#cvModal" class="btn-pill-secondary btn-full cv-btn-trigger">
-          <span>Download CV (PDF)</span>
-        </a>
-        <div class="drawer-contact-info mono-text">
-          <p>kiflemusse@gmail.com</p>
-          <p>+251 97 882 0389</p>
+        <div class="drawer-footer">
+          <a href="#cvModal" class="btn-secondary btn-full cv-btn-trigger">
+            <span>Download CV (PDF)</span>
+          </a>
+          <div class="drawer-contact-meta">
+            <p>kiflemusse@gmail.com</p>
+            <p>+251 97 882 0389</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <main id="mainContent">
 
     <!-- ══════════════════════════════════════════════════
-         02. HERO SECTION (SIMPLE, DIRECT & CLIENT-FOCUSED)
+         02. HERO SECTION (CLEAN, DIRECT & SPACIOUS)
     ══════════════════════════════════════════════════ -->
     <section class="hero-section" id="hero">
-      <div class="site-container hero-grid">
+      <div class="site-container hero-container">
         
-        <!-- Left: Punchy Conversion Copy -->
-        <div class="hero-content">
-          
-          <div class="hero-badge-wrap">
-            <span class="status-pill mono-text">
-              <span class="live-dot"></span>
-              Available for freelance projects & full-time roles
-            </span>
-          </div>
-
-          <h1 class="hero-title">
-            I build fast web apps, AI tools, and automation systems.
-          </h1>
-
-          <p class="hero-subtitle">
-            Full-Stack Developer & AI Builder helping startups and businesses turn ideas into working software.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#projects" class="btn-pill-primary hero-btn">
-              <span>View My Work</span>
-              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-
-            <a href="#contact" class="btn-pill-secondary hero-btn">
-              <span>Message Me</span>
-            </a>
-          </div>
-
-          <!-- 4 Stat Metric Strip -->
-          <div class="hero-stats-band">
-            <div class="stat-box">
-              <strong class="stat-num mono-text">4+ Years</strong>
-              <span class="stat-lbl">Experience</span>
-            </div>
-            <div class="stat-box">
-              <strong class="stat-num mono-text">6+</strong>
-              <span class="stat-lbl">Live Projects</span>
-            </div>
-            <div class="stat-box">
-              <strong class="stat-num mono-text">Full-Stack</strong>
-              <span class="stat-lbl">& AI Systems</span>
-            </div>
-            <div class="stat-box">
-              <strong class="stat-num mono-text">Fast</strong>
-              <span class="stat-lbl">Turnaround</span>
-            </div>
-          </div>
-
+        <!-- Eyebrow -->
+        <div class="hero-eyebrow">
+          <span class="eyebrow-text mono-text">FULL-STACK DEVELOPER &bull; AI BUILDER</span>
         </div>
 
-        <!-- Right: Interactive 3D CSS Solar Radar (NO PHOTO) -->
-        <div class="hero-visual-col">
-          <div class="interactive-radar-card">
-            
-            <div class="radar-card-header">
-              <div class="radar-live-group mono-text">
-                <span class="radar-indicator"></span>
-                <span>SYSTEM CORE // ACTIVE</span>
-              </div>
-              <span class="radar-tag mono-text">MK_SYSTEMS</span>
-            </div>
+        <!-- Large Clear Headline -->
+        <h1 class="hero-title">
+          I build fast web apps, AI tools, and automation systems.
+        </h1>
 
-            <div class="radar-display-canvas">
-              <div class="radar-orbital-rings">
-                <div class="orbit-ring ring-outer"></div>
-                <div class="orbit-ring ring-mid"></div>
-                <div class="orbit-ring ring-inner"></div>
-                <div class="radar-sweep-beam"></div>
-              </div>
+        <!-- Supporting Text -->
+        <p class="hero-subtitle">
+          Full-Stack Developer & AI Builder helping startups and businesses turn ideas into working software.
+        </p>
 
-              <div class="solar-core-orb">
-                <div class="core-pulse-ring"></div>
-                <span class="core-symbol mono-text">MK</span>
-              </div>
-
-              <div class="radar-hud-tag tag-top mono-text">
-                <span>01 // WEB APPS</span>
-              </div>
-              <div class="radar-hud-tag tag-mid mono-text">
-                <span>02 // AI AGENTS</span>
-              </div>
-              <div class="radar-hud-tag tag-bot mono-text">
-                <span>03 // AUTOMATION</span>
-              </div>
-            </div>
-
-            <div class="radar-card-footer mono-text">
-              <span>DEPLOYMENTS: VERCEL EDGE</span>
-              <span class="text-accent">&bull; READY TO SHIP</span>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════
-         03. WORKFLOW AUTOMATION (Features5 Component Style)
-    ══════════════════════════════════════════════════ -->
-    <section class="section-wrap workflow-section" id="workflow">
-      <div class="site-container workflow-grid">
-        
-        <!-- Left: Workflow Control Copy & Feature Items -->
-        <div class="workflow-left space-y-6">
-          <div class="workflow-badge mono-text">
-            <span class="badge-dot"></span>
-            Workflow Control & Automation
-          </div>
-
-          <h2 class="workflow-heading">
-            Run your system, not just tasks.
-          </h2>
-
-          <p class="workflow-subtext">
-            Coordinate actions, automate decisions, and keep everything moving smoothly without constant manual input or switching between tools.
-          </p>
-
-          <div class="workflow-features-list">
-            
-            <div class="workflow-item">
-              <div class="workflow-icon-box">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="3" width="7" height="7" rx="1"></rect>
-                  <rect x="14" y="3" width="7" height="7" rx="1"></rect>
-                  <rect x="14" y="14" width="7" height="7" rx="1"></rect>
-                  <rect x="3" y="14" width="7" height="7" rx="1"></rect>
-                </svg>
-              </div>
-              <div class="workflow-item-content">
-                <strong class="item-title">Flow visibility</strong>
-                <p class="item-desc">Track how tasks and data move across stages in real-time.</p>
-              </div>
-            </div>
-
-            <div class="workflow-item">
-              <div class="workflow-icon-box">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div class="workflow-item-content">
-                <strong class="item-title">Execution speed</strong>
-                <p class="item-desc">Instant trigger execution and automated API dispatch.</p>
-              </div>
-            </div>
-
-            <div class="workflow-item">
-              <div class="workflow-icon-box">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                  <line x1="12" y1="9" x2="12" y2="13"></line>
-                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                </svg>
-              </div>
-              <div class="workflow-item-content">
-                <strong class="item-title">Smart alerts</strong>
-                <p class="item-desc">Catch issues before they grow with Telegram & email alerts.</p>
-              </div>
-            </div>
-
-          </div>
-
-          <a href="#contact" class="btn-pill-primary workflow-btn">
-            <span>Start Building With Me</span>
+        <!-- Tap-Friendly Action Buttons -->
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary hero-btn">
+            <span>View My Work</span>
             <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
+
+          <a href="#contact" class="btn-secondary hero-btn">
+            <span>Let's Talk</span>
+          </a>
         </div>
 
-        <!-- Right: Interactive Stacked Glassmorphism Workflow Stage Cards -->
-        <div class="workflow-right">
-          <div class="workflow-stage-stage-wrap">
-            
-            <!-- Card 1: Incoming Flow -->
-            <div class="glass-stage-card card-incoming">
-              <div class="card-meta-row mono-text">
-                <span class="text-muted">Incoming Flow</span>
-                <div class="badge-row">
-                  <span class="stage-tag tag-live">Live</span>
-                  <span class="stage-tag tag-trigger">Trigger</span>
-                </div>
-              </div>
-              <h4 class="stage-card-title">New order detected</h4>
-              <div class="stage-card-details mono-text">
-                <div>Source: API / Webhook</div>
-                <div>Region: Addis Ababa / Global</div>
-                <div class="text-green">Status: Active &bull; Processing</div>
-              </div>
-            </div>
+        <!-- Clean 4-Item Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong class="stat-value">4+ Years</strong>
+            <span class="stat-label">Experience</span>
+          </div>
 
-            <!-- Card 2: Decision Layer -->
-            <div class="glass-stage-card card-decision">
-              <span class="stage-category mono-text">Decision Layer</span>
-              <h4 class="stage-card-title">Routing & validation</h4>
-              <div class="stage-progress-bar">
-                <div class="bar-seg seg-primary"></div>
-                <div class="bar-seg seg-blue"></div>
-                <div class="bar-seg seg-orange"></div>
-              </div>
-              <div class="stage-meta-pills mono-text">
-                <span>Priority</span>
-                <span>Checks</span>
-                <span>Filters</span>
-              </div>
-            </div>
+          <div class="stat-card">
+            <strong class="stat-value">6+</strong>
+            <span class="stat-label">Live Projects</span>
+          </div>
 
-            <!-- Card 3: Execution Layer -->
-            <div class="glass-stage-card card-execution">
-              <div class="exec-head">
-                <strong class="exec-title">Execution</strong>
-                <span class="exec-synced mono-text">&bull; Synced</span>
-              </div>
-              <p class="exec-desc">Action completed and pushed across connected services.</p>
-              <div class="exec-badges mono-text">
-                <span class="badge-success">Success</span>
-                <span class="badge-dist">Distributed</span>
-              </div>
-            </div>
+          <div class="stat-card">
+            <strong class="stat-value">Full-Stack</strong>
+            <span class="stat-label">Development</span>
+          </div>
 
+          <div class="stat-card">
+            <strong class="stat-value">Fast</strong>
+            <span class="stat-label">Turnaround</span>
           </div>
         </div>
 
@@ -363,160 +173,79 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         04. SERVICES ("WHAT I CAN BUILD FOR YOU" - 3 CARDS)
+         03. SELECTED WORK (PROJECTS - MAIN FOCUS)
     ══════════════════════════════════════════════════ -->
-    <section class="section-wrap services-section" id="services">
+    <section class="section-wrap" id="projects">
       <div class="site-container">
         
-        <div class="section-head-wrap">
-          <span class="section-tag mono-text">[ WHAT I BUILD ]</span>
-          <h2 class="section-title">Services to grow your business.</h2>
-          <p class="section-desc">
-            Clean, high-performance software engineered to solve real problems and deliver measurable results.
+        <div class="section-header">
+          <h2 class="section-title">Selected Work</h2>
+          <p class="section-subtitle">
+            A few things I've built for real-world problems.
           </p>
         </div>
 
-        <div class="services-grid">
-          
-          <!-- Service Card 01 -->
-          <div class="service-card">
-            <div class="service-icon-box">
-              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h3 class="service-title">Custom Web Applications</h3>
-            <p class="service-text">
-              Modern, responsive, and fast web apps built with Next.js, React, and Supabase that provide smooth user experiences on all devices.
-            </p>
-            <div class="service-tags mono-text">
-              <span>Next.js</span>
-              <span>React</span>
-              <span>TypeScript</span>
-              <span>Supabase</span>
-            </div>
-          </div>
-
-          <!-- Service Card 02 -->
-          <div class="service-card featured-service">
-            <div class="service-icon-box">
-              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path>
-                <path d="M12 6v6l4 2"></path>
-              </svg>
-            </div>
-            <h3 class="service-title">AI & Telegram Bots</h3>
-            <p class="service-text">
-              Intelligent chatbots, automated customer service, and smart workflows using Python & LLMs to answer queries 24/7.
-            </p>
-            <div class="service-tags mono-text">
-              <span>Python</span>
-              <span>LLM APIs</span>
-              <span>AI Agents</span>
-              <span>Telegram Bot API</span>
-            </div>
-          </div>
-
-          <!-- Service Card 03 -->
-          <div class="service-card">
-            <div class="service-icon-box">
-              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <h3 class="service-title">End-to-End Automation</h3>
-            <p class="service-text">
-              Connecting APIs, streamlining business processes, eliminating repetitive manual tasks, and building reliable digital tools.
-            </p>
-            <div class="service-tags mono-text">
-              <span>REST APIs</span>
-              <span>Webhooks</span>
-              <span>Process Automation</span>
-              <span>PostgreSQL</span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════
-         05. FEATURED PROJECTS (SHOW, DON'T OVER-EXPLAIN)
-    ══════════════════════════════════════════════════ -->
-    <section class="section-wrap projects-section" id="projects">
-      <div class="site-container">
-        
-        <div class="section-head-wrap">
-          <span class="section-tag mono-text">[ FEATURED WORK ]</span>
-          <h2 class="section-title">Live projects & working products.</h2>
-          <p class="section-desc">
-            Explore live production software built for real businesses, clinics, and startups.
-          </p>
-        </div>
-
-        <div class="primary-projects-list">
+        <div class="projects-list">
 
           <!-- PROJECT 01: ADDIS FOODIE -->
           <article class="project-card">
-            <div class="project-info">
-              <div class="project-header-strip mono-text">
-                <span class="p-num text-accent">01</span>
-                <span class="p-live"><span class="green-dot"></span> LIVE APP</span>
+            <div class="project-content">
+              <div class="project-meta-top mono-text">
+                <span class="p-index">01</span>
+                <span class="p-status"><span class="status-dot"></span> LIVE WEB APP</span>
               </div>
 
-              <h3 class="project-name">Addis Foodie</h3>
+              <h3 class="project-heading">Addis Foodie</h3>
               <p class="project-tagline mono-text">AI Restaurant Discovery Platform</p>
 
-              <p class="project-impact">
+              <p class="project-description">
                 Helps locals and tourists find top cafes and restaurants in Addis Ababa with instant menu price checks and AI recommendations.
               </p>
 
-              <div class="project-tech-badges mono-text">
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>AI</span>
-                <span>Tailwind</span>
+              <div class="tech-tags mono-text">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">AI Assistant</span>
+                <span class="tag">Tailwind CSS</span>
               </div>
 
-              <div class="project-actions">
-                <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-pill-primary btn-sm">
-                  <span>Live Demo ↗</span>
+              <div class="project-links">
+                <a href="https://addis-foodie.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>View Project ↗</span>
                 </a>
-                <button class="btn-pill-secondary btn-sm preview-trigger-btn" data-url="https://addis-foodie.vercel.app/" data-title="Addis Foodie — AI Food Discovery Platform">
+                <button class="btn-secondary btn-sm preview-trigger-btn" data-url="https://addis-foodie.vercel.app/" data-title="Addis Foodie — AI Food Discovery Platform">
                   <span>Inspect Frame</span>
                 </button>
-                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="btn-pill-secondary btn-sm" title="View Source on GitHub">
+                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm">
                   <span>Source Code</span>
                 </a>
               </div>
             </div>
 
-            <div class="project-visual">
-              <div class="mockup-frame">
-                <div class="mockup-bar">
-                  <div class="mockup-dots"><span class="d-red"></span><span class="d-yel"></span><span class="d-grn"></span></div>
-                  <span class="mock-url mono-text">https://addis-foodie.vercel.app</span>
+            <!-- Project UI Preview Window -->
+            <div class="project-preview-box">
+              <div class="preview-chrome">
+                <div class="chrome-dots">
+                  <span class="dot d-red"></span><span class="dot d-yel"></span><span class="dot d-grn"></span>
                 </div>
-                <div class="mockup-screen screen-foodie">
-                  <div class="mock-header">
-                    <strong class="mock-logo">ADDIS FOODIE</strong>
-                    <span class="mock-pill mono-text">አማ / EN</span>
+                <span class="chrome-url mono-text">https://addis-foodie.vercel.app</span>
+              </div>
+              <div class="preview-canvas canvas-foodie">
+                <div class="mock-top-bar">
+                  <span class="mock-brand">ADDIS FOODIE</span>
+                  <span class="mock-pill mono-text">አማ / EN</span>
+                </div>
+                <div class="mock-search-input mono-text">
+                  <span>Search kitfo, cafes, restaurants in Bole...</span>
+                </div>
+                <div class="mock-cards-duo">
+                  <div class="mock-card">
+                    <div class="mock-thumb thumb-1"></div>
+                    <span class="mock-item-name">Kategna Traditional</span>
                   </div>
-                  <div class="mock-search-box mono-text">
-                    <span>Search kitfo, cafes, restaurants in Bole & Piazza...</span>
-                  </div>
-                  <div class="mock-cards-row">
-                    <div class="mock-card-item">
-                      <div class="mock-thumb thumb-foodie-1"></div>
-                      <span class="mock-card-name">Kategna Traditional</span>
-                    </div>
-                    <div class="mock-card-item">
-                      <div class="mock-thumb thumb-foodie-2"></div>
-                      <span class="mock-card-name">Tomoca Coffee</span>
-                    </div>
+                  <div class="mock-card">
+                    <div class="mock-thumb thumb-2"></div>
+                    <span class="mock-item-name">Tomoca Coffee</span>
                   </div>
                 </div>
               </div>
@@ -525,59 +254,59 @@
 
           <!-- PROJECT 02: SADOR DENTAL -->
           <article class="project-card">
-            <div class="project-info">
-              <div class="project-header-strip mono-text">
-                <span class="p-num text-accent">02</span>
-                <span class="p-live"><span class="green-dot"></span> PRODUCTION PWA</span>
+            <div class="project-content">
+              <div class="project-meta-top mono-text">
+                <span class="p-index">02</span>
+                <span class="p-status"><span class="status-dot"></span> CLINIC PWA</span>
               </div>
 
-              <h3 class="project-name">Sador Dental</h3>
+              <h3 class="project-heading">Sador Dental</h3>
               <p class="project-tagline mono-text">Clinic Practice Management System</p>
 
-              <p class="project-impact">
+              <p class="project-description">
                 Digitizes patient appointment booking, operatory schedules, and clinical records for modern dental clinic operations.
               </p>
 
-              <div class="project-tech-badges mono-text">
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>PWA</span>
-                <span>Auth</span>
+              <div class="tech-tags mono-text">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">PWA</span>
+                <span class="tag">Supabase</span>
               </div>
 
-              <div class="project-actions">
-                <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-pill-primary btn-sm">
-                  <span>Live Demo ↗</span>
+              <div class="project-links">
+                <a href="https://sador-dental.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>View Project ↗</span>
                 </a>
-                <button class="btn-pill-secondary btn-sm preview-trigger-btn" data-url="https://sador-dental.vercel.app/" data-title="Sador Dental Clinic — Practice Management System">
+                <button class="btn-secondary btn-sm preview-trigger-btn" data-url="https://sador-dental.vercel.app/" data-title="Sador Dental Clinic — Practice Management System">
                   <span>Inspect Frame</span>
                 </button>
-                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="btn-pill-secondary btn-sm" title="View Source on GitHub">
+                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm">
                   <span>Source Code</span>
                 </a>
               </div>
             </div>
 
-            <div class="project-visual">
-              <div class="mockup-frame">
-                <div class="mockup-bar">
-                  <div class="mockup-dots"><span class="d-red"></span><span class="d-yel"></span><span class="d-grn"></span></div>
-                  <span class="mock-url mono-text">https://sador-dental.vercel.app</span>
+            <div class="project-preview-box">
+              <div class="preview-chrome">
+                <div class="chrome-dots">
+                  <span class="dot d-red"></span><span class="dot d-yel"></span><span class="dot d-grn"></span>
                 </div>
-                <div class="mockup-screen screen-dental">
-                  <div class="mock-header">
-                    <strong class="mock-logo">SADOR DENTAL CLINIC</strong>
-                    <span class="mock-pill mono-text text-accent">&bull; PWA READY</span>
+                <span class="chrome-url mono-text">https://sador-dental.vercel.app</span>
+              </div>
+              <div class="preview-canvas canvas-dental">
+                <div class="mock-top-bar">
+                  <span class="mock-brand">SADOR DENTAL CLINIC</span>
+                  <span class="mock-pill mono-text text-accent">&bull; PWA READY</span>
+                </div>
+                <div class="mock-stats-duo">
+                  <div class="mock-tile">
+                    <span class="tile-lbl mono-text">PATIENT BOOKING</span>
+                    <strong class="tile-val">Online Queue</strong>
                   </div>
-                  <div class="mock-boxes-grid">
-                    <div class="mock-stat-tile">
-                      <span class="tile-lbl mono-text">ONLINE QUEUE</span>
-                      <strong class="tile-val mono-text">Zero Paper</strong>
-                    </div>
-                    <div class="mock-stat-tile">
-                      <span class="tile-lbl mono-text">PORTAL ACCESS</span>
-                      <strong class="tile-val mono-text">Role Auth</strong>
-                    </div>
+                  <div class="mock-tile">
+                    <span class="tile-lbl mono-text">CLINICAL PORTAL</span>
+                    <strong class="tile-val">Role Auth</strong>
                   </div>
                 </div>
               </div>
@@ -586,51 +315,51 @@
 
           <!-- PROJECT 03: EAGLE INVESTMENTS AI -->
           <article class="project-card">
-            <div class="project-info">
-              <div class="project-header-strip mono-text">
-                <span class="p-num text-accent">03</span>
-                <span class="p-live"><span class="green-dot"></span> LIVE FINTECH AI</span>
+            <div class="project-content">
+              <div class="project-meta-top mono-text">
+                <span class="p-index">03</span>
+                <span class="p-status"><span class="status-dot"></span> FINTECH AI</span>
               </div>
 
-              <h3 class="project-name">Eagle Investments AI</h3>
+              <h3 class="project-heading">Eagle Investments AI</h3>
               <p class="project-tagline mono-text">Financial Intelligence & Chatbot</p>
 
-              <p class="project-impact">
+              <p class="project-description">
                 Democratizes investment literacy in East Africa with conversational financial chatbots and real-time market data.
               </p>
 
-              <div class="project-tech-badges mono-text">
-                <span>Python</span>
-                <span>LLMs</span>
-                <span>FlutterFlow</span>
-                <span>AI</span>
+              <div class="tech-tags mono-text">
+                <span class="tag">Python</span>
+                <span class="tag">LLMs</span>
+                <span class="tag">FlutterFlow</span>
+                <span class="tag">AI</span>
               </div>
 
-              <div class="project-actions">
-                <a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener noreferrer" class="btn-pill-primary btn-sm">
-                  <span>Live Demo ↗</span>
+              <div class="project-links">
+                <a href="https://eagleinvest.flutterflow.app/home" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">
+                  <span>View Project ↗</span>
                 </a>
-                <button class="btn-pill-secondary btn-sm preview-trigger-btn" data-url="https://eagleinvest.flutterflow.app/home" data-title="Eagle Investments — Capital Market AI Platform">
+                <button class="btn-secondary btn-sm preview-trigger-btn" data-url="https://eagleinvest.flutterflow.app/home" data-title="Eagle Investments — Capital Market AI Platform">
                   <span>Inspect Frame</span>
                 </button>
               </div>
             </div>
 
-            <div class="project-visual">
-              <div class="mockup-frame">
-                <div class="mockup-bar">
-                  <div class="mockup-dots"><span class="d-red"></span><span class="d-yel"></span><span class="d-grn"></span></div>
-                  <span class="mock-url mono-text">https://eagleinvest.flutterflow.app</span>
+            <div class="project-preview-box">
+              <div class="preview-chrome">
+                <div class="chrome-dots">
+                  <span class="dot d-red"></span><span class="dot d-yel"></span><span class="dot d-grn"></span>
                 </div>
-                <div class="mockup-screen screen-eagle">
-                  <div class="mock-header">
-                    <strong class="mock-logo">EAGLE INVESTMENTS AI</strong>
-                    <span class="mock-pill mono-text">&bull; ONLINE</span>
-                  </div>
-                  <div class="mock-chat-bubble mono-text">
-                    <p class="chat-q">"Explain capital market listing criteria."</p>
-                    <p class="chat-a">"Listing requirements, audited filings, and regulatory compliance standards..."</p>
-                  </div>
+                <span class="chrome-url mono-text">https://eagleinvest.flutterflow.app</span>
+              </div>
+              <div class="preview-canvas canvas-eagle">
+                <div class="mock-top-bar">
+                  <span class="mock-brand">EAGLE INVESTMENTS AI</span>
+                  <span class="mock-pill mono-text">&bull; ONLINE</span>
+                </div>
+                <div class="mock-chat-bubble mono-text">
+                  <p class="chat-q">"Explain capital market listing criteria."</p>
+                  <p class="chat-a">"Requirements include audited filings, governance standards, and minimum capital..."</p>
                 </div>
               </div>
             </div>
@@ -638,54 +367,49 @@
 
         </div>
 
-        <!-- Secondary Deployments -->
-        <div class="secondary-projects-wrap">
-          <div class="sec-head">
-            <span class="sec-tag mono-text">[ MORE DEPLOYMENTS ]</span>
-            <h4 class="sec-title">Specialized digital tools & client hubs</h4>
-          </div>
-
-          <div class="secondary-grid">
-            
-            <div class="sec-card">
-              <div class="sec-card-top mono-text">
+        <!-- Additional Projects (Compact 3-Grid) -->
+        <div class="additional-projects">
+          <h3 class="sub-heading">Additional Projects & Tools</h3>
+          
+          <div class="compact-projects-grid">
+            <div class="compact-card">
+              <div class="compact-top mono-text">
                 <span class="text-accent">04</span>
                 <span class="text-green">&bull; LIVE VERCEL</span>
               </div>
-              <h5 class="sec-card-name">Special Day Wedding Hub</h5>
-              <p class="sec-card-desc">Interactive bilingual celebration hub with synchronized countdown and Telegram bot integration.</p>
-              <div class="sec-card-tags mono-text">
+              <h4 class="compact-title">Special Day Wedding Hub</h4>
+              <p class="compact-desc">Interactive bilingual celebration hub with synchronized countdown and Telegram bot integration.</p>
+              <div class="compact-tags mono-text">
                 <span>React</span><span>Tailwind</span><span>Telegram API</span>
               </div>
-              <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener" class="sec-card-link mono-text">Live Demo ↗</a>
+              <a href="https://special-day-net.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link mono-text">View Live ↗</a>
             </div>
 
-            <div class="sec-card">
-              <div class="sec-card-top mono-text">
+            <div class="compact-card">
+              <div class="compact-top mono-text">
                 <span class="text-accent">05</span>
                 <span class="text-green">&bull; LIVE VERCEL</span>
               </div>
-              <h5 class="sec-card-name">Ayche Mart Showcase</h5>
-              <p class="sec-card-desc">High-converting digital storefront card with QR routing across Telegram and social channels.</p>
-              <div class="sec-card-tags mono-text">
+              <h4 class="compact-title">Ayche Mart Showcase</h4>
+              <p class="compact-desc">Digital storefront card with fast QR routing across Telegram and social retail channels.</p>
+              <div class="compact-tags mono-text">
                 <span>Next.js</span><span>Tailwind CSS</span><span>QR App</span>
               </div>
-              <a href="https://ayche.vercel.app/" target="_blank" rel="noopener" class="sec-card-link mono-text">Live Demo ↗</a>
+              <a href="https://ayche.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link mono-text">View Live ↗</a>
             </div>
 
-            <div class="sec-card">
-              <div class="sec-card-top mono-text">
+            <div class="compact-card">
+              <div class="compact-top mono-text">
                 <span class="text-accent">06</span>
                 <span class="text-green">&bull; LIVE VERCEL</span>
               </div>
-              <h5 class="sec-card-name">Alelgn Design Links</h5>
-              <p class="sec-card-desc">Fast responsive branding showcase and digital business card for creative design services.</p>
-              <div class="sec-card-tags mono-text">
+              <h4 class="compact-title">Alelgn Design Links</h4>
+              <p class="compact-desc">Responsive branding showcase and digital link hub for creative design services.</p>
+              <div class="compact-tags mono-text">
                 <span>HTML5 / CSS3</span><span>Branding</span><span>QR Hub</span>
               </div>
-              <a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener" class="sec-card-link mono-text">Live Demo ↗</a>
+              <a href="https://alelgn-links.vercel.app/" target="_blank" rel="noopener noreferrer" class="compact-link mono-text">View Live ↗</a>
             </div>
-
           </div>
         </div>
 
@@ -693,51 +417,121 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         06. SKILLS / STACK (COMPACT & VISUAL PILLS)
+         04. ABOUT ME SECTION
     ══════════════════════════════════════════════════ -->
-    <section class="section-wrap skills-section" id="skills">
+    <section class="section-wrap" id="about">
       <div class="site-container">
         
-        <div class="section-head-wrap">
-          <span class="section-tag mono-text">[ TECH STACK ]</span>
-          <h2 class="section-title">Tools & technologies I use.</h2>
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            Engineering software that delivers real business impact.
+          </p>
         </div>
 
-        <div class="skills-compact-grid">
+        <div class="about-grid">
+          <div class="about-text-col">
+            <p class="about-paragraph">
+              I'm <strong>Mussie Kifle</strong>, a Full-Stack Developer and AI Builder based in Addis Ababa. I specialize in turning ideas into clean, fast, and scalable digital products — from custom web applications to intelligent automation bots.
+            </p>
+            <p class="about-paragraph">
+              With <strong>4+ years of development experience</strong> across independent products and startups, I focus on building reliable software with Next.js, React, TypeScript, Python, and Supabase.
+            </p>
+            <p class="about-paragraph">
+              I study <strong>Mechatronics Engineering</strong> at Addis Ababa Science and Technology University (AASTU, Expected Graduation: 2027), which gives me a strong systems-thinking foundation across both software architecture and technical problem solving.
+            </p>
+          </div>
+
+          <div class="about-highlights-col">
+            <div class="highlight-item">
+              <span class="h-num mono-text text-accent">01</span>
+              <div class="h-content">
+                <strong class="h-title">Full-Stack Web Architecture</strong>
+                <p class="h-desc">Fast, responsive web apps with Next.js, React, and Supabase.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <span class="h-num mono-text text-accent">02</span>
+              <div class="h-content">
+                <strong class="h-title">AI & Telegram Automation</strong>
+                <p class="h-desc">Custom chatbots, LLM workflows, and automated customer service.</p>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <span class="h-num mono-text text-accent">03</span>
+              <div class="h-content">
+                <strong class="h-title">Mechatronics Background</strong>
+                <p class="h-desc">B.Sc. Mechatronics Engineering at AASTU (2023–2027).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         05. TECHNICAL SKILLS SECTION
+    ══════════════════════════════════════════════════ -->
+    <section class="section-wrap" id="skills">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle">
+            Modern technologies and tools I work with daily.
+          </p>
+        </div>
+
+        <div class="skills-categories-grid">
           
-          <div class="skill-category-card">
-            <h3 class="cat-title mono-text">01 // FRONTEND</h3>
-            <div class="pill-group mono-text">
-              <span class="skill-pill">React</span>
-              <span class="skill-pill">Next.js</span>
-              <span class="skill-pill">TypeScript</span>
-              <span class="skill-pill">Tailwind CSS</span>
-              <span class="skill-pill">HTML5 / CSS3</span>
-              <span class="skill-pill">PWA</span>
+          <div class="skill-category">
+            <h3 class="category-name mono-text">01 // FRONTEND</h3>
+            <div class="skill-pills">
+              <span class="pill">React</span>
+              <span class="pill">Next.js</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">JavaScript (ES6+)</span>
+              <span class="pill">Tailwind CSS</span>
+              <span class="pill">HTML5 / CSS3</span>
+              <span class="pill">PWA</span>
             </div>
           </div>
 
-          <div class="skill-category-card">
-            <h3 class="cat-title mono-text">02 // BACKEND & DB</h3>
-            <div class="pill-group mono-text">
-              <span class="skill-pill">Node.js</span>
-              <span class="skill-pill">Python</span>
-              <span class="skill-pill">PostgreSQL</span>
-              <span class="skill-pill">Supabase</span>
-              <span class="skill-pill">REST APIs</span>
-              <span class="skill-pill">User Auth</span>
+          <div class="skill-category">
+            <h3 class="category-name mono-text">02 // BACKEND & DATABASE</h3>
+            <div class="pill-group skill-pills">
+              <span class="pill">Node.js</span>
+              <span class="pill">Python</span>
+              <span class="pill">PostgreSQL</span>
+              <span class="pill">Supabase</span>
+              <span class="pill">REST APIs</span>
+              <span class="pill">User Auth</span>
             </div>
           </div>
 
-          <div class="skill-category-card">
-            <h3 class="cat-title mono-text">03 // AI & AUTOMATION</h3>
-            <div class="pill-group mono-text">
-              <span class="skill-pill">OpenAI API</span>
-              <span class="skill-pill">LLM Integration</span>
-              <span class="skill-pill">Telegram Bots</span>
-              <span class="skill-pill">AI Agents</span>
-              <span class="skill-pill">Python Automation</span>
-              <span class="skill-pill">Webhooks</span>
+          <div class="skill-category">
+            <h3 class="category-name mono-text">03 // AI & AUTOMATION</h3>
+            <div class="pill-group skill-pills">
+              <span class="pill">OpenAI API</span>
+              <span class="pill">LLM Integration</span>
+              <span class="pill">Telegram Bots</span>
+              <span class="pill">AI Agents</span>
+              <span class="pill">Python Automation</span>
+              <span class="pill">Webhooks</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-name mono-text">04 // TOOLS & ENGINEERING</h3>
+            <div class="pill-group skill-pills">
+              <span class="pill">Git / GitHub</span>
+              <span class="pill">Vercel</span>
+              <span class="pill">Figma</span>
+              <span class="pill">MATLAB</span>
+              <span class="pill">SolidWorks CAD</span>
             </div>
           </div>
 
@@ -747,93 +541,89 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-         07. CONTACT SECTION (FRICTIONLESS)
+         06. CONTACT SECTION (FRICTIONLESS)
     ══════════════════════════════════════════════════ -->
     <section class="section-wrap contact-section" id="contact">
       <div class="site-container">
         
-        <div class="contact-frame">
-          <div class="contact-frame-inner">
+        <div class="contact-box">
+          <div class="contact-grid">
             
-            <div class="contact-info">
-              <span class="section-tag mono-text">[ GET IN TOUCH ]</span>
-              <h2 class="contact-heading">Let's build something great.</h2>
-              <p class="contact-subtext">
-                Have a project idea, need a web app or AI bot, or want to discuss a full-time role? Send a message and let's make it happen.
+            <div class="contact-info-col">
+              <h2 class="contact-title">Let's build something useful.</h2>
+              <p class="contact-desc">
+                Have a project, idea, or opportunity? Let's talk.
               </p>
 
-              <div class="contact-direct-links">
-                
-                <a href="mailto:kiflemusse@gmail.com" class="direct-link-card">
-                  <div class="d-icon">
+              <div class="contact-channel-cards">
+                <a href="mailto:kiflemusse@gmail.com" class="channel-card">
+                  <div class="channel-icon">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                       <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                   </div>
-                  <div class="d-meta">
-                    <span class="d-lbl mono-text">EMAIL</span>
-                    <strong class="d-val">kiflemusse@gmail.com</strong>
+                  <div class="channel-meta">
+                    <span class="channel-lbl mono-text">EMAIL</span>
+                    <strong class="channel-val">kiflemusse@gmail.com</strong>
                   </div>
                 </a>
 
-                <a href="https://t.me/MOSS_K1" target="_blank" rel="noopener noreferrer" class="direct-link-card">
-                  <div class="d-icon">
+                <a href="https://t.me/MOSS_K1" target="_blank" rel="noopener noreferrer" class="channel-card">
+                  <div class="channel-icon">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.939z"/>
                     </svg>
                   </div>
-                  <div class="d-meta">
-                    <span class="d-lbl mono-text">TELEGRAM / WHATSAPP</span>
-                    <strong class="d-val">t.me/MOSS_K1 &bull; +251 97 882 0389</strong>
+                  <div class="channel-meta">
+                    <span class="channel-lbl mono-text">TELEGRAM / WHATSAPP</span>
+                    <strong class="channel-val">t.me/MOSS_K1 &bull; +251 97 882 0389</strong>
                   </div>
                 </a>
 
-                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="direct-link-card">
-                  <div class="d-icon">
+                <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer" class="channel-card">
+                  <div class="channel-icon">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
                   </div>
-                  <div class="d-meta">
-                    <span class="d-lbl mono-text">GITHUB</span>
-                    <strong class="d-val">github.com/Moss-kk</strong>
+                  <div class="channel-meta">
+                    <span class="channel-lbl mono-text">GITHUB</span>
+                    <strong class="channel-val">github.com/Moss-kk</strong>
                   </div>
                 </a>
-
               </div>
             </div>
 
-            <!-- Right: Message Form -->
-            <div class="contact-form-wrap">
-              <form class="quick-contact-form" id="contactForm">
-                <div class="form-field">
-                  <label for="senderName" class="form-label mono-text">YOUR NAME *</label>
-                  <input type="text" id="senderName" name="name" class="form-input" placeholder="Sarah Jenkins" required />
+            <!-- Message Form -->
+            <div class="contact-form-col">
+              <form class="clean-form" id="contactForm">
+                <div class="form-group">
+                  <label for="senderName" class="form-label mono-text">NAME *</label>
+                  <input type="text" id="senderName" name="name" class="form-control" placeholder="Your Name" required />
                 </div>
 
-                <div class="form-field">
-                  <label for="senderEmail" class="form-label mono-text">YOUR EMAIL *</label>
-                  <input type="email" id="senderEmail" name="email" class="form-input" placeholder="sarah@company.com" required />
+                <div class="form-group">
+                  <label for="senderEmail" class="form-label mono-text">EMAIL *</label>
+                  <input type="email" id="senderEmail" name="email" class="form-control" placeholder="you@company.com" required />
                 </div>
 
-                <div class="form-field">
-                  <label for="projectScope" class="form-label mono-text">WHAT DO YOU NEED?</label>
-                  <select id="projectScope" name="scope" class="form-select">
-                    <option value="Custom Web App">Custom Web Application</option>
-                    <option value="Workflow Automation & Webhooks">Workflow Automation & Webhooks</option>
-                    <option value="AI / Chatbot Development">AI / Chatbot Development</option>
-                    <option value="Freelance Project">Freelance Web Project</option>
-                    <option value="Full-Time Role">Full-Time / Contract Role</option>
+                <div class="form-group">
+                  <label for="projectScope" class="form-label mono-text">TOPIC</label>
+                  <select id="projectScope" name="scope" class="form-control">
+                    <option value="Freelance Web Project">Freelance Web Project</option>
+                    <option value="AI / Bot Development">AI / Bot Development</option>
+                    <option value="Full-Time / Contract Role">Full-Time / Contract Role</option>
+                    <option value="General Inquiry">General Inquiry</option>
                   </select>
                 </div>
 
-                <div class="form-field">
-                  <label for="senderMessage" class="form-label mono-text">PROJECT DETAILS *</label>
-                  <textarea id="senderMessage" name="message" rows="3" class="form-textarea" placeholder="Tell me briefly about your project, timeline, or goals..." required></textarea>
+                <div class="form-group">
+                  <label for="senderMessage" class="form-label mono-text">MESSAGE *</label>
+                  <textarea id="senderMessage" name="message" rows="3" class="form-control" placeholder="Tell me about your project, goals, or timeline..." required></textarea>
                 </div>
 
-                <button type="submit" class="btn-pill-primary form-submit-btn" id="submitBtn">
+                <button type="submit" class="btn-primary btn-full" id="submitBtn">
                   <span>Send Message</span>
                   <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -853,45 +643,37 @@
   </main>
 
   <!-- ══════════════════════════════════════════════════
-       08. FULL FOOTER
+       07. SIMPLE FOOTER
   ══════════════════════════════════════════════════ -->
   <footer class="site-footer" id="siteFooter">
     <div class="site-container footer-inner">
-      <div class="footer-row-main">
-        <div class="footer-brand">
-          <div class="logo-pill-icon mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="svg-icon">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <span class="footer-title">MUSSIE KIFLE</span>
-          <span class="footer-desc">Full-Stack Developer & AI Builder</span>
-        </div>
-        <div class="footer-nav mono-text">
-          <a href="#hero">Home</a>
-          <a href="#services">Services</a>
-          <a href="#workflow">Workflow</a>
-          <a href="#projects">Work</a>
-          <a href="#skills">Stack</a>
-          <a href="#contact">Contact</a>
-        </div>
+      <div class="footer-left">
+        <span class="f-name">Mussie Kifle</span>
+        <span class="f-title">Full-Stack Developer & AI Builder</span>
       </div>
-      <div class="footer-row-bottom mono-text">
+
+      <div class="footer-links">
+        <a href="https://github.com/Moss-kk" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/mussie-k-shimelis-436892373" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://t.me/MOSS_K1" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="mailto:kiflemusse@gmail.com">Email</a>
+      </div>
+
+      <div class="footer-copy mono-text">
         <span>&copy; 2026 Mussie Kifle. All rights reserved.</span>
-        <a href="#hero" class="back-to-top">Back to top &uarr;</a>
       </div>
     </div>
   </footer>
 
   <!-- ══════════════════════════════════════════════════
-       09. INTERACTIVE LIVE PROJECT INSPECTOR MODAL
+       08. LIVE PROJECT INSPECTOR MODAL
   ══════════════════════════════════════════════════ -->
   <div class="preview-modal-backdrop" id="previewModal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="preview-modal-sheet">
       <div class="modal-chrome-bar">
         <div class="modal-left-meta">
           <span class="m-dot"></span>
-          <span class="m-title mono-text" id="modalTitle">LIVE PROJECT INSPECTOR</span>
+          <span class="m-title mono-text" id="modalTitle">LIVE PROJECT PREVIEW</span>
           <span class="m-url mono-text" id="modalUrlDisplay">https://addis-foodie.vercel.app</span>
         </div>
         <div class="modal-right-actions">
@@ -929,7 +711,7 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════
-       10. CV DOWNLOAD MODAL
+       09. CV MODAL
   ══════════════════════════════════════════════════ -->
   <div class="preview-modal-backdrop" id="cvModal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="preview-modal-sheet cv-modal-sheet">
@@ -942,19 +724,14 @@
       </div>
       <div class="cv-modal-body">
         <div class="cv-info-block">
-          <div class="logo-pill-icon mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="svg-icon">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
           <h3 class="cv-name">MUSSIE KIFLE SHIMELIS</h3>
-          <p class="cv-title-sub mono-text">Full-Stack Developer & AI Builder</p>
+          <p class="cv-title-sub mono-text text-accent">Full-Stack Developer & AI Builder</p>
           <p class="cv-summary-text">
             Full-Stack Developer with 4+ years experience building production web applications, AI chatbots, and automated workflows using Next.js, React, TypeScript, and Python.
           </p>
         </div>
         <div class="cv-action-strip">
-          <a href="assets/Mussie_Kifle_CV.pdf" download="Mussie_Kifle_CV.pdf" class="btn-pill-primary" id="directCvDownloadLink">
+          <a href="assets/Mussie_Kifle_CV.pdf" download="Mussie_Kifle_CV.pdf" class="btn-primary" id="directCvDownloadLink">
             <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
@@ -962,7 +739,7 @@
             </svg>
             <span>Download PDF CV</span>
           </a>
-          <a href="mailto:kiflemusse@gmail.com?subject=Request%20CV%20—%20Mussie%20Kifle" class="btn-pill-secondary">
+          <a href="mailto:kiflemusse@gmail.com?subject=Request%20CV%20—%20Mussie%20Kifle" class="btn-secondary">
             <span>Request via Email</span>
           </a>
         </div>

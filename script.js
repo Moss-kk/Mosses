@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * MOSSES PORTFOLIO — INTERACTIVE CONTROLLER
- * Floating Pill Nav · Workflow Telemetry · Frame Inspector · CV
+ * MOSSES PORTFOLIO — CLEAN INTERACTIVE CONTROLLER
+ * Mobile Drawer · Live Project Inspector · CV Modal · Contact Form
  * ═══════════════════════════════════════════════════════════════
  */
 
@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 01. Mobile Drawer Navigation
+ * 01. Mobile Navigation Drawer
  */
 function initMobileDrawer() {
   const toggleBtn = document.getElementById('mobileMenuBtn');
   const drawer = document.getElementById('mobileDrawer');
   const closeBtn = document.getElementById('drawerCloseBtn');
-  const navLinks = document.querySelectorAll('.mobile-nav-link');
+  const navLinks = document.querySelectorAll('.mobile-link');
 
   if (!toggleBtn || !drawer) return;
 
@@ -199,11 +199,11 @@ function initContactForm() {
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Preparing Message...</span>';
+      submitBtn.innerHTML = '<span>Sending Message...</span>';
     }
 
-    const mailSubject = encodeURIComponent(`[NEW INQUIRY] ${scope} — ${name}`);
-    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${scope}\n\nMessage:\n${message}`);
+    const mailSubject = encodeURIComponent(`[PORTFOLIO CONTACT] ${scope} — ${name}`);
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${scope}\n\nMessage:\n${message}`);
     const mailUrl = `mailto:kiflemusse@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
     setTimeout(() => {
@@ -220,19 +220,19 @@ function initContactForm() {
       }
 
       form.reset();
-    }, 400);
+    }, 350);
   });
 }
 
 /**
- * 05. Navigation Scroll Spy & Active State Indicator
+ * 05. Navigation Scroll Spy
  */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.desktop-pill-nav .pill-nav-link');
+  const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
 
   function onScroll() {
-    const scrollPos = window.scrollY + 140;
+    const scrollPos = window.scrollY + 100;
 
     sections.forEach(section => {
       const top = section.offsetTop;
