@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * SUMI-E TECH SCROLL — INTERACTIVE CONTROLLER
+ * HELIOS-9 // MISSION CONTROL — INTERACTIVE TELEMETRY CONTROLLER
  * Live Frame Inspector · Filtering · CV Modal · Telemetry Clock
  * ═══════════════════════════════════════════════════════════════
  */
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 01. Live East Africa Time Clock (2026 EAT)
+ * 01. Live East Africa Time Telemetry Clock (2026 EAT)
  */
 function initLiveClock() {
   const clockEl = document.getElementById('liveClock');
@@ -78,8 +78,8 @@ function initMobileDrawer() {
  */
 function initProjectFiltering() {
   const filterTabs = document.querySelectorAll('.filter-btn');
-  const primaryCards = document.querySelectorAll('.sumie-project-card');
-  const secondaryCards = document.querySelectorAll('.sumie-sub-card');
+  const primaryCards = document.querySelectorAll('.mission-card');
+  const secondaryCards = document.querySelectorAll('.sub-mission-card');
 
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -251,31 +251,31 @@ function initContactForm() {
     if (!name || !email || !message) {
       if (feedback) {
         feedback.className = 'form-status-line error mono-text';
-        feedback.textContent = 'ERROR: Please fill in all required fields.';
+        feedback.textContent = 'TELEMETRY ERROR: Please fill in all required mission fields.';
       }
       return;
     }
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Preparing Transmission...</span>';
+      submitBtn.innerHTML = '<span>Transmitting Telemetry...</span>';
     }
 
-    const mailSubject = encodeURIComponent(`[SUMI-E DISPATCH] ${scope} — ${name}`);
-    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
+    const mailSubject = encodeURIComponent(`[HELIOS-9 MISSION] ${scope} — ${name}`);
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMission Scope: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
     const mailUrl = `mailto:kiflemusse@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
     setTimeout(() => {
       if (feedback) {
         feedback.className = 'form-status-line success mono-text';
-        feedback.innerHTML = `✓ DISPATCH READY. Opening your email client to send to <strong>kiflemusse@gmail.com</strong>...`;
+        feedback.innerHTML = `✓ MISSION DATA DISPATCHED. Launching email client to send to <strong>kiflemusse@gmail.com</strong>...`;
       }
 
       window.location.href = mailUrl;
 
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Message Sent &check;</span>';
+        submitBtn.innerHTML = '<span>Transmission Dispatched &check;</span>';
       }
 
       form.reset();

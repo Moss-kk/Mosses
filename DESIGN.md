@@ -1,61 +1,54 @@
-# Sumi-e Tech Scroll — Design System
+# HELIOS-9 // MISSION CONTROL — Design System
 
 ```yaml
 version: "alpha"
-name: "Sumi-e Tech Scroll"
-description: "Sumi-e style landing, ink wash painting, rice paper texture, red seal accent, isometric tech details, east asian aesthetic. Ideal for landing pages, modern websites. AI-ready template."
+name: "HELIOS-9 // MISSION CONTROL"
+description: "Interactive/Animated aerospace mission control style with CSS Grid, solar telemetry, and high-energy amber HUD interfaces."
 colors:
-  primary: "#F4F1E8"
-  secondary: "#0D0D0D"
-  tertiary: "#8A1C15"
-  neutral: "#000000"
-  surface: "#EBE7DC"
-  surface-dark: "#1A1918"
-  wash-grey: "#808080"
-  accent: "#8A1C15"
+  slate: "#0C0F14"
+  panel: "#11151C"
+  panel2: "#141922"
+  solar-amber: "#FFB347"
+  cream-text: "#E8DCC8"
+  muted-radar: "#8A8272"
+  line: "rgba(255, 179, 71, 0.16)"
+  line-soft: "rgba(255, 179, 71, 0.08)"
 typography:
-  h1:
-    fontFamily: "Noto Serif JP"
-    fontSize: "2.5rem"
-    fontWeight: 700
-  body-md:
-    fontFamily: "Noto Serif JP"
-    fontSize: "1rem"
-    fontWeight: 400
-  mono:
-    fontFamily: "JetBrains Mono"
-    fontSize: "0.875rem"
-geometry:
-  radius: "8px"
-  border-accent: "2px solid #8A1C15"
+  display: "Space Grotesk, sans-serif"
+  body: "Space Grotesk, sans-serif"
+  mono: "JetBrains Mono, monospace"
+rounded:
+  sm: "4px"
+  md: "8px"
+  lg: "16px"
+spacing:
+  sm: "1rem"
+  md: "2rem"
+  lg: "4rem"
 ```
 
 ## Overview
 
-Sumi-e didn't arrive in digital design through some trend cycle. It seeped in. The practice — born in Tang Dynasty China, refined into spiritual discipline by Japanese monks — was never about depicting reality. It was about capturing essence in a single, irreversible stroke. No undo button. No layers panel. Just ink, water, and breath.
+HELIOS-9 // MISSION CONTROL — Interactive/Animated style inspired by modern aerospace command modules, orbital telemetry stations, and solar energy grids. High visual precision, dynamic CSS grid layouts, real-time telemetry streams, and smooth micro-animations.
 
-That philosophy translates to interfaces more honestly than most designers admit. The controlled imperfection of a brush loaded with varying ink density maps directly to how we think about visual weight and hierarchy. A thick downstroke commands attention the way a bold headline does. A trailing whisper of dry brush creates the same tension as generous whitespace around a call to action. The relationship between mark and void — that's layout theory distilled to its oldest form.
-
-What makes sumi-e genuinely useful as a design reference isn't the aesthetic alone. It's the underlying constraint: **say more with less**. *Ma* (間) — the Japanese concept of negative space as active, breathing presence — predates every minimalism manifesto by centuries. Empty space isn't absence. It's architecture.
-
-- **Density:** 5/10 — Balanced
-- **Variance:** 8/10 — Expressive
-- **Motion:** 4/10 — Subtle
-- **Style:** Cultural, Artistic, Fused
-- **Keywords:** sumi-e, ink, asian, traditional, landscape, tech, isometric, red accent
-- **Era:** Traditional/Modern Fusion
+- **Density:** 5/10 — Balanced Telemetry Grid
+- **Variance:** 6/10 — Structured Mission Modules
+- **Motion:** 8/10 — Animated Radar & Telemetry HUDs
+- **Style:** Interactive / Animated / Mission Control
+- **Keywords:** helios, mission, control, interactive, animated, gradient, grid-layout, telemetry
 
 ## Color Tokens
 
-- **Paper Cream** (`#F4F1E8`): Primary background rice-paper surface
-- **Sumi Ink Black** (`#0D0D0D`): Primary text & dominant calligraphic strokes
-- **Vermilion Seal Red** (`#8A1C15`): Red stamp (hanko) accents, primary interactive CTAs, live indicators
-- **Wash Grey** (`#808080` / `#6b6b66`): Secondary metadata, hairline grid borders, ink bleed rules
-- **Wash Surface** (`#EBE7DC` / `#E2DDD0`): Subtle ink-washed card containers
-- **Contrast Technical Ink** (`#1A1918`): Dark terminal & isometric schematic frames
+- **Deep Space Slate** (`#0C0F14`): Primary background canvas
+- **Telemetry Panel** (`#11151C`): Main structural cards & containment grid
+- **Subsystem Panel** (`#141922`): Elevated interactive surfaces & secondary modules
+- **Solar Amber Accent** (`#FFB347`): High-energy primary interactive accent & live beacon
+- **Warm Stellar Cream** (`#E8DCC8`): High-contrast primary readable typography
+- **Radar Wash Grey** (`#8A8272`): Secondary telemetry labels, coordinate axes, and muted rules
+- **HUD Grid Lines** (`rgba(255, 179, 71, 0.16)`): Hairline structural grid & wireframe overlays
 
-## Typography
+## Layout & Effects
 
-- **Display / Hero:** `Noto Serif JP` — Weight 700/900, tight tracking, dramatic calligraphic gravity
-- **Body:** `Noto Serif JP` — Weight 400/500, 16px/1.65 line-height, max 72ch
-- **Monospace:** `JetBrains Mono` / `IBM Plex Mono` — Technical telemetry, code, dates, coordinates
+- **Grid Modules:** CSS Grid telemetry arrays with responsive 1-column mobile collapse.
+- **HUD Animations:** Radar sweeps, solar orbit rings, live telemetry tickers.
+- **Corner Radii:** 8px base panel radius with 4px inner control chips.
