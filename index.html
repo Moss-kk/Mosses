@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mussie Kifle — Full-Stack Developer &amp; AI Builder</title>
+  <title>Mussie Kifle (MK) — Full-Stack Developer &amp; AI Builder</title>
   
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Hi, I'm Mussie Kifle — Full-Stack Developer &amp; AI Builder. I build software for founders, startups, businesses, and design engineers." />
-  <meta name="keywords" content="Mussie Kifle, Full-Stack Developer, AI Builder, Web Developer, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Supabase, Phoenixopia" />
+  <meta name="description" content="Mussie Kifle (MK) — Full-Stack Developer &amp; AI Builder. I build software for founders, startups, businesses, and design engineers." />
+  <meta name="keywords" content="Mussie Kifle, MK, Full-Stack Developer, AI Builder, Web Developer, Next.js, React, TypeScript, Python, Telegram Bots, Automation, Supabase, Phoenixopia" />
   <meta name="author" content="Mussie Kifle" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#FAFAF9" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mussie Kifle — Full-Stack Developer &amp; AI Builder" />
+  <meta property="og:title" content="Mussie Kifle (MK) — Full-Stack Developer &amp; AI Builder" />
   <meta property="og:description" content="I build software for founders, startups, and businesses that scale." />
   <meta property="og:url" content="https://mosses.vercel.app/" />
   <meta property="og:site_name" content="Mussie Kifle Portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mussie Kifle — Full-Stack Developer &amp; AI Builder" />
+  <meta name="twitter:title" content="Mussie Kifle (MK) — Full-Stack Developer &amp; AI Builder" />
   <meta name="twitter:description" content="I build software for founders, startups, and businesses that scale." />
 
   <!-- Google Fonts: Playfair Display, Source Sans 3 & Fira Code -->
@@ -33,15 +33,14 @@
 <body>
 
   <!-- ══════════════════════════════════════════════════
-       01. CONTINUOUS FLOATING PILL NAVBAR
+       01. STICKY HEADER WITH MK MONOGRAM BRAND
   ══════════════════════════════════════════════════ -->
   <header class="site-header" id="siteHeader">
     <div class="site-container header-inner">
       
-      <!-- Brand Title -->
-      <a href="#hero" class="brand-link" aria-label="Mussie Kifle Home">
-        <span class="brand-dot"></span>
-        <span class="brand-name font-serif">Mussie Kifle</span>
+      <!-- Brand Logo: MK Monogram -->
+      <a href="#hero" class="brand-link" aria-label="Mussie Kifle (MK) Home">
+        <span class="brand-badge-mk font-serif">MK</span>
       </a>
 
       <!-- Continuous Floating Tabs Navigation with Sliding Spring Active Pill -->
@@ -89,7 +88,7 @@
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="mobile-drawer-body">
         <div class="drawer-header">
-          <span class="drawer-brand font-serif">Mussie Kifle</span>
+          <span class="drawer-brand font-serif">MK &bull; Mussie Kifle</span>
           <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation">&times;</button>
         </div>
 
@@ -119,7 +118,7 @@
   <main id="mainContent">
 
     <!-- ══════════════════════════════════════════════════
-         02. HERO SECTION WITH 3D TEXTLOOP VARIANTS
+         02. HERO SECTION WITH INTRO TEXTLOOP & HEADLINE 3D TEXTLOOP
     ══════════════════════════════════════════════════ -->
     <section class="hero-section reveal-on-scroll" id="hero">
       <div class="site-container hero-container">
@@ -127,19 +126,24 @@
         <!-- Left Column: Bio & Core Pitch -->
         <div class="hero-text-col">
           
-          <!-- Prominent Introduction Banner -->
+          <!-- Animated Intro TextLoop Badge -->
           <div class="hero-intro-header">
             <div class="intro-greeting-pill font-code">
               <span class="pill-dot"></span>
-              <span class="intro-title" id="heroIntroTitle">Hi, I'm Mussie</span>
+              <div class="text-loop-basic-wrap font-code" id="heroIntroTextLoop" title="Click to cycle intro">
+                <span class="intro-loop-item active">Welcome to my portfolio</span>
+                <span class="intro-loop-item">This is Mussie Kifle</span>
+                <span class="intro-loop-item">Full-Stack Developer</span>
+                <span class="intro-loop-item">AI &amp; Systems Builder</span>
+                <span class="intro-loop-item">What can I build for you today?</span>
+              </div>
             </div>
-            <span class="intro-sub-role font-body">Full-Stack Developer &amp; AI Builder</span>
           </div>
 
-          <!-- Rebuilt Playfair Display Headline with 3D TextLoop Variants -->
+          <!-- Playfair Display Headline with 3D TextLoop Variants -->
           <h1 class="hero-title font-serif" id="heroMainTitle">
             I build software for
-            <span class="text-loop-inline-wrapper" id="heroTextLoopWrapper" title="Click to rotate phrase">
+            <span class="text-loop-inline-wrapper" id="heroTextLoopWrapper" title="Click to rotate audience">
               <span class="text-loop-item active text-terracotta" data-index="0">Founders</span>
               <span class="text-loop-item text-terracotta" data-index="1">Startups</span>
               <span class="text-loop-item text-terracotta" data-index="2">Businesses</span>

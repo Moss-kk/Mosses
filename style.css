@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
-   MOSSES PORTFOLIO — 3D TEXTLOOP VARIANTS & PRODUCT SHOWCASE (v16.0)
-   3D rotateX + Blur Filter TextLoop Spring Physics
+   MOSSES PORTFOLIO — STICKY MK HEADER & TEXTLOOP ENGINES (v17.0)
+   Sticky Navigation Bar with MK Monogram Branding
+   font-mono TextLoopBasic Intro Badge + 3D TextLoop Headline
    macOS Browser Window Mockups for Live Screenshots
-   Continuous Floating Pill Tabs & Mobile CardSwipe
    Warm Terracotta (#C2410C) & Source Sans 3 / Playfair Display
    ═══════════════════════════════════════════════════════════════ */
 
@@ -281,14 +281,16 @@ button, input, select, textarea {
   width: 100%;
 }
 
-/* ─── 04. Continuous Floating Pill Navbar & Mobile Drawer ─── */
+/* ─── 04. Sticky Header with MK Monogram Branding ─── */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background-color: rgba(250, 250, 249, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(250, 250, 249, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
   height: var(--header-height);
   display: flex;
@@ -309,18 +311,27 @@ button, input, select, textarea {
   gap: 0.5rem;
 }
 
-.brand-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary);
-  border-radius: var(--radius-full);
+/* MK Monogram Badge */
+.brand-badge-mk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--text-primary);
+  color: #FAFAF9;
+  border-radius: var(--radius-md);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--trans-fast);
 }
 
-.brand-name {
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
+.brand-badge-mk:hover {
+  background: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--glow-primary);
 }
 
 /* Continuous Floating Pill Navigation */
@@ -475,7 +486,7 @@ button, input, select, textarea {
 }
 
 .drawer-brand {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -532,7 +543,7 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-/* ─── 05. Hero Section & 3D TextLoop Variants ─── */
+/* ─── 05. Hero Section & TextLoop Engines ─── */
 .hero-section {
   width: 100%;
   padding-top: clamp(2.5rem, 6vw, 5.5rem);
@@ -554,38 +565,30 @@ button, input, select, textarea {
   width: 100%;
 }
 
-/* Prominent Intro Header */
+/* Prominent Intro Header with TextLoopBasic */
 .hero-intro-header {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 0.65rem 1.15rem;
   margin-bottom: 0.25rem;
 }
 
 .intro-greeting-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  background: rgba(194, 65, 12, 0.09);
-  border: 1px solid rgba(194, 65, 12, 0.25);
+  gap: 0.65rem;
+  background: rgba(194, 65, 12, 0.08);
+  border: 1px solid rgba(194, 65, 12, 0.22);
   border-radius: var(--radius-full);
   padding: 0.45rem 1.15rem;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--primary);
   transition: all var(--trans-fast);
 }
 
 .intro-greeting-pill:hover {
-  background: rgba(194, 65, 12, 0.15);
+  background: rgba(194, 65, 12, 0.14);
   border-color: var(--primary);
-}
-
-.intro-sub-role {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-secondary);
 }
 
 .pill-dot {
@@ -597,13 +600,57 @@ button, input, select, textarea {
   animation: pulse-dot 2s infinite ease-in-out;
 }
 
+/* TextLoopBasic Wrap */
+.text-loop-basic-wrap {
+  display: inline-block;
+  vertical-align: baseline;
+  position: relative;
+  overflow-y: clip;
+  height: 1.25em;
+  transition: width 350ms var(--ease-smooth);
+  user-select: none;
+  cursor: pointer;
+}
+
+.intro-loop-item {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(3px);
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 450ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity, filter;
+  pointer-events: none;
+}
+
+.intro-loop-item.active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+  pointer-events: auto;
+}
+
+.intro-loop-item.exit {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-14px);
+  filter: blur(3px);
+  pointer-events: none;
+}
+
 .hero-title {
   font-size: clamp(2.5rem, 7.5vw, 4.25rem);
   line-height: 1.12;
   color: var(--text-primary);
 }
 
-/* 3D Framer-Motion Style TextLoop Variants */
+/* 3D Framer-Motion Style TextLoop Variants for Headline */
 .text-loop-inline-wrapper {
   display: inline-block;
   vertical-align: baseline;

@@ -1,11 +1,69 @@
 /**
- * MOSSES PORTFOLIO — 3D TEXTLOOP VARIANTS JAVASCRIPT (v16.0)
- * 3D rotateX + Blur Filter TextLoop Controller, Mobile CardSwipe with Dot Pagination,
- * Continuous Floating Pill Tabs, Copy Toasts & Interactive AI Chat
+ * MOSSES PORTFOLIO — STICKY MK HEADER & TEXTLOOP CONTROLLERS (v17.0)
+ * 1. font-mono TextLoopBasic Intro Badge Controller
+ * 2. 3D rotateX + Blur Filter Audience Headline TextLoop
+ * 3. Continuous Floating Pill Navigation & Mobile Drawer
+ * 4. Mobile CardSwipe with Dot Pagination Synchronization
+ * 5. Interactive Copy Toasts & Live Eagle AI Chat Simulation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ─── 01. 3D TextLoop Variants Controller ───
+  // ─── 01. Intro TextLoopBasic Controller ───
+  const introLoopWrap = document.getElementById('heroIntroTextLoop');
+  const introItems = document.querySelectorAll('.intro-loop-item');
+
+  let currentIntroIdx = 0;
+  let introLoopTimer = null;
+
+  function updateIntroWidth(activeEl) {
+    if (!introLoopWrap || !activeEl) return;
+    const w = activeEl.offsetWidth;
+    if (w > 0) {
+      introLoopWrap.style.width = `${w}px`;
+    }
+  }
+
+  function rotateIntroLoop(targetIdx) {
+    if (introItems.length === 0) return;
+    const current = introItems[currentIntroIdx];
+    const nextIdx = targetIdx !== undefined ? targetIdx : (currentIntroIdx + 1) % introItems.length;
+    const next = introItems[nextIdx];
+
+    current.classList.remove('active');
+    current.classList.add('exit');
+
+    next.classList.remove('exit');
+    next.classList.add('active');
+
+    updateIntroWidth(next);
+    currentIntroIdx = nextIdx;
+
+    setTimeout(() => {
+      current.classList.remove('exit');
+    }, 480);
+  }
+
+  if (introLoopWrap && introItems.length > 0) {
+    setTimeout(() => {
+      updateIntroWidth(introItems[0]);
+    }, 60);
+
+    function startIntroLoop() {
+      clearTimeout(introLoopTimer);
+      introLoopTimer = setInterval(() => {
+        rotateIntroLoop();
+      }, 2600);
+    }
+
+    startIntroLoop();
+
+    introLoopWrap.addEventListener('click', () => {
+      rotateIntroLoop();
+      startIntroLoop();
+    });
+  }
+
+  // ─── 02. 3D Audience Headline TextLoop Controller ───
   const textLoopWrapper = document.getElementById('heroTextLoopWrapper');
   const textLoopItems = document.querySelectorAll('.text-loop-item');
 
@@ -26,40 +84,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextIdx = nextIndex !== undefined ? nextIndex : (currentLoopIndex + 1) % textLoopItems.length;
     const nextItem = textLoopItems[nextIdx];
 
-    // 1. Current item exits to top with rotateX(-90deg) & blur(4px)
     currentItem.classList.remove('active');
     currentItem.classList.add('exit');
 
-    // 2. Next item animates in from bottom with rotateX(0deg) & blur(0px)
     nextItem.classList.remove('exit');
     nextItem.classList.add('active');
 
     updateWrapperWidth(nextItem);
     currentLoopIndex = nextIdx;
 
-    // Reset previous item classes after transition completes
     setTimeout(() => {
       currentItem.classList.remove('exit');
     }, 560);
   }
 
   if (textLoopWrapper && textLoopItems.length > 0) {
-    // Set initial width
     setTimeout(() => {
       updateWrapperWidth(textLoopItems[0]);
     }, 80);
 
-    // Auto-cycle loop
     function startTextLoop() {
       clearTimeout(textLoopTimer);
       textLoopTimer = setInterval(() => {
         rotateTextLoop();
-      }, 2800);
+      }, 3000);
     }
 
     startTextLoop();
 
-    // Click wrapper to immediately trigger next phrase
     textLoopWrapper.addEventListener('click', () => {
       rotateTextLoop();
       startTextLoop();
@@ -68,10 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
       const activeItem = document.querySelector('.text-loop-item.active');
       if (activeItem) updateWrapperWidth(activeItem);
+      const activeIntro = document.querySelector('.intro-loop-item.active');
+      if (activeIntro) updateIntroWidth(activeIntro);
     });
   }
 
-  // ─── 02. Mobile CardSwipe Dot Pagination Synchronization ───
+  // ─── 03. Mobile CardSwipe Dot Pagination Synchronization ───
   function setupScrollSwipeDots(trackId, dotsContainerId) {
     const track = document.getElementById(trackId);
     const dotsContainer = document.getElementById(dotsContainerId);
@@ -81,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = track.children;
     if (dots.length === 0 || cards.length === 0) return;
 
-    // Track scroll
     track.addEventListener('scroll', () => {
       const scrollLeft = track.scrollLeft;
       const cardWidth = cards[0]?.offsetWidth || 300;
@@ -96,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { passive: true });
 
-    // Click dot to scroll
     dots.forEach((dot, idx) => {
       dot.addEventListener('click', () => {
         if (cards[idx]) {
@@ -110,11 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Setup mobile swipe dots for Services and Experience
   setupScrollSwipeDots('servicesSwipeTrack', 'servicesDots');
   setupScrollSwipeDots('experienceSwipeTrack', 'expDots');
 
-  // ─── 03. Continuous Tabs: Sliding Spring Active Pill ───
+  // ─── 04. Continuous Tabs: Sliding Spring Active Pill ───
   const tabsNav = document.getElementById('continuousTabsNav');
   const tabButtons = document.querySelectorAll('.tab-pill-btn');
   const slidingPill = document.getElementById('slidingActivePill');
@@ -133,13 +184,11 @@ document.addEventListener('DOMContentLoaded', () => {
     slidingPill.style.opacity = '1';
   }
 
-  // Initialize pill position
   const initialActive = document.querySelector('.tab-pill-btn.active') || tabButtons[0];
   if (initialActive) {
     setTimeout(() => updateSlidingPill(initialActive), 60);
   }
 
-  // Handle Tab Click
   tabButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       tabButtons.forEach((b) => b.classList.remove('active'));
@@ -148,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Scroll-Spy to update continuous tabs
   function onScrollSpy() {
     let currentId = '';
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -180,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentActive) updateSlidingPill(currentActive);
   });
 
-  // ─── 04. Scroll Reveal Observer ───
+  // ─── 05. Scroll Reveal Observer ───
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -197,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach((el) => el.classList.add('is-revealed'));
   }
 
-  // ─── 05. Interactive Project Card Swipe & Carousel ───
+  // ─── 06. Interactive Project Card Swipe & Carousel ───
   const carouselTrack = document.getElementById('projectCarouselTrack');
   const prevBtn = document.getElementById('carouselPrevBtn');
   const nextBtn = document.getElementById('carouselNextBtn');
@@ -246,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ─── 06. Copy to Clipboard with Toast Notification ───
+  // ─── 07. Copy to Clipboard with Toast Notification ───
   const copyButtons = document.querySelectorAll('.copy-link-btn');
   const toast = document.getElementById('toastNotification');
   let toastTimer = null;
@@ -282,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ─── 07. Mobile Navigation Drawer ───
+  // ─── 08. Mobile Navigation Drawer ───
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const drawerCloseBtn = document.getElementById('drawerCloseBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
@@ -317,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ─── 08. Interactive Eagle Investments AI Chat Simulation ───
+  // ─── 09. Interactive Eagle Investments AI Chat Simulation ───
   const eagleChatThread = document.getElementById('eagleChatThread');
   const chatChips = document.querySelectorAll('.chat-chip');
 
@@ -335,21 +383,18 @@ document.addEventListener('DOMContentLoaded', () => {
       chip.addEventListener('click', () => {
         const query = chip.getAttribute('data-prompt') || chip.textContent.trim();
         
-        // 1. Append User Bubble
         const userDiv = document.createElement('div');
         userDiv.className = 'chat-bubble user-bubble';
         userDiv.innerHTML = `<p>${query}</p>`;
         eagleChatThread.appendChild(userDiv);
         eagleChatThread.scrollTop = eagleChatThread.scrollHeight;
 
-        // 2. Show Typing Indicator
         const typingDiv = document.createElement('div');
         typingDiv.className = 'chat-bubble bot-bubble';
         typingDiv.innerHTML = `<p class="text-terracotta font-code">Analyzing financial data...</p>`;
         eagleChatThread.appendChild(typingDiv);
         eagleChatThread.scrollTop = eagleChatThread.scrollHeight;
 
-        // 3. Simulate response
         setTimeout(() => {
           const answer = financialAiResponses[query] || 
             `Analyzing query regarding "${query}". Model recommends diversified treasury hedges and automated portfolio rebalancing.`;
@@ -360,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ─── 09. Contact Form Mailto Dispatch ───
+  // ─── 10. Contact Form Mailto Dispatch ───
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
 
