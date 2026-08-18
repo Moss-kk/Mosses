@@ -1,34 +1,30 @@
-# MOSSes Portfolio — Editorial Luxe & Modern Warm Aesthetic
+# MOSSes Portfolio — Project Showcase Upgrade & Visual Experience
 
 ```yaml
-version: "7.0.0"
-name: "Warm Editorial Interactive Developer Portfolio"
-description: "Inspired by luxury editorial and high-contrast atmospheric web design. Combines modern geometric sans with elegant italic serif (Playfair Display), warm deep canvas (#120E0A), radiant orange/amber accents (#F97316), frosted glassmorphism, and smooth micro-interactions."
+version: "8.0.0"
+name: "Visual Project Showcase Portfolio"
+description: "Upgraded project section featuring real, high-resolution desktop screenshots of live products (Addis Foodie, Sador Dental, Eagle Investments AI, Special Day, Ayche Mart, Alelgn Design), structured role/stack/features metadata, subtle hover micro-interactions, and 100% mobile-first single-column responsive layout."
 colors:
   bg: "#120E0A"
-  bg-gradient: "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(249, 115, 22, 0.15), rgba(18, 14, 10, 0))"
-  surface: "rgba(255, 255, 255, 0.04)"
-  surface-hover: "rgba(255, 255, 255, 0.08)"
-  surface-card: "rgba(26, 20, 16, 0.6)"
+  surface: "rgba(255, 255, 255, 0.05)"
+  surface-hover: "rgba(255, 255, 255, 0.09)"
+  surface-card: "rgba(24, 18, 14, 0.75)"
   fg: "#FFFFFF"
-  fg-subtle: "rgba(255, 255, 255, 0.72)"
+  fg-subtle: "rgba(255, 255, 255, 0.75)"
   fg-muted: "rgba(255, 255, 255, 0.45)"
   accent: "#EA580C"
   accent-hover: "#F97316"
   accent-glow: "rgba(234, 88, 12, 0.35)"
   border: "rgba(255, 255, 255, 0.12)"
-  border-hover: "rgba(255, 255, 255, 0.24)"
+  border-active: "rgba(249, 115, 22, 0.45)"
 typography:
   headline-sans: "'Space Grotesk', -apple-system, sans-serif"
   headline-serif-italic: "'Playfair Display', Georgia, serif"
   body: "'Space Grotesk', -apple-system, sans-serif"
   mono: "'JetBrains Mono', monospace"
-layout:
-  mobile-first: true
-  max-width: "1140px"
 ```
 
-## Aesthetic Pillars
-1. **Headline Contrast**: Bold modern geometric sans paired with italic serif Playfair Display for signature editorial quality.
-2. **Warm Glowing Atmosphere**: Deep warm background with subtle amber glow, frosted glass pill cards, and interactive hover feedback.
-3. **Client-Focused Conversion**: Available badge, 3 clear services, high-impact project showcases with live demo & GitHub buttons, and frictionless contact.
+## Project Presentation
+1. **Real Project Screenshots**: 100% width, 16:9 aspect ratio, subtle border radius, gentle 1.02 desktop hover scale, native fallback support.
+2. **Compact Metadata Grid**: Role, Built With, Key Features, and Live Status.
+3. **Hierarchy**: 3 Large Featured Projects + 3 Supporting Projects.

@@ -11,7 +11,7 @@
   --bg-alt: #18120D;
   --surface: rgba(255, 255, 255, 0.05);
   --surface-hover: rgba(255, 255, 255, 0.09);
-  --surface-raised: rgba(30, 22, 16, 0.7);
+  --surface-raised: rgba(30, 22, 16, 0.75);
 
   /* Typography Colors */
   --fg: #FFFFFF;
@@ -162,6 +162,13 @@ button, input, select, textarea {
   position: relative;
   box-sizing: border-box;
   z-index: 1;
+}
+
+.section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
 }
 
 /* Custom Scrollbar */
@@ -690,9 +697,9 @@ button, input, select, textarea {
   color: var(--fg);
 }
 
-/* ─── 07. Featured Projects ─── */
+/* ─── 07. Upgraded Featured Projects ─── */
 .section-header {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
   width: 100%;
 }
 
@@ -712,27 +719,95 @@ button, input, select, textarea {
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 2.5rem;
   width: 100%;
 }
 
-.project-card {
-  background: var(--surface);
+/* Featured Project Card */
+.project-showcase-card {
+  background: var(--surface-raised);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.85rem 1.5rem;
-  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   box-shadow: var(--shadow-card);
   backdrop-filter: blur(16px);
   transition: all var(--trans-smooth);
 }
 
-.project-card:hover {
+.project-showcase-card:hover {
   border-color: var(--border-active);
-  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(234, 88, 12, 0.15);
 }
 
-.project-content {
+/* Project Real Screenshot Container */
+.project-screenshot-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
+  background-color: #0A0806;
+  display: block;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.project-screenshot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--trans-smooth);
+}
+
+.project-showcase-card:hover .project-screenshot-img {
+  transform: scale(1.02);
+}
+
+.screenshot-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 14, 10, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--trans-smooth);
+}
+
+.project-showcase-card:hover .screenshot-hover-overlay {
+  opacity: 1;
+}
+
+.overlay-badge {
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Fallback state if image is missing */
+.project-screenshot-wrap.img-fallback::before {
+  content: "Live Product Preview";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  background: #15100C;
+}
+
+/* Project Body & Metadata */
+.project-body {
+  padding: 1.85rem 1.5rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -767,7 +842,7 @@ button, input, select, textarea {
 }
 
 .project-heading {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
   font-weight: 800;
   color: #ffffff;
 }
@@ -777,31 +852,46 @@ button, input, select, textarea {
   color: #FEEBC8;
   font-weight: 600;
   margin-top: 0.15rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .project-description {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--fg-subtle);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  font-size: 0.725rem;
+/* Structured Compact Metadata Grid */
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
   margin-bottom: 1.5rem;
+  font-size: 0.75rem;
 }
 
-.tech-tags .tag {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
-  color: var(--fg);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-sm);
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.meta-label {
+  font-size: 0.65rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.06em;
+}
+
+.meta-value {
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .project-links {
@@ -817,33 +907,33 @@ button, input, select, textarea {
   width: 100%;
 }
 
-/* More Supporting Projects Grid */
+/* ─── 08. More Supporting Projects Grid ─── */
 .additional-projects {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
   border-top: 1px solid var(--border-subtle);
-  padding-top: 2.5rem;
+  padding-top: 3rem;
   width: 100%;
 }
 
 .sub-heading {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
 .compact-projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   width: 100%;
 }
 
 .compact-card {
-  background: var(--surface);
+  background: var(--surface-raised);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.35rem 1.15rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -853,7 +943,36 @@ button, input, select, textarea {
 
 .compact-card:hover {
   border-color: var(--accent-hover);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+}
+
+.compact-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  background-color: #0A0806;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.compact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--trans-fast);
+}
+
+.compact-card:hover .compact-img {
+  transform: scale(1.02);
+}
+
+.compact-card-body {
+  padding: 1.35rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .compact-top {
@@ -897,14 +1016,14 @@ button, input, select, textarea {
 }
 
 .compact-link {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-hover);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-/* ─── 08. Skills / Stack ─── */
+/* ─── 09. Skills / Stack ─── */
 .skills-categories-grid {
   display: flex;
   flex-direction: column;
@@ -955,7 +1074,7 @@ button, input, select, textarea {
   background: rgba(234, 88, 12, 0.2);
 }
 
-/* ─── 09. Contact Section ─── */
+/* ─── 10. Contact Section ─── */
 .contact-box {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1105,7 +1224,7 @@ button, input, select, textarea {
 .form-status.success { color: #22c55e; }
 .form-status.error { color: #ef4444; }
 
-/* ─── 10. Simple Footer ─── */
+/* ─── 11. Simple Footer ─── */
 .site-footer {
   background: #0D0A07;
   border-top: 1px solid var(--border-subtle);
@@ -1161,7 +1280,7 @@ button, input, select, textarea {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   11. PROGRESSIVE ENHANCEMENT BREAKPOINTS (TABLET & DESKTOP)
+   12. PROGRESSIVE ENHANCEMENT BREAKPOINTS (TABLET & DESKTOP)
    ═══════════════════════════════════════════════════════════════ */
 
 /* ─── Tablet: min-width: 768px ─── */
@@ -1189,14 +1308,17 @@ button, input, select, textarea {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .project-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+  }
+
   .compact-projects-grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
 
   .skills-categories-grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
@@ -1243,6 +1365,23 @@ button, input, select, textarea {
 
   .mobile-menu-toggle {
     display: none;
+  }
+
+  .project-showcase-card {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: stretch;
+  }
+
+  .project-screenshot-wrap {
+    height: 100%;
+    aspect-ratio: auto;
+    border-bottom: none;
+    border-right: 1px solid var(--border-subtle);
+  }
+
+  .project-body {
+    padding: 2.25rem 2rem;
   }
 
   .contact-box {
