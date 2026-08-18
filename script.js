@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * BROADSIDE EDITORIAL JAVASCRIPT CONTROLLER
- * Interactive Systems · Live Preview Modal · Filtering · Telemetry
+ * MOSSES PORTFOLIO — INTERACTIVE CONTROLLER
+ * Live Frame Inspector · Filtering · CV Modal · Telemetry Clock
  * ═══════════════════════════════════════════════════════════════
  */
 
@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initProjectFiltering();
   initLivePreviewModal();
+  initCvModal();
   initContactForm();
   initScrollSpy();
-  initBackToTop();
 });
 
 /**
- * 01. Live Ticker Clock (2026 EAT)
+ * 01. Live Clock (2026 East Africa Time)
  */
 function initLiveClock() {
   const clockEl = document.getElementById('liveClock');
@@ -24,7 +24,6 @@ function initLiveClock() {
 
   function updateTime() {
     const now = new Date();
-    // Use East Africa Time (UTC+3)
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
@@ -36,13 +35,13 @@ function initLiveClock() {
 }
 
 /**
- * 02. Mobile Navigation Drawer
+ * 02. Mobile Drawer Navigation
  */
 function initMobileDrawer() {
   const toggleBtn = document.getElementById('mobileMenuBtn');
   const drawer = document.getElementById('mobileDrawer');
   const closeBtn = document.getElementById('drawerCloseBtn');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
 
   if (!toggleBtn || !drawer) return;
 
@@ -63,7 +62,7 @@ function initMobileDrawer() {
     if (e.target === drawer) closeDrawer();
   });
 
-  mobileLinks.forEach(link => {
+  navLinks.forEach(link => {
     link.addEventListener('click', closeDrawer);
   });
 
@@ -75,26 +74,37 @@ function initMobileDrawer() {
 }
 
 /**
- * 03. Project Category Filter
+ * 03. Project Category Filtering
  */
 function initProjectFiltering() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectRows = document.querySelectorAll('.project-broadside-row');
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const primaryCards = document.querySelectorAll('.project-case-card');
+  const secondaryCards = document.querySelectorAll('.sec-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
 
-      const filterValue = btn.getAttribute('data-filter');
+      const filterVal = tab.getAttribute('data-filter');
 
-      projectRows.forEach(row => {
-        const category = row.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          row.style.display = 'grid';
-          row.style.opacity = '1';
+      // Primary cards
+      primaryCards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        if (filterVal === 'all' || cat.includes(filterVal)) {
+          card.style.display = 'grid';
         } else {
-          row.style.display = 'none';
+          card.style.display = 'none';
+        }
+      });
+
+      // Secondary cards
+      secondaryCards.forEach(secCard => {
+        const cat = secCard.getAttribute('data-category') || '';
+        if (filterVal === 'all' || (filterVal !== 'flagship' && cat.includes(filterVal))) {
+          secCard.style.display = 'flex';
+        } else {
+          secCard.style.display = 'none';
         }
       });
     });
@@ -102,7 +112,7 @@ function initProjectFiltering() {
 }
 
 /**
- * 04. Interactive Live Preview Inspector Modal
+ * 04. Live Project Inspector Modal
  */
 function initLivePreviewModal() {
   const modal = document.getElementById('previewModal');
@@ -118,12 +128,12 @@ function initLivePreviewModal() {
 
   if (!modal || !iframe) return;
 
-  const previewButtons = document.querySelectorAll('.preview-btn');
+  const triggerButtons = document.querySelectorAll('.preview-trigger-btn');
 
-  function openModal(url, title) {
-    modalTitle.textContent = title.toUpperCase();
-    modalUrlDisplay.textContent = url;
-    modalExternalLink.href = url;
+  function openInspector(url, title) {
+    if (modalTitle) modalTitle.textContent = title.toUpperCase();
+    if (modalUrlDisplay) modalUrlDisplay.textContent = url;
+    if (modalExternalLink) modalExternalLink.href = url;
 
     if (loader) loader.style.display = 'flex';
     iframe.src = url;
@@ -137,34 +147,34 @@ function initLivePreviewModal() {
     document.body.style.overflow = 'hidden';
   }
 
-  function closeModal() {
+  function closeInspector() {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     iframe.src = 'about:blank';
     document.body.style.overflow = '';
   }
 
-  previewButtons.forEach(btn => {
+  triggerButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const url = btn.getAttribute('data-url');
       const title = btn.getAttribute('data-title') || 'Live Project';
-      openModal(url, title);
+      openInspector(url, title);
     });
   });
 
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeInspector);
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+    if (e.target === modal) closeInspector();
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) {
-      closeModal();
+      closeInspector();
     }
   });
 
-  // Viewport Device Toggles (Desktop vs Mobile)
+  // Desktop vs Mobile View Toggle
   if (desktopViewBtn && mobileViewBtn && frameWrapper) {
     desktopViewBtn.addEventListener('click', () => {
       desktopViewBtn.classList.add('active');
@@ -181,7 +191,47 @@ function initLivePreviewModal() {
 }
 
 /**
- * 05. Contact Form Transmission Dispatch
+ * 05. CV Modal Handler
+ */
+function initCvModal() {
+  const cvModal = document.getElementById('cvModal');
+  const cvCloseBtn = document.getElementById('cvModalCloseBtn');
+  const cvTriggers = document.querySelectorAll('.cv-btn-trigger');
+
+  if (!cvModal) return;
+
+  function openCvModal(e) {
+    if (e) e.preventDefault();
+    cvModal.classList.add('open');
+    cvModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCvModal() {
+    cvModal.classList.remove('open');
+    cvModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  cvTriggers.forEach(btn => {
+    btn.addEventListener('click', openCvModal);
+  });
+
+  if (cvCloseBtn) cvCloseBtn.addEventListener('click', closeCvModal);
+
+  cvModal.addEventListener('click', (e) => {
+    if (e.target === cvModal) closeCvModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cvModal.classList.contains('open')) {
+      closeCvModal();
+    }
+  });
+}
+
+/**
+ * 06. Contact Transmission Form
  */
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -200,42 +250,41 @@ function initContactForm() {
 
     if (!name || !email || !message) {
       if (feedback) {
-        feedback.className = 'form-feedback error mono-text';
-        feedback.textContent = 'ERROR: All mandatory dispatch fields must be specified.';
+        feedback.className = 'form-status error mono-text';
+        feedback.textContent = 'ERROR: Please fill in all required fields.';
       }
       return;
     }
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Transmitting Dispatch...</span>';
+      submitBtn.innerHTML = '<span>Preparing Transmission...</span>';
     }
 
-    // Construct mailto link for direct transmission
-    const mailtoSubject = encodeURIComponent(`[BROADSIDE DISPATCH] ${scope} — from ${name}`);
-    const mailtoBody = encodeURIComponent(`From: ${name} (${email})\nNature of Dispatch: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
-    const mailtoUrl = `mailto:kiflemusse@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+    const mailSubject = encodeURIComponent(`[PORTFOLIO CONTACT] ${scope} — ${name}`);
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry: ${scope}\n\nProject Specifications / Role Details:\n${message}`);
+    const mailUrl = `mailto:kiflemusse@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
     setTimeout(() => {
       if (feedback) {
-        feedback.className = 'form-feedback success mono-text';
-        feedback.innerHTML = `✓ DISPATCH TRANSMISSION CONFIRMED. Launching mail client to finalize send to <strong>kiflemusse@gmail.com</strong>...`;
+        feedback.className = 'form-status success mono-text';
+        feedback.innerHTML = `✓ DISPATCH READY. Opening your email client to send to <strong>kiflemusse@gmail.com</strong>...`;
       }
 
-      window.location.href = mailtoUrl;
+      window.location.href = mailUrl;
 
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Dispatch Sent &check;</span>';
+        submitBtn.innerHTML = '<span>Message Sent &check;</span>';
       }
 
       form.reset();
-    }, 600);
+    }, 400);
   });
 }
 
 /**
- * 06. Scroll Spy for Main Navigation
+ * 07. Navigation Scroll Spy
  */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
@@ -261,20 +310,4 @@ function initScrollSpy() {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-}
-
-/**
- * 07. Back to Top Button
- */
-function initBackToTop() {
-  const topBtn = document.getElementById('backToTop');
-  if (!topBtn) return;
-
-  topBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
 }
